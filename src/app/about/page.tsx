@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container, Section, Eyebrow } from "@/components/ui/Container";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { site } from "@/content/site";
-import { getOpenJobs } from "@/lib/careers";
 
 export const metadata: Metadata = {
   title: "About",
@@ -32,8 +30,6 @@ const beliefs = [
 ];
 
 export default function AboutPage() {
-  const openRoles = getOpenJobs();
-
   return (
     <>
       <PageHeader
@@ -104,28 +100,6 @@ export default function AboutPage() {
                   {site.email}
                 </a>
               </Card>
-
-              {openRoles.length > 0 && (
-                <Card className="border-primary/40 bg-primary-soft">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    We are hiring
-                  </p>
-                  <p className="mt-2 font-display text-lg font-semibold">
-                    {openRoles.length} open{" "}
-                    {openRoles.length === 1 ? "role" : "roles"}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    Published salary bands, paid take-homes, and a reply to every
-                    application.
-                  </p>
-                  <Link
-                    href="/careers"
-                    className="mt-4 inline-block font-medium text-primary underline underline-offset-4"
-                  >
-                    See open roles
-                  </Link>
-                </Card>
-              )}
             </div>
           </div>
         </Container>

@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { getAllPosts } from "@/lib/blog";
-import { getOpenJobs } from "@/lib/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -15,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/success-stories", priority: 0.6 },
     { path: "/about", priority: 0.6 },
     { path: "/blog", priority: 0.8 },
-    { path: "/careers", priority: 0.7 },
     { path: "/faq", priority: 0.6 },
     { path: "/contact", priority: 0.7 },
     { path: "/book", priority: 0.9 },
@@ -41,13 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${p.date}T00:00:00Z`),
       changeFrequency: "yearly" as const,
       priority: 0.6,
-    })),
-    // Job posts change state often and are time-sensitive for indexing.
-    ...getOpenJobs().map((j) => ({
-      url: `${site.url}/careers/${j.slug}`,
-      lastModified: new Date(`${j.postedDate}T00:00:00Z`),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
     })),
   ];
 }
