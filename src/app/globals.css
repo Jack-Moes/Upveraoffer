@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+   Upveraoffer design tokens
+   Light palette lives on :root; dark overrides live on .dark.
+   Every color used in the app resolves through one of these.
+--------------------------------------------------------------- */
+:root {
+  --background: #ffffff;
+  --surface: #f7f6fc;
+  --surface-2: #eeecf9;
+  --foreground: #14112e;
+  --muted: #56507c;
+  --subtle: #7d77a3;
+  --border: #e5e2f3;
+
+  --primary: #5b45e0;
+  --primary-hover: #4a36c7;
+  --primary-soft: #eeebfe;
+  --primary-foreground: #ffffff;
+
+  --accent: #00a874;
+  --accent-strong: #00845c;
+  --accent-soft: #e2f8f0;
+
+  --ink: #14112e;
+  --ink-foreground: #ffffff;
+
+  --ring: #5b45e0;
+  --shadow-color: 250 30% 20%;
+}
+
+.dark {
+  --background: #0b0918;
+  --surface: #131029;
+  --surface-2: #1c1838;
+  --foreground: #efedfa;
+  --muted: #a49ecb;
+  --subtle: #837cae;
+  --border: #29244f;
+
+  --primary: #8b7bff;
+  --primary-hover: #a294ff;
+  --primary-soft: #1e1a41;
+  --primary-foreground: #0b0918;
+
+  --accent: #38e8ac;
+  --accent-strong: #6cf3c5;
+  --accent-soft: #102f26;
+
+  --ink: #1c1838;
+  --ink-foreground: #efedfa;
+
+  --ring: #8b7bff;
+  --shadow-color: 260 60% 3%;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
+  --font-mono: var(--font-jetbrains);
+
+  --radius-card: 1rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header never covers them. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
