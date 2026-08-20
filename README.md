@@ -39,6 +39,7 @@ text lives in `src/content/`:
 | `faq.ts` | The FAQ page |
 | `testimonials.ts` | Client results (currently empty — see below) |
 | `blog/*.md` | Blog articles |
+| `careers/*.md` | Job postings (see below) |
 
 ### Adding a blog post
 
@@ -60,6 +61,55 @@ Your article in normal markdown.
 Reading time is calculated automatically. The post appears in the blog index,
 the home page teaser, and the sitemap with no other changes.
 
+### Posting a job
+
+Job posts work the same way. Create a `.md` file in `src/content/careers/` —
+the filename becomes the URL (`senior-backend-engineer.md` →
+`/careers/senior-backend-engineer`).
+
+```markdown
+---
+title: "Senior Backend Engineer"
+department: "Engineering"
+location: "Remote — worldwide"
+workplace: "Remote"             # Remote | Hybrid | On-site
+employmentType: "Full-time"     # Full-time | Part-time | Contract | Internship
+experience: "5+ years"
+summary: "One sentence shown on the listing card and in search results."
+postedDate: "2026-08-20"
+closingDate: ""                 # empty means no fixed close date
+open: true                      # false hides it without deleting the file
+salary:
+  min: 130000
+  max: 170000
+  currency: "USD"
+  period: "year"                # year | month | day | hour
+highlights:                     # short bullets on the listing card
+  - "Own the assessment platform end to end"
+applyEmail: "careers@upveraoffer.com"
+applicantCountries: []          # real country names, for Google Jobs
+---
+
+The full job description in normal markdown.
+```
+
+Adding the file is all it takes. The role then appears on `/careers`, gets its
+own page with a sticky summary rail and an apply button, is counted in the
+"we are hiring" card on `/about`, and is added to the sitemap.
+
+**Closing a role:** set `open: false`. It disappears from listings and the
+sitemap but the file and its URL stay put.
+
+**Google Jobs:** each post emits `JobPosting` structured data, which is what
+gets a role indexed into Google's jobs results. Two things to know:
+
+- `applicantCountries` must contain **real country names** — `"Worldwide"` is
+  not valid. Left empty, the field is omitted rather than emitted wrong, which
+  is the safe default but weaker for indexing. Fill it in with the countries
+  you can genuinely employ or contract in.
+- Publish the salary band honestly. It is rendered on the page *and* in the
+  structured data, so a band you will not honor is visible in two places.
+
 ---
 
 ## Before you launch — required changes
@@ -77,10 +127,14 @@ each one. The important ones:
 4. **`src/app/privacy/page.tsx` and `src/app/terms/page.tsx`** — these are
    **starting drafts, not legal advice**. Have a lawyer in your jurisdiction
    review them before you take a single payment.
-5. **Booking** — set `calcom` in `site.ts` to your Cal.com handle
+5. **`src/content/careers/*.md`** — the Senior Backend Engineer post has a
+   placeholder salary band and a placeholder benefits list. Both must match
+   what you will actually offer, and `careersEmail` in `site.ts` must be a real
+   inbox that someone reads.
+6. **Booking** — set `calcom` in `site.ts` to your Cal.com handle
    (`"username/event-slug"`). Until then `/book` shows a fallback that routes
    people to the contact form.
-6. **Contact form** — see below.
+7. **Contact form** — see below.
 
 ### Testimonials
 
@@ -133,12 +187,13 @@ src/
 │  ├─ sitemap.ts / robots.ts
 │  ├─ services/[slug]/      Service detail pages
 │  ├─ blog/[slug]/          Blog posts
+│  ├─ careers/[slug]/       Job posts (JobPosting structured data)
 │  └─ api/contact/          Contact form handler
 ├─ components/
 │  ├─ site/                 Header, Footer, Logo, forms, page blocks
 │  └─ ui/                   Container, Section, Button primitives
 ├─ content/                 All editable copy (see table above)
-└─ lib/                     Blog loader, helpers
+└─ lib/                     blog.ts and careers.ts markdown loaders
 ```
 
 ### Design system

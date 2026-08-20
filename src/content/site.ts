@@ -17,6 +17,7 @@ export const site = {
   url: "https://upveraoffer.com", // PLACEHOLDER: set to your real domain
 
   email: "hello@upveraoffer.com", // PLACEHOLDER
+  careersEmail: "careers@upveraoffer.com", // PLACEHOLDER: where applications land
   phone: "", // PLACEHOLDER: leave empty to hide from the site
 
   /**
@@ -68,6 +69,7 @@ export const footerNav = [
       { label: "About us", href: "/about" },
       { label: "How it works", href: "/process" },
       { label: "Success stories", href: "/success-stories" },
+      { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
     ],
   },
