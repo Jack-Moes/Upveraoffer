@@ -4,6 +4,10 @@ description: "Grinding hundreds of problems and still failing timed assessments 
 date: "2026-07-22"
 category: "Coding Tests"
 author: "Upveraoffer"
+cover: "/images/blog/coding-test.jpg"
+coverAlt: "A computer screen filled with lines of source code"
+coverCredit: "Chris Ried"
+coverCreditUrl: "https://unsplash.com/@cdr6934"
 ---
 
 Here is a story we hear most weeks. Someone has solved three hundred problems. They can explain binary search. They sit a sixty-minute assessment, read problem one, and their mind goes flat.

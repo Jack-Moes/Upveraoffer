@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink, ArrowRight } from "@/components/ui/Button";
 import { SectionHeading, Card, CTABanner } from "@/components/site/Blocks";
@@ -306,7 +307,19 @@ export default function HomePage() {
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <Card className="flex h-full flex-col group-hover:border-primary/40">
+                  <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
+                    {post.cover && (
+                      <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+                        <Image
+                          src={post.cover}
+                          alt={post.coverAlt}
+                          fill
+                          sizes="(min-width: 768px) 22rem, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-2 text-xs text-subtle">
                       <span className="rounded-full bg-primary-soft px-2.5 py-1 font-medium text-primary">
                         {post.category}
@@ -320,6 +333,7 @@ export default function HomePage() {
                       {post.description}
                     </p>
                     <p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p>
+                    </div>
                   </Card>
                 </Link>
               ))}

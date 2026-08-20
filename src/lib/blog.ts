@@ -13,6 +13,13 @@ export type PostMeta = {
   category: string;
   readingTime: number; // minutes
   author: string;
+  /** Path under /public, e.g. "/images/blog/foo.jpg". Empty = no cover. */
+  cover: string;
+  /** Describes the image for screen readers. Never leave this empty. */
+  coverAlt: string;
+  /** Photographer name — see public/images/CREDITS.md. */
+  coverCredit: string;
+  coverCreditUrl: string;
 };
 
 export type Post = PostMeta & { html: string };
@@ -33,6 +40,10 @@ function toMeta(slug: string, data: Record<string, unknown>, body: string): Post
     category: String(data.category ?? "Guides"),
     author: String(data.author ?? "Upveraoffer"),
     readingTime: Math.max(1, Math.round(words / 220)),
+    cover: String(data.cover ?? ""),
+    coverAlt: String(data.coverAlt ?? ""),
+    coverCredit: String(data.coverCredit ?? ""),
+    coverCreditUrl: String(data.coverCreditUrl ?? ""),
   };
 }
 

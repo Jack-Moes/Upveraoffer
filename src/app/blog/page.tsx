@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHeader, Card, CTABanner } from "@/components/site/Blocks";
 import { getAllPosts, getCategories, formatDate } from "@/lib/blog";
@@ -72,7 +73,19 @@ export default function BlogIndexPage() {
                     {featured.description}
                   </p>
                 </div>
-                <div className="flex items-end">
+                <div className="flex flex-col justify-between gap-5">
+                  {featured.cover && (
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-surface-2">
+                      <Image
+                        src={featured.cover}
+                        alt={featured.coverAlt}
+                        fill
+                        sizes="(min-width: 1024px) 24rem, 100vw"
+                        priority
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  )}
                   <span className="text-sm font-medium text-primary underline-offset-4 group-hover:underline">
                     Read the article →
                   </span>
@@ -84,7 +97,19 @@ export default function BlogIndexPage() {
               <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {rest.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                    <Card className="flex h-full flex-col group-hover:border-primary/40">
+                    <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
+                      {post.cover && (
+                        <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+                          <Image
+                            src={post.cover}
+                            alt={post.coverAlt}
+                            fill
+                            sizes="(min-width: 768px) 22rem, 100vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          />
+                        </div>
+                      )}
+                      <div className="flex flex-1 flex-col p-6">
                       <div className="flex items-center gap-2 text-xs text-subtle">
                         <span className="rounded-full bg-primary-soft px-2.5 py-1 font-medium text-primary">
                           {post.category}
@@ -100,6 +125,7 @@ export default function BlogIndexPage() {
                       <p className="mt-5 text-xs text-subtle">
                         {formatDate(post.date)}
                       </p>
+                      </div>
                     </Card>
                   </Link>
                 ))}

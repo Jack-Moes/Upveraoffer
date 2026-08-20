@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Container";
 import { Card, CTABanner } from "@/components/site/Blocks";
@@ -30,7 +31,12 @@ export async function generateMetadata({
       description: post.description,
       publishedTime: post.date,
       authors: [post.author],
+      // Falls back to the site-wide generated card when a post has no cover.
+      ...(post.cover
+        ? { images: [{ url: post.cover, width: 1600, height: 900, alt: post.coverAlt }] }
+        : {}),
     },
+    ...(post.cover ? { twitter: { card: "summary_large_image", images: [post.cover] } } : {}),
   };
 }
 
@@ -87,6 +93,45 @@ export default async function BlogPostPage({
         </Container>
       </div>
 
+      {post.cover && (
+        <Container className="max-w-4xl">
+          <figure className="-mt-10 sm:-mt-14">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-black/5">
+              <Image
+                src={post.cover}
+                alt={post.coverAlt}
+                fill
+                sizes="(min-width: 896px) 56rem, 100vw"
+                priority
+                className="object-cover"
+              />
+            </div>
+            {post.coverCredit && (
+              <figcaption className="mt-3 text-right text-xs text-subtle">
+                Photo by{" "}
+                <a
+                  href={post.coverCreditUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline underline-offset-4 hover:text-primary"
+                >
+                  {post.coverCredit}
+                </a>{" "}
+                on{" "}
+                <a
+                  href="https://unsplash.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline underline-offset-4 hover:text-primary"
+                >
+                  Unsplash
+                </a>
+              </figcaption>
+            )}
+          </figure>
+        </Container>
+      )}
+
       <Section>
         <Container className="max-w-3xl">
           <article
@@ -115,16 +160,29 @@ export default async function BlogPostPage({
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`} className="group">
-                  <Card className="flex h-full flex-col group-hover:border-primary/40">
-                    <span className="w-fit rounded-full bg-primary-soft px-2.5 py-1 text-xs font-medium text-primary">
-                      {r.category}
-                    </span>
-                    <h3 className="mt-4 font-display text-lg font-semibold leading-snug group-hover:text-primary">
-                      {r.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-muted">
-                      {r.description}
-                    </p>
+                  <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
+                    {r.cover && (
+                      <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+                        <Image
+                          src={r.cover}
+                          alt={r.coverAlt}
+                          fill
+                          sizes="(min-width: 768px) 22rem, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-1 flex-col p-6">
+                      <span className="w-fit rounded-full bg-primary-soft px-2.5 py-1 text-xs font-medium text-primary">
+                        {r.category}
+                      </span>
+                      <h3 className="mt-4 font-display text-lg font-semibold leading-snug group-hover:text-primary">
+                        {r.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-muted">
+                        {r.description}
+                      </p>
+                    </div>
                   </Card>
                 </Link>
               ))}

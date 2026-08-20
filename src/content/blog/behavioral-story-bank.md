@@ -4,6 +4,10 @@ description: "You cannot memorize an answer for every question. You can build tw
 date: "2026-07-08"
 category: "Interviews"
 author: "Upveraoffer"
+cover: "/images/blog/story-bank.jpg"
+coverAlt: "Two women seated at a table in conversation"
+coverCredit: "Christina @ wocintechchat.com"
+coverCreditUrl: "https://unsplash.com/@wocintechchat"
 ---
 
 Candidates prepare for behavioral interviews by trying to anticipate questions. There are hundreds of possible questions, so this fails, and it fails in a specific way: you end up with a shallow half-answer for many prompts rather than a strong answer for any.

@@ -4,6 +4,10 @@ description: "Most bullets describe a job description. The ones that work descri
 date: "2026-08-04"
 category: "Résumé"
 author: "Upveraoffer"
+cover: "/images/blog/resume-bullets.jpg"
+coverAlt: "A person writing notes in a notebook beside a coffee mug on a wooden desk"
+coverCredit: "Unseen Studio"
+coverCreditUrl: "https://unsplash.com/@uns__nstudio"
 ---
 
 A recruiter gives your résumé somewhere between six and twenty seconds on the first pass. In that window they are not reading — they are scanning for evidence that you have done the thing they need done.
