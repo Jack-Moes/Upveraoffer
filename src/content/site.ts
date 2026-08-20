@@ -33,6 +33,24 @@ export const site = {
 
   /** Shown in the footer and structured data. */
   foundedYear: 2026,
+
+  /**
+   * Founder / lead coach.
+   *
+   * The About page renders this block ONLY when both `name` and `photo` are
+   * filled in, so nothing half-finished is ever shown publicly. Drop a real
+   * photograph into public/images/site/ and fill this in — a real face with
+   * real credentials is the single strongest trust signal on the whole site.
+   *
+   * Do not put a stock photo here. Passing a stock person off as yourself is
+   * misrepresentation, and it is trivially exposed by a reverse image search.
+   */
+  founder: {
+    name: "", // e.g. "Jack Moes"
+    role: "Founder and lead coach",
+    photo: "", // e.g. "/images/site/founder.jpg"
+    bio: "", // two or three sentences of genuine, checkable background
+  },
 } as const;
 
 export const nav = [

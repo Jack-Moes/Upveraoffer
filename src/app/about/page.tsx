@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/Container";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { site } from "@/content/site";
@@ -30,6 +31,10 @@ const beliefs = [
 ];
 
 export default function AboutPage() {
+  // Only render the founder block once there is a real photo and name to show.
+  const founder = site.founder;
+  const showFounder = Boolean(founder.name && founder.photo);
+
   return (
     <>
       <PageHeader
@@ -104,6 +109,33 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+
+      {showFounder && (
+        <Section className="border-t border-border bg-surface">
+          <Container>
+            <div className="grid items-center gap-10 lg:grid-cols-[20rem_1fr]">
+              <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-surface-2">
+                <Image
+                  src={founder.photo}
+                  alt={`${founder.name}, ${founder.role} at ${site.name}`}
+                  fill
+                  sizes="(min-width: 1024px) 20rem, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <Eyebrow>{founder.role}</Eyebrow>
+                <h2 className="font-display text-3xl font-semibold">
+                  {founder.name}
+                </h2>
+                <p className="mt-5 text-lg leading-relaxed text-muted">
+                  {founder.bio}
+                </p>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      )}
 
       <Section className="border-y border-border bg-surface">
         <Container>

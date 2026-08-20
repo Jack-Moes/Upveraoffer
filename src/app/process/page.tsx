@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { steps, pillars } from "@/content/process";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "How it works",
@@ -18,6 +20,19 @@ export default function ProcessPage() {
         title="Four stages, in the order that actually works."
         intro="We do not hand you a plan on day one. We find out what is wrong first, because the plan depends entirely on the answer."
       />
+
+      <Container className="-mt-8 sm:-mt-10">
+        <div className="relative aspect-21/9 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
+          <Image
+            src={images.process.src}
+            alt={images.process.alt}
+            fill
+            priority
+            sizes="(min-width: 1152px) 72rem, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </Container>
 
       <Section>
         <Container>

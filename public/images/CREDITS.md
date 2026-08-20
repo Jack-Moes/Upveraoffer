@@ -12,6 +12,20 @@ If you cannot name the licence, do not ship the image.
 | `blog/coding-test.jpg` | Chris Ried | [Unsplash](https://unsplash.com/@cdr6934) | Unsplash License |
 | `blog/story-bank.jpg` | Christina @ wocintechchat.com | [Unsplash](https://unsplash.com/@wocintechchat) | Unsplash License |
 
+## Site and service images
+
+Registered in `src/content/images.ts`, which holds the alt text and credit
+for each one.
+
+| File | Used on | Photographer | Source | Licence |
+|---|---|---|---|---|
+| `site/hero.jpg` | Home hero | Jan Baborák | [Unsplash](https://unsplash.com/@janbaborak) | Unsplash License |
+| `site/process.jpg` | Home, `/process` | JESHOOTS.COM | [Unsplash](https://unsplash.com/@jeshoots) | Unsplash License |
+| `site/consult.jpg` | `/book` | Kelly Sikkema | [Unsplash](https://unsplash.com/@kellysikkema) | Unsplash License |
+| `services/resume.jpg` | Résumé service | pure julia | [Unsplash](https://unsplash.com/@purejulia) | Unsplash License |
+| `services/interview.jpg` | Interview service | Vitaly Gariev | [Unsplash](https://unsplash.com/@silverkblack) | Unsplash License |
+| `services/coding.jpg` | Coding test service | Nubelson Fernandes | [Unsplash](https://unsplash.com/@nublson) | Unsplash License |
+
 ## About the Unsplash License
 
 Free to use for commercial and non-commercial purposes, no permission needed.

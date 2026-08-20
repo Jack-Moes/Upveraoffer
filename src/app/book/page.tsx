@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHeader, Card } from "@/components/site/Blocks";
 import { BookingEmbed } from "@/components/site/BookingEmbed";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "Book a free consult",
@@ -59,6 +61,16 @@ export default function BookPage() {
                   ))}
                 </ul>
               </Card>
+
+              <div className="relative aspect-4/3 overflow-hidden rounded-card border border-border bg-surface-2">
+                <Image
+                  src={images.consult.src}
+                  alt={images.consult.alt}
+                  fill
+                  sizes="(min-width: 1024px) 22rem, 100vw"
+                  className="object-cover"
+                />
+              </div>
 
               <Card className="bg-surface">
                 <h2 className="font-display text-lg font-semibold">

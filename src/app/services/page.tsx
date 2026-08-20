@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink, ArrowRight } from "@/components/ui/Button";
 import { PageHeader, Card, CTABanner } from "@/components/site/Blocks";
 import { IconBadge } from "@/components/site/ServiceIcon";
 import { services } from "@/content/services";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -31,6 +33,15 @@ export default function ServicesPage() {
                 className="grid gap-8 rounded-card border border-border bg-background p-7 sm:p-9 lg:grid-cols-[1fr_1.2fr]"
               >
                 <div>
+                  <div className="relative mb-7 aspect-16/9 overflow-hidden rounded-2xl bg-surface-2">
+                    <Image
+                      src={images[service.slug].src}
+                      alt={images[service.slug].alt}
+                      fill
+                      sizes="(min-width: 1024px) 26rem, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                   <IconBadge icon={service.icon} />
                   <h2 className="mt-5 font-display text-2xl font-semibold">
                     {service.name}

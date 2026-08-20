@@ -7,6 +7,7 @@ import { IconBadge } from "@/components/site/ServiceIcon";
 import { services } from "@/content/services";
 import { steps, pillars } from "@/content/process";
 import { plans, currencySymbol } from "@/content/pricing";
+import { images } from "@/content/images";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 const stalls = [
@@ -84,29 +85,45 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Visual: the four-stage journey as a compact vertical track. */}
-            <div className="relative">
-              <div className="rounded-3xl border border-border bg-background p-7 shadow-xl shadow-primary/5">
-                <p className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-subtle">
+            {/* Photograph with the four-stage journey card overlapping it. */}
+            <div className="relative lg:pl-14">
+              <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-2xl shadow-primary/10">
+                <Image
+                  src={images.hero.src}
+                  alt={images.hero.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 30rem, 100vw"
+                  className="object-cover"
+                />
+                {/* Warms the photo toward the brand and lifts card contrast. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-linear-to-t from-ink/45 via-transparent to-transparent"
+                />
+              </div>
+
+              <div className="mt-6 rounded-3xl border border-border bg-background p-6 shadow-xl shadow-primary/5 lg:absolute lg:-left-2 lg:bottom-8 lg:mt-0 lg:w-72 lg:p-7">
+                <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
                   The path
                 </p>
-                <ol className="mt-6 space-y-6">
+                <ol className="mt-5 space-y-5">
                   {steps.map((step, i) => (
-                    <li key={step.number} className="relative flex gap-4">
+                    <li key={step.number} className="relative flex gap-3.5">
                       {i < steps.length - 1 && (
                         <span
                           aria-hidden="true"
-                          className="absolute left-[1.1rem] top-9 h-[calc(100%+0.6rem)] w-px bg-border"
+                          className="absolute left-4 top-8 h-[calc(100%+0.35rem)] w-px bg-border"
                         />
                       )}
-                      <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-surface font-mono text-xs font-semibold text-primary">
+                      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-surface font-mono text-[0.65rem] font-semibold text-primary">
                         {step.number}
                       </span>
-                      <div className="pt-1">
-                        <p className="font-display font-semibold leading-none">
+                      <div className="pt-0.5">
+                        <p className="font-display text-sm font-semibold leading-none">
                           {step.title}
                         </p>
-                        <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted">
                           {step.summary}
                         </p>
                       </div>
@@ -161,8 +178,18 @@ export default function HomePage() {
             {services.map((service) => (
               <Card
                 key={service.slug}
-                className="flex flex-col hover:border-primary/40"
+                className="group flex flex-col overflow-hidden p-0 hover:border-primary/40"
               >
+                <div className="relative aspect-16/10 overflow-hidden bg-surface-2">
+                  <Image
+                    src={images[service.slug].src}
+                    alt={images[service.slug].alt}
+                    fill
+                    sizes="(min-width: 1024px) 22rem, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
                 <IconBadge icon={service.icon} />
                 <h3 className="mt-5 font-display text-xl font-semibold">
                   {service.name}
@@ -185,6 +212,7 @@ export default function HomePage() {
                   Explore {service.name}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
+                </div>
               </Card>
             ))}
           </div>
@@ -204,6 +232,16 @@ export default function HomePage() {
               <ButtonLink href="/process" variant="secondary" className="mt-8">
                 The full process
               </ButtonLink>
+
+              <div className="relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 lg:block">
+                <Image
+                  src={images.process.src}
+                  alt={images.process.alt}
+                  fill
+                  sizes="30rem"
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
