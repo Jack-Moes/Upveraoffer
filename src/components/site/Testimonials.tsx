@@ -3,34 +3,6 @@ import { Card } from "./Blocks";
 import type { Testimonial } from "@/content/testimonials";
 import { cn } from "@/lib/utils";
 
-/** Shown above sample content so it can never be mistaken for real feedback. */
-export function SampleNotice() {
-  return (
-    <div className="mb-8 flex items-start gap-3 rounded-card border border-dashed border-primary/50 bg-primary-soft px-5 py-4">
-      <svg viewBox="0 0 20 20" className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true">
-        <path
-          d="M10 2.5 18 17H2L10 2.5Z M10 8v3.5 M10 14h.01"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p className="text-sm leading-relaxed text-foreground">
-        <strong className="font-semibold">Example layout, not real feedback.</strong>{" "}
-        These entries are placeholders so you can see the finished section. They
-        are never shown on the live site — replace them with real, permissioned
-        client feedback in{" "}
-        <code className="rounded bg-background px-1.5 py-0.5 font-mono text-xs">
-          src/content/testimonials.ts
-        </code>
-        .
-      </p>
-    </div>
-  );
-}
-
 function QuoteMark({ className }: { className?: string }) {
   return (
     <svg

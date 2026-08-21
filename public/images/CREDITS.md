@@ -26,6 +26,22 @@ for each one.
 | `services/interview.jpg` | Interview service | Vitaly Gariev | [Unsplash](https://unsplash.com/@silverkblack) | Unsplash License |
 | `services/coding.jpg` | Coding test service | Nubelson Fernandes | [Unsplash](https://unsplash.com/@nublson) | Unsplash License |
 
+## Testimonial portraits — demonstration content
+
+These four portraits stand in as client avatars in `src/content/testimonials.ts`.
+**The people pictured are not clients and have not endorsed anything.** That is
+acceptable for this portfolio build; it is not acceptable on a live commercial
+site. Replace them with real, permissioned client photos — or remove the
+`photo` field entirely, which falls the avatar back to a generated monogram —
+before this sells anything.
+
+| File | Photographer | Source | Licence |
+|---|---|---|---|
+| `people/a1.jpg` | Jurica Koletić | [Unsplash](https://unsplash.com/@juricakoletic) | Unsplash License |
+| `people/a2.jpg` | Michael Dam | [Unsplash](https://unsplash.com/@michaeldam) | Unsplash License |
+| `people/a3.jpg` | Joseph Gonzalez | [Unsplash](https://unsplash.com/@miracletwentyone) | Unsplash License |
+| `people/a4.jpg` | Andre Styles | [Unsplash](https://unsplash.com/@lovedisorder) | Unsplash License |
+
 ## About the Unsplash License
 
 Free to use for commercial and non-commercial purposes, no permission needed.

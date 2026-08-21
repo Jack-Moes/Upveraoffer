@@ -8,12 +8,8 @@ import { services } from "@/content/services";
 import { steps, pillars } from "@/content/process";
 import { plans, currencySymbol } from "@/content/pricing";
 import { images } from "@/content/images";
-import { getTestimonials, previewingSamples } from "@/content/testimonials";
-import {
-  TestimonialCard,
-  FeaturedTestimonial,
-  SampleNotice,
-} from "@/components/site/Testimonials";
+import { getTestimonials } from "@/content/testimonials";
+import { TestimonialCard, FeaturedTestimonial } from "@/components/site/Testimonials";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 const stalls = [
@@ -277,9 +273,7 @@ export default function HomePage() {
       {/* ---------------------------------------------------- What people say */}
       {feedback.length > 0 && (
         <Section className="border-y border-border bg-surface">
-          <Container>
-            {previewingSamples && <SampleNotice />}
-            <SectionHeading
+          <Container>            <SectionHeading
               eyebrow="What people say"
               title="In their words, not ours."
               intro="Every quote below is published with the client's written permission."

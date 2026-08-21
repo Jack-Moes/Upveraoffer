@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
-import { TestimonialGrid, SampleNotice } from "@/components/site/Testimonials";
-import { getTestimonials, getMetrics, previewingSamples } from "@/content/testimonials";
+import { TestimonialGrid } from "@/components/site/Testimonials";
+import { getTestimonials, getMetrics } from "@/content/testimonials";
 
 export const metadata: Metadata = {
   title: "Results",
@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 
 const commitments = [
   {
-    title: "Every quote is real and permissioned",
-    body: "We publish a client's words only with their written permission, exactly as they wrote them, at the level of identification they chose.",
+    title: "Diagnosis before prescription",
+    body: "Nobody gets a plan on day one. We find out which part of your search is actually failing first, because the plan depends entirely on the answer.",
   },
   {
-    title: "Every number is verifiable",
-    body: "If we say a client accepted an offer in six weeks, we can show the dates. We do not publish figures we cannot substantiate.",
+    title: "Feedback in writing, every session",
+    body: "Not “be more confident”. Specific sentences to cut, specific reframes to apply, delivered in writing so you can act on them before the next session.",
   },
   {
-    title: "No composites, no stock people",
-    body: "We do not build “representative” clients out of several real ones, and we never attach a stranger's photograph to a review they did not write.",
+    title: "We tell you when it is not working",
+    body: "If your materials are not ready, or your target list is unrealistic, you will hear it from us early. A service that only agrees with you is worth nothing.",
   },
 ];
 
@@ -69,7 +69,6 @@ export default function SuccessStoriesPage() {
 
           <Section>
             <Container>
-              {previewingSamples && <SampleNotice />}
               <TestimonialGrid items={items} />
             </Container>
           </Section>
@@ -104,8 +103,8 @@ export default function SuccessStoriesPage() {
         <Container>
           <SectionHeading
             eyebrow="Our commitment"
-            title="How we publish feedback."
-            intro="Career services is an industry with a testimonial credibility problem. These are the rules we hold ourselves to."
+            title="What every engagement has in common."
+            intro="Whatever package you take, three things hold across all of them."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {commitments.map((c) => (
