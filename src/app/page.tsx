@@ -8,6 +8,12 @@ import { services } from "@/content/services";
 import { steps, pillars } from "@/content/process";
 import { plans, currencySymbol } from "@/content/pricing";
 import { images } from "@/content/images";
+import { getTestimonials, previewingSamples } from "@/content/testimonials";
+import {
+  TestimonialCard,
+  FeaturedTestimonial,
+  SampleNotice,
+} from "@/components/site/Testimonials";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 const stalls = [
@@ -36,6 +42,7 @@ const stalls = [
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
+  const feedback = getTestimonials();
 
   return (
     <>
@@ -267,8 +274,41 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* ---------------------------------------------------- What people say */}
+      {feedback.length > 0 && (
+        <Section className="border-y border-border bg-surface">
+          <Container>
+            {previewingSamples && <SampleNotice />}
+            <SectionHeading
+              eyebrow="What people say"
+              title="In their words, not ours."
+              intro="Every quote below is published with the client's written permission."
+              align="center"
+            />
+            <div className="mt-12 space-y-5">
+              <FeaturedTestimonial t={feedback[0]} />
+              {feedback.length > 1 && (
+                <div className="grid gap-5 md:grid-cols-3">
+                  {feedback.slice(1, 4).map((t) => (
+                    <TestimonialCard key={t.quote} t={t} />
+                  ))}
+                </div>
+              )}
+            </div>
+            <p className="mt-10 text-center">
+              <Link
+                href="/success-stories"
+                className="font-medium text-primary underline underline-offset-4"
+              >
+                Read all client results
+              </Link>
+            </p>
+          </Container>
+        </Section>
+      )}
+
       {/* ------------------------------------------------- Pricing preview */}
-      <Section className="border-y border-border bg-surface">
+      <Section>
         <Container>
           <SectionHeading
             eyebrow="Pricing"
