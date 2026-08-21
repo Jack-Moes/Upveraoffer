@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 
 const covered = [
   "Where your search is actually breaking down, based on what you show us",
-  "A quick read on your résumé — the two or three changes that matter most",
+  "A quick read on your résumé, and the two or three changes that matter most",
   "Which stage to fix first, and roughly how long it should take",
-  "Whether we are the right help, or whether you can do this yourself",
+  "Whether we’re the right help, or whether you can do this yourself",
 ];
 
 export default function BookPage() {
@@ -25,7 +25,7 @@ export default function BookPage() {
       <PageHeader
         eyebrow="Free consult"
         title="Thirty minutes. No charge. No pitch."
-        intro="Bring your résumé and a description of your search so far. You will leave with a written diagnosis whether or not you ever become a client."
+        intro="Bring your résumé and a rough account of your search so far. You’ll leave with a written diagnosis whether or not you ever become a client."
       />
 
       <Section>
@@ -77,9 +77,9 @@ export default function BookPage() {
                   How to prepare
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted">
-                  Send your current résumé ahead of the call if you can, plus one
-                  or two job postings you are targeting. It means we spend the
-                  thirty minutes on advice rather than on context gathering.
+                  Send your current résumé ahead of the call if you can, plus a
+                  couple of job postings you’re targeting. It means we spend the
+                  thirty minutes on advice instead of on catching up.
                 </p>
               </Card>
 
@@ -88,8 +88,8 @@ export default function BookPage() {
                   No obligation, genuinely
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted">
-                  There is no follow-up sequence and no pressure. If we do not
-                  think we can help, we will tell you on the call and point you
+                  There’s no follow-up sequence and no pressure. If we don’t
+                  think we can help, we’ll say so on the call and point you
                   somewhere better.
                 </p>
               </Card>

@@ -56,9 +56,9 @@ export function ContactForm() {
           Message received.
         </h3>
         <p className="mt-3 leading-relaxed text-muted">
-          We reply to every enquiry within one business day. If your search is
-          time-sensitive, mention the deadline in a follow-up and we will
-          prioritize it.
+          We reply to every message within one business day. If your search is
+          time-sensitive, mention the deadline in a follow-up and we’ll jump
+          the queue for you.
         </p>
         <button
           type="button"
@@ -138,7 +138,7 @@ export function ContactForm() {
                 {s.name}
               </option>
             ))}
-            <option value="Everything">Everything — full search support</option>
+            <option value="Everything">Everything, the full search</option>
           </select>
         </div>
         <div>
@@ -165,7 +165,7 @@ export function ContactForm() {
           name="message"
           required
           rows={6}
-          placeholder="Tell us what is happening in your search right now — how many applications, what stage you reach, where it breaks down."
+          placeholder="What is happening in your search right now? How many applications, what stage you get to, where it falls apart."
           className={field}
         />
       </div>
@@ -178,7 +178,7 @@ export function ContactForm() {
           className="mt-1 h-4 w-4 rounded border-border accent-[var(--primary)]"
         />
         <span>
-          I agree that Upveraoffer may contact me about my enquiry and store the
+          I agree that Upveraoffer may contact me about this message and store the
           details I have submitted, as described in the privacy policy.
         </span>
       </label>
@@ -194,7 +194,7 @@ export function ContactForm() {
       </Button>
 
       <p className="text-sm text-subtle">
-        We reply within one business day. Nothing you send is shared with anyone.
+        We reply within one business day, and nothing you send goes anywhere else.
       </p>
     </form>
   );

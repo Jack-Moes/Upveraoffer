@@ -11,7 +11,7 @@ import { images } from "@/content/images";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Résumé and CV writing, interview preparation, and coding test coaching — the three services that cover an entire job search.",
+    "Résumé and CV writing, interview preparation, and coding test coaching: the three services that cover an entire job search.",
   alternates: { canonical: "/services" },
 };
 
@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Everything a job search actually requires."
-        intro="Three services that map to the three places a search stalls. Use one, or use all three as a single sequence."
+        intro="Three services that map to the three places a search stalls. Take one, or run all three as a single sequence."
       />
 
       <Section>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
                   </h2>
                   <p className="mt-3 leading-relaxed text-muted">{service.intro}</p>
                   <ButtonLink href={`/services/${service.slug}`} className="mt-7">
-                    See what is included
+                    See what you get
                     <ArrowRight />
                   </ButtonLink>
                 </div>
@@ -88,9 +88,9 @@ export default function ServicesPage() {
               Not sure which one you need?
             </h2>
             <p className="mx-auto mt-3 max-w-xl leading-relaxed text-muted">
-              That is what the diagnostic is for. Book a free consult and we will
-              tell you where your search is actually breaking down — including if
-              the answer is that you do not need us.
+              That’s what the diagnostic is for. Book a free consult and we’ll
+              tell you where your search is actually breaking down, including if
+              the answer is that you don’t need us.
             </p>
             <ButtonLink href="/book" className="mt-6">
               Book a free consult

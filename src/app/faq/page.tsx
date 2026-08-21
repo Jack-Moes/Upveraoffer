@@ -7,7 +7,7 @@ import { pricingFaq } from "@/content/pricing";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Common questions about how Upveraoffer works, what is included, timelines, languages supported, refunds, and confidentiality.",
+    "Common questions about how Upveraoffer works, what you get, timelines, languages, refunds and confidentiality.",
   alternates: { canonical: "/faq" },
 };
 
@@ -29,7 +29,7 @@ export default function FaqPage() {
       <PageHeader
         eyebrow="FAQ"
         title="Questions, answered plainly."
-        intro="If yours is not here, ask us directly — we answer every message within one business day."
+        intro="If yours isn't here, just ask. We answer every message within one business day."
       />
 
       <Section>
@@ -50,7 +50,7 @@ export default function FaqPage() {
 
       <CTABanner
         title="Still have a question?"
-        body="Ask it on the consult call, or send it in writing — either way you get a straight answer, not a sales pitch."
+        body="Ask it on the consult call, or send it in writing. Either way you get a straight answer, not a sales pitch."
         secondary={{ href: "/contact", label: "Send a message" }}
       />
 

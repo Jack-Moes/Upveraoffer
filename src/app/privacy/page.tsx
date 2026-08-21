@@ -92,8 +92,8 @@ export default function PrivacyPage() {
             <h2>Who we share it with</h2>
             <p>
               We share information only with service providers who help us operate, and
-              only to the extent they need it — for example our website host, email
-              delivery provider, scheduling tool, and payment processor. Each is bound to
+              only to the extent they need it: our website host, email delivery
+              provider, scheduling tool, and payment processor. Each is bound to
               protect it. We may also disclose information where the law requires it.
             </p>
             {/* TODO(founder): list your actual processors by name here — most
@@ -120,8 +120,8 @@ export default function PrivacyPage() {
             <p>
               We use encrypted transport, access controls, and reputable providers.
               No system is perfectly secure, so please do not send us information you
-              would not want stored — such as national identity numbers or bank details —
-              unless we have specifically asked for it.
+              would not want stored, such as national identity numbers or bank
+              details, unless we have specifically asked for it.
             </p>
 
             <h2>Children</h2>

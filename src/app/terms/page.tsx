@@ -55,7 +55,7 @@ export default function TermsPage() {
               <strong>We do not guarantee employment.</strong> We do not guarantee
               interviews, offers, salary outcomes, or that any particular employer will
               respond to you. Hiring depends on market conditions, timing, employer
-              preferences, and your own performance — none of which we control. Any
+              preferences, and your own performance, none of which we control. Any
               example outcomes described on this site are illustrative and are not a
               prediction of your results.
             </p>
@@ -118,8 +118,8 @@ export default function TermsPage() {
             <p>
               You may not use our services to prepare fraudulent applications, to
               misrepresent another person, or to gain an unfair advantage through
-              dishonest means — including having us complete a live assessment on your
-              behalf. We will end an engagement without refund if this happens.
+              dishonest means, including having us complete a live assessment on
+              your behalf. We will end an engagement without refund if this happens.
             </p>
 
             <h2>11. Limitation of liability</h2>

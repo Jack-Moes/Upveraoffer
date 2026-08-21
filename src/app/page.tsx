@@ -16,21 +16,21 @@ const stalls = [
   {
     stage: "You apply and hear nothing",
     cause:
-      "Your résumé reads like a job description. Screeners and recruiters cannot find evidence that you did the work, so they move on.",
+      "Your résumé reads like a job description. Screeners and recruiters can't find any evidence that you did the work, so they move on.",
     fix: "Résumé rebuilt around impact",
     href: "/services/resume",
   },
   {
     stage: "You interview and lose",
     cause:
-      "You know the material but the answers wander, the ownership is unclear, and the interviewer leaves unconvinced.",
+      "You know the material, but the answers wander, it's never clear what you owned, and the interviewer leaves unconvinced.",
     fix: "Mock interviews with real feedback",
     href: "/services/interview",
   },
   {
     stage: "You freeze on the assessment",
     cause:
-      "Hundreds of practice problems and still a blank screen, because nothing in your practice trained the first two minutes.",
+      "Hundreds of practice problems and still a blank screen, because nothing you practiced trained the first two minutes.",
     fix: "Pattern-first coding coaching",
     href: "/services/coding-test",
   },
@@ -67,9 +67,9 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                Upveraoffer is a job search partner for the whole process — the
+                Upveraoffer is a job search partner for the whole process. The
                 résumé that gets you read, the interviews that get you through,
-                and the coding tests that stand between you and the offer.
+                and the coding tests standing between you and the offer.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -145,7 +145,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="The problem"
             title="A job search stalls in one of three places."
-            intro="Each one has a different cause and a different fix. Guessing which is which is what turns a three-month search into a nine-month one."
+            intro="Each one has a different cause and a different fix. Guessing wrong is what turns a three-month search into a nine-month one."
           />
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -174,7 +174,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="What we do"
             title="Three services, built to be used together."
-            intro="Take one if that is all you need. Most people find the pieces compound — a stronger résumé produces more interviews, and interview practice is wasted if the assessment blocks you first."
+            intro="Take one if that's all you need. Most people find the pieces build on each other. A stronger résumé gets you more interviews, and interview practice is wasted if the coding test stops you first."
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">

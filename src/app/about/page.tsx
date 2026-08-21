@@ -13,20 +13,20 @@ export const metadata: Metadata = {
 
 const beliefs = [
   {
-    title: "The market is not a meritocracy",
-    body: "Plenty of excellent engineers go unhired for months because their materials misrepresent them and nobody ever tells them why. Presentation is not the same as substance, but a search fails without both.",
+    title: "The market isn’t a meritocracy",
+    body: "Plenty of excellent engineers go unhired for months because their materials misrepresent them and nobody ever tells them why. Presentation isn’t the same as substance, but a search fails without both.",
   },
   {
     title: "Feedback has to be specific to be useful",
-    body: "“Be more confident” is not feedback. “You spent ninety seconds on setup and thirty on your own decisions — invert that” is. We give the second kind, in writing, after every session.",
+    body: "“Be more confident” isn’t feedback. “You spent ninety seconds on setup and thirty on your own decisions, so flip that” is. We give the second kind, in writing, after every session.",
   },
   {
     title: "Practice beats advice",
-    body: "Nobody has ever read their way to being good at interviews. The gains come from doing the thing under pressure and being corrected immediately afterwards.",
+    body: "Nobody has ever read their way to being good at interviews. The gains come from doing it under pressure and getting corrected straight afterwards.",
   },
   {
     title: "Honesty is the whole product",
-    body: "We will tell you when your résumé is not ready, when your target is unrealistic, and when you do not need to hire us. A service that only ever agrees with you is worth nothing.",
+    body: "We’ll tell you when your résumé isn’t ready, when your target is unrealistic, and when you don’t need to hire us at all. A service that only ever agrees with you is worth nothing.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="We built the service we wanted during our own job searches."
-        intro="Upveraoffer exists because the gap between being capable and being hired is real, unfair, and almost entirely fixable with structure and honest feedback."
+        intro="Upveraoffer exists because the gap between being capable and being hired is real, unfair, and mostly fixable with structure and honest feedback."
       />
 
       <Section>
@@ -50,26 +50,26 @@ export default function AboutPage() {
               <Eyebrow>Our story</Eyebrow>
               <div className="space-y-5 text-lg leading-relaxed text-muted">
                 {/* TODO(founder): replace the three paragraphs below with your
-                    real story — why you started this, what you did before, and
+                    real story: why you started this, what you did before, and
                     what you saw that made the gap obvious. Specific beats
                     polished; people hire the person, not the prose. */}
                 <p>
-                  Every job search produces the same quiet moment: dozens of
+                  Every job search has the same quiet moment. Dozens of
                   applications sent, no replies, and no way to tell whether the
                   problem is the market, the résumé, or something invisible in
                   between. Nobody writes back to explain.
                 </p>
                 <p>
-                  We started {site.name} to close that feedback loop. Not with
-                  motivational advice, and not with a template — with a
-                  diagnostic that tells you precisely which part of your search
-                  is failing, then the work to fix it.
+                  We started {site.name} to close that loop. Not with
+                  motivational advice, and not with a template. With a
+                  diagnostic that tells you which part of your search is
+                  failing, and then the work to fix it.
                 </p>
                 <p>
-                  We work with a deliberately small number of clients at a time.
-                  The work is hands-on, the feedback is direct, and we would
-                  rather turn someone away than take money for a package that
-                  does not match what they need.
+                  We work with a deliberately small number of clients at once.
+                  The work is hands-on, the feedback is direct, and we’d rather
+                  turn someone away than take their money for a package that
+                  doesn’t match what they need.
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   Remote, worldwide
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  Sessions are scheduled to your time zone, not ours.
+                  Sessions run on your time zone, not ours.
                 </p>
               </Card>
               <Card className="bg-surface">
@@ -154,13 +154,13 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* TODO(founder): add a team section here once you have coach bios —
+      {/* TODO(founder): add a team section here once you have coach bios:
           name, photo, one paragraph of relevant credentials. Real credentials
           are the single strongest trust signal on a page like this. */}
 
       <CTABanner
         title="Talk to us before you decide anything."
-        body="The consult is genuinely free and genuinely useful. Worst case, you get an honest outside read on your search and go do it yourself."
+        body="The consult is genuinely free and genuinely useful. Worst case, you get an honest outside read on your search and go do the rest yourself."
         secondary={{ href: "/faq", label: "Read the FAQ" }}
       />
     </>

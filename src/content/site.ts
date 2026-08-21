@@ -11,7 +11,7 @@ export const site = {
   legalName: "Upveraoffer", // PLACEHOLDER: registered legal entity name
   tagline: "From résumé to offer.",
   description:
-    "Upveraoffer is an end-to-end job search partner. We help you write a résumé that gets read, prepare for interviews that get passed, and clear the coding tests that stand between you and the offer.",
+    "Upveraoffer is a job search partner for the whole process. We help you write a résumé that gets read, prepare for interviews you’ll pass, and clear the coding tests standing between you and the offer.",
 
   /** Used for canonical URLs, sitemap, and Open Graph. */
   url: "https://upveraoffer.com", // PLACEHOLDER: set to your real domain

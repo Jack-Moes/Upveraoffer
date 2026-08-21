@@ -18,7 +18,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              {site.tagline} An end-to-end job search partner for résumés,
+              {site.tagline} A job search partner for the whole thing: résumés,
               interviews, and coding assessments.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">

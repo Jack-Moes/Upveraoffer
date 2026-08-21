@@ -8,7 +8,7 @@ import { getAllPosts, getCategories, formatDate } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Practical guides on résumé writing, interview preparation, and coding assessments — the same material we teach clients.",
+    "Practical guides on résumé writing, interview preparation, and coding assessments. The same material we teach clients.",
   alternates: { canonical: "/blog" },
 };
 
@@ -22,7 +22,7 @@ export default function BlogIndexPage() {
       <PageHeader
         eyebrow="Resources"
         title="Free material, no email required."
-        intro="Everything here is what we would tell a client. If you can use it without hiring us, that is a good outcome."
+        intro="Everything here is what we’d tell a client. If you can use it without hiring us, that’s a good outcome."
       />
 
       {posts.length === 0 ? (
@@ -33,7 +33,7 @@ export default function BlogIndexPage() {
                 Articles are on the way
               </h2>
               <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted">
-                We are writing the first pieces now. Check back shortly.
+                We’re writing the first pieces now. Check back shortly.
               </p>
             </Card>
           </Container>
@@ -137,7 +137,7 @@ export default function BlogIndexPage() {
 
       <CTABanner
         title="Want this applied to your actual search?"
-        body="Reading is the cheap part. The consult is where we look at your specific materials and tell you what to change."
+        body="Reading is the cheap part. The consult is where we look at your actual materials and tell you what to change."
         secondary={{ href: "/services", label: "See our services" }}
       />
     </>

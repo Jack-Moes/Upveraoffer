@@ -13,7 +13,7 @@ import { plans, comparison, pricingFaq, currencySymbol, currency } from "@/conte
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "One-time packages for résumé writing, interview preparation, and coding test coaching. No subscriptions, payment plans available.",
+    "One-time packages for résumé writing, interview preparation, and coding test coaching. No subscriptions, and payment plans if you need them.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -50,7 +50,7 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Pricing"
         title="Pick the depth your search needs."
-        intro="Three one-time packages. No subscriptions, no retainers, no upsells mid-engagement. If you outgrow the one you picked, you pay the difference and nothing more."
+        intro="Three one-time packages. No subscriptions, no retainers, and nothing sold to you halfway through. If you outgrow the one you picked, you pay the difference and nothing more."
       />
 
       <Section>
@@ -188,7 +188,7 @@ export default function PricingPage() {
 
       <CTABanner
         title="Not sure which package fits?"
-        body="Book the free consult. We will tell you which one your situation actually calls for — including when the answer is the cheapest one."
+        body="Book the free consult. We'll tell you which one your situation actually calls for, including when the answer is the cheapest one."
         secondary={{ href: "/faq", label: "Read the FAQ" }}
       />
     </>

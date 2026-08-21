@@ -19,8 +19,8 @@ export function BookingEmbed() {
           Online booking is opening shortly
         </h2>
         <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted">
-          Self-serve scheduling is not live yet. Send us a message with a couple
-          of times that suit you and we will confirm a slot the same day.
+          Self-serve booking isn’t live yet. Send us a message with a couple of
+          times that suit you and we’ll confirm a slot the same day.
         </p>
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <ButtonLink href="/contact">Request a consult</ButtonLink>
@@ -44,11 +44,11 @@ export function BookingEmbed() {
         allow="camera; microphone; fullscreen; payment"
       />
       <p className="border-t border-border px-5 py-3 text-sm text-subtle">
-        Trouble with the scheduler?{" "}
+        Scheduler not loading?{" "}
         <Link href="/contact" className="text-primary underline underline-offset-4">
           Send us a message
         </Link>{" "}
-        and we will book you in manually.
+        and we’ll book you in by hand.
       </p>
     </div>
   );

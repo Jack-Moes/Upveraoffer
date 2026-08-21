@@ -26,8 +26,8 @@ export const plans: Plan[] = [
     name: "Foundation",
     price: 390, // PLACEHOLDER
     cadence: "one-time",
-    tagline: "Fix the document that is costing you interviews.",
-    bestFor: "You are applying and not hearing back.",
+    tagline: "Fix the document that’s costing you interviews.",
+    bestFor: "You’re applying and hearing nothing back.",
     features: [
       "Full résumé rewrite (DOCX + PDF)",
       "LinkedIn profile pass",
@@ -43,8 +43,8 @@ export const plans: Plan[] = [
     name: "Interview Ready",
     price: 990, // PLACEHOLDER
     cadence: "one-time",
-    tagline: "Everything in Foundation, plus rehearsal until it is automatic.",
-    bestFor: "You are getting interviews and losing them.",
+    tagline: "Everything in Foundation, plus rehearsal until it’s second nature.",
+    bestFor: "You’re getting interviews and losing them.",
     features: [
       "Everything in Foundation",
       "Four live mock interviews",
@@ -62,8 +62,8 @@ export const plans: Plan[] = [
     name: "Full Offer",
     price: 1890, // PLACEHOLDER
     cadence: "one-time",
-    tagline: "The complete path, coding assessments included.",
-    bestFor: "You are targeting engineering roles with a coding test in the loop.",
+    tagline: "The whole path, coding assessments included.",
+    bestFor: "You’re going for engineering roles with a coding test in the loop.",
     features: [
       "Everything in Interview Ready",
       "Coding-test diagnostic and study plan",
@@ -97,14 +97,14 @@ export const comparison: { feature: string; values: Record<string, boolean | str
 export const pricingFaq = [
   {
     q: "Do you offer payment plans?",
-    a: "Yes. Interview Ready and Full Offer can be split across monthly installments at no extra cost. Mention it on your consult call and we will set it up.",
+    a: "Yes. Interview Ready and Full Offer can be split into monthly payments at no extra cost. Mention it on your consult call and we’ll set it up.",
   },
   {
     q: "Are there discounts?",
-    a: "We reserve a number of reduced-rate places each month for students, career changers, and people currently between jobs. Ask on the consult call — there is no application form and no means testing.",
+    a: "We keep a few reduced-rate places open each month for students, career changers, and people currently out of work. Just ask on the consult call. There’s no application form and nobody checks your bank balance.",
   },
   {
     q: "What if I only need one piece?",
-    a: "Individual sessions are available à la carte. The packages exist because the pieces compound, not because we will not sell them separately.",
+    a: "You can book individual sessions à la carte. The packages exist because the pieces build on each other, not because we won’t sell them separately.",
   },
 ];

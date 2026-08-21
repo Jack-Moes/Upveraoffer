@@ -8,7 +8,7 @@ import { images } from "@/content/images";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Diagnose, build, practice, land — the four-stage process Upveraoffer runs with every client, and what happens at each stage.",
+    "Diagnose, build, practice, land. The four stages Upveraoffer runs with every client, and what happens in each one.",
   alternates: { canonical: "/process" },
 };
 
@@ -18,7 +18,7 @@ export default function ProcessPage() {
       <PageHeader
         eyebrow="How it works"
         title="Four stages, in the order that actually works."
-        intro="We do not hand you a plan on day one. We find out what is wrong first, because the plan depends entirely on the answer."
+        intro="We don't hand you a plan on day one. We find out what's wrong first, because the plan depends entirely on the answer."
       />
 
       <Container className="-mt-8 sm:-mt-10">
@@ -101,7 +101,7 @@ export default function ProcessPage() {
 
       <CTABanner
         title="Start with the diagnostic."
-        body="Thirty minutes, no charge. You leave with a written read on where your search stands and what to fix first — whether or not you go further with us."
+        body="Thirty minutes, no charge. You leave with a written read on where your search stands and what to fix first, whether or not you go any further with us."
       />
     </>
   );

@@ -108,8 +108,8 @@ export function FaqAccordion({ items }: { items: readonly FaqItem[] }) {
 }
 
 export function CTABanner({
-  title = "Find out what is actually blocking your search.",
-  body = "The consult is free, thirty minutes, and ends with a written read on where you stand — whether or not you work with us.",
+  title = "Find out what's actually blocking your search.",
+  body = "The consult is free, takes thirty minutes, and ends with a written read on where you stand, whether or not you work with us.",
   primary = { href: "/book", label: "Book a free consult" },
   secondary = { href: "/pricing", label: "See pricing" },
 }: {

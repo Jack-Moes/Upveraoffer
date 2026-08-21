@@ -20,8 +20,8 @@ export default function NotFound() {
           This page is not here.
         </h1>
         <p className="mt-4 leading-relaxed text-muted">
-          The link may be out of date, or the page may have moved. Here is where
-          most people are heading.
+          This link might be out of date, or the page may have moved. Here’s
+          where most people are heading.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-2">

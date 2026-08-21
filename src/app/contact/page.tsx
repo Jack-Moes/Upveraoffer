@@ -18,8 +18,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Tell us where you are stuck."
-        intro="The more specific you are, the more useful our first reply will be. We answer every message within one business day."
+        title="Tell us where you’re stuck."
+        intro="The more specific you are, the more useful our first reply will be. We answer everything within one business day."
       />
 
       <Section>
@@ -41,8 +41,8 @@ export default function ContactPage() {
                   Prefer to talk?
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted">
-                  The free consult is thirty minutes and covers more ground than
-                  email ever will.
+                  The free consult runs thirty minutes and covers far more
+                  ground than email ever will.
                 </p>
                 <Link
                   href="/book"
@@ -75,17 +75,17 @@ export default function ContactPage() {
                 <ol className="mt-4 space-y-3 text-[0.95rem] leading-relaxed text-muted">
                   <li className="flex gap-3">
                     <span className="font-mono text-sm text-primary">01</span>
-                    We read your message properly — a person, not an autoresponder.
+                    A person reads your message properly. Not an autoresponder.
                   </li>
                   <li className="flex gap-3">
                     <span className="font-mono text-sm text-primary">02</span>
-                    You get a reply within one business day with an initial read
-                    on your situation.
+                    You get a reply within one business day with a first read on
+                    your situation.
                   </li>
                   <li className="flex gap-3">
                     <span className="font-mono text-sm text-primary">03</span>
-                    If it makes sense to talk, we send times. If it does not, we
-                    say so.
+                    If it makes sense to talk, we send you some times. If it
+                    doesn’t, we say so.
                   </li>
                 </ol>
               </Card>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   Confidentiality
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted">
-                  Nothing you send is shared with anyone. We will never name you
+                  Nothing you send goes anywhere else, and we’ll never name you
                   publicly without written permission. See our{" "}
                   <Link href="/privacy" className="text-primary underline underline-offset-4">
                     privacy policy
