@@ -8,7 +8,7 @@ import { getTestimonials, getMetrics } from "@/content/testimonials";
 export const metadata: Metadata = {
   title: "Results",
   description:
-    "Client feedback from Upveraoffer — what changed, how long it took, and in the clients' own words.",
+    "Client feedback from Upveraoffer: what changed, how long it took, and in the clients' own words.",
   alternates: { canonical: "/success-stories" },
 };
 
@@ -44,7 +44,7 @@ export default function SuccessStoriesPage() {
         intro={
           hasStories
             ? "Real clients, real outcomes, published with their permission."
-            : "Upveraoffer is newly established. Rather than fill this page with invented feedback — which is both dishonest and, in most places, unlawful advertising — we are leaving it empty until we have results worth publishing."
+            : "Upveraoffer is newly established. We would rather leave this page empty than fill it with invented feedback, so it stays like this until we have results worth publishing."
         }
       />
 

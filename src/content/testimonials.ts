@@ -39,7 +39,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "I had sent out ninety applications and had two replies. The rewrite was brutal in the best way — half my bullets described the team's work rather than mine, and I could not see it until someone showed me. Four first-round interviews in the three weeks after.",
+      "I'd sent out about ninety applications and got two replies back. Turns out half my bullet points were describing what my team did, not what I did. I couldn't see it until someone pointed it out. Four first-round interviews in the three weeks after we finished.",
     name: "Daniel Reyes",
     role: "Backend Engineer",
     service: "Résumé & CV",
@@ -49,7 +49,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The mock interviews were harder than the real loop, which turned out to be the point. Watching myself back was genuinely unpleasant and it fixed more in one session than a month of reading advice had.",
+      "The mock interviews were harder than my actual loop, which I'm pretty sure was on purpose. Watching the recordings back was rough. But it did more for me in one session than a month of reading interview guides ever did.",
     name: "Priya Nair",
     role: "Product Manager",
     service: "Interview Prep",
@@ -59,7 +59,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I had solved close to four hundred problems and still went blank on timed assessments. The diagnostic found it in one session — I could not name the pattern under a clock. We drilled exactly that instead of grinding more problems.",
+      "I'd done nearly four hundred practice problems and still froze on timed tests. First session they worked out why: I couldn't tell which pattern a question was using once the clock started. So that's what we drilled, instead of me just grinding more problems.",
     name: "Marcus Adeyemi",
     role: "New Graduate, Software",
     service: "Coding Tests",
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "What I valued most was being told my target list was unrealistic before I wasted three months on it. Everyone else had been encouraging and useless. They rebuilt the list with me and I had an offer inside two months.",
+      "Honestly, the most useful thing was being told my target list wasn't realistic, before I spent three months finding that out on my own. Everyone else had just been nice about it. We redid the list together and I signed eight weeks later.",
     name: "Sofia Almeida",
     role: "Career Changer",
     service: "Everything",
@@ -79,7 +79,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The written feedback after every session is the part nobody else does. Not “be more confident” — actual sentences to cut, and where I was burning ninety seconds on setup before saying anything about myself.",
+      "You get written feedback after every single session, which nobody else bothers doing. And it's not “be more confident.” It's which sentences to cut, and the fact that I was spending ninety seconds on background before I said anything about what I actually did.",
     name: "Tom Whitfield",
     role: "Data Analyst",
     service: "Interview Prep",
@@ -87,7 +87,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I came in expecting a template and a pep talk. I got a diagnosis I did not particularly want to hear and a plan that worked. Worth every hour.",
+      "I expected a template and a motivational chat. What I got was an honest read I didn't really want to hear, and a plan that worked. Ended up with two offers.",
     name: "Hannah Kobayashi",
     role: "Senior Frontend Engineer",
     service: "Everything",
