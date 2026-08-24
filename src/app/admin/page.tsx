@@ -83,20 +83,29 @@ function AdminSetup() {
 
 function AdminLogin({ username }: { username: string }) {
   return (
-    <Section>
-      <Container className="max-w-md">
-        <Card className="p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-            Private area
-          </p>
-          <h1 className="mt-3 font-display text-3xl font-semibold">
-            Admin sign in
-          </h1>
-          <p className="mt-3 leading-relaxed text-muted">
-            Use the owner credentials configured for this deployment.
-          </p>
-          <AdminLoginForm username={username} />
-        </Card>
+    <Section className="relative overflow-hidden bg-surface">
+      <div aria-hidden="true" className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
+      <div aria-hidden="true" className="absolute -bottom-32 left-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+      <Container className="relative max-w-4xl">
+        <div className="grid overflow-hidden rounded-[2rem] border border-border bg-background shadow-2xl shadow-primary/10 md:grid-cols-[0.9fr_1.1fr]">
+          <div className="relative overflow-hidden bg-ink p-8 text-ink-foreground sm:p-10">
+            <div aria-hidden="true" className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/35 blur-3xl" />
+            <div className="relative flex h-full min-h-80 flex-col">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary font-display text-lg font-semibold text-primary-foreground shadow-lg shadow-primary/30">U</span>
+              <div className="mt-auto">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Owner workspace</p>
+                <h1 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">Everything important, in one view.</h1>
+                <p className="mt-4 leading-relaxed text-ink-foreground/65">Review content, integrations, client proof, and launch readiness without exposing private controls to visitors.</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Private area</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold">Welcome back</h2>
+            <p className="mt-3 leading-relaxed text-muted">Sign in with the owner credentials for this deployment.</p>
+            <AdminLoginForm username={username} />
+          </div>
+        </div>
       </Container>
     </Section>
   );
@@ -170,28 +179,34 @@ export default async function AdminPage() {
       href: "/privacy",
     },
   ];
+  const readyCount = checks.filter((check) => check.status === "ready").length;
+  const readiness = Math.round((readyCount / checks.length) * 100);
 
   return (
     <>
-      <div className="border-b border-border bg-surface">
-        <Container className="py-12 sm:py-16">
-          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+      <div className="bg-surface py-8 sm:py-10">
+        <Container>
+          <div className="relative overflow-hidden rounded-[2rem] bg-ink p-8 text-ink-foreground shadow-2xl shadow-primary/15 sm:p-12">
+            <div aria-hidden="true" className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/40 blur-3xl" />
+            <div aria-hidden="true" className="absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
+            <div className="relative flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
                 Private dashboard
               </p>
-              <h1 className="mt-3 font-display text-4xl font-semibold">
-                Site administration
+              <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
+                Good to see you.
               </h1>
-              <p className="mt-3 max-w-2xl leading-relaxed text-muted">
-                A source-backed view of content, integrations, and launch readiness.
+              <p className="mt-4 max-w-2xl leading-relaxed text-ink-foreground/65">
+                Here is the current health of Upveraoffer’s content, integrations, and launch checklist.
               </p>
             </div>
             <form action={logoutAdmin}>
-              <button type="submit" className={buttonClass("secondary")}>
+              <button type="submit" className={buttonClass("secondary", "md", "border-white/15 bg-white/10 text-white hover:bg-white/15")}>
                 Sign out
               </button>
             </form>
+            </div>
           </div>
         </Container>
       </div>
@@ -205,13 +220,31 @@ export default async function AdminPage() {
               { value: posts.length, label: "Blog posts" },
               { value: testimonials.length, label: "Testimonials" },
             ].map((item) => (
-              <Card key={item.label} className="bg-surface">
+              <Card key={item.label} className="group relative overflow-hidden bg-surface p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
+                <span aria-hidden="true" className="absolute -right-3 -top-5 font-display text-8xl font-semibold text-primary/5">{item.value}</span>
                 <p className="font-display text-3xl font-semibold text-primary">
                   {item.value}
                 </p>
                 <p className="mt-2 text-sm text-muted">{item.label}</p>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-[1fr_2fr]">
+            <Card className="bg-primary-soft p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Readiness score</p>
+              <div className="mt-4 flex items-end gap-2">
+                <p className="font-display text-5xl font-semibold text-primary">{readiness}</p>
+                <span className="mb-1 text-lg text-muted">%</span>
+              </div>
+              <div className="mt-5 h-2 overflow-hidden rounded-full bg-background">
+                <div className="h-full rounded-full bg-linear-to-r from-primary to-accent" style={{ width: `${readiness}%` }} />
+              </div>
+            </Card>
+            <Card className="flex flex-col justify-center bg-surface p-7 sm:p-8">
+              <p className="font-display text-xl font-semibold">Your next best move</p>
+              <p className="mt-3 leading-relaxed text-muted">Replace demonstration testimonials and add a genuine founder profile first. Those two changes create more trust than any additional visual polish.</p>
+            </Card>
           </div>
 
           <div className="mt-12 flex flex-wrap items-end justify-between gap-5">

@@ -66,12 +66,15 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <div className="border-b border-border bg-surface">
-        <Container className="py-16 sm:py-20">
-          <div className="max-w-3xl">
+      <div className="relative overflow-hidden border-b border-border bg-surface">
+        <div aria-hidden="true" className="absolute -right-32 -top-40 h-[32rem] w-[32rem] rounded-full bg-primary/15 blur-3xl" />
+        <div aria-hidden="true" className="absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+        <Container className="relative py-12 sm:py-16 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+            <div>
             <Link
               href="/blog"
-              className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
             >
               ← All articles
             </Link>
@@ -83,59 +86,54 @@ export default async function BlogPostPage({
               <span aria-hidden="true">·</span>
               <time dateTime={post.date}>{formatDate(post.date)}</time>
             </div>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.12] sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
               {post.title}
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted">
+            <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
               {post.description}
             </p>
+            <div className="mt-8 flex items-center gap-3 border-t border-border pt-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-sm font-semibold text-primary-foreground">U</span>
+              <div>
+                <p className="text-sm font-semibold">{post.author}</p>
+                <p className="text-xs text-subtle">Practical job-search field notes</p>
+              </div>
+            </div>
           </div>
-        </Container>
-      </div>
-
-      {post.cover && (
-        <Container className="max-w-4xl">
-          <figure className="-mt-10 sm:-mt-14">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-black/5">
+          {post.cover && (
+            <figure>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
               <Image
                 src={post.cover}
                 alt={post.coverAlt}
                 fill
-                sizes="(min-width: 896px) 56rem, 100vw"
+                sizes="(min-width: 1024px) 34rem, 100vw"
                 priority
-                className="object-cover"
+                className="object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
-            </div>
-            {post.coverCredit && (
-              <figcaption className="mt-3 text-right text-xs text-subtle">
-                Photo by{" "}
-                <a
-                  href={post.coverCreditUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline underline-offset-4 hover:text-primary"
-                >
-                  {post.coverCredit}
-                </a>{" "}
-                on{" "}
-                <a
-                  href="https://unsplash.com"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline underline-offset-4 hover:text-primary"
-                >
-                  Unsplash
-                </a>
-              </figcaption>
-            )}
-          </figure>
+                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/20 via-transparent to-transparent" />
+              </div>
+              {post.coverCredit && (
+                <figcaption className="mt-3 text-right text-xs text-subtle">
+                  Photo by{" "}
+                  <a href={post.coverCreditUrl} target="_blank" rel="noreferrer noopener" className="underline underline-offset-4 hover:text-primary">
+                    {post.coverCredit}
+                  </a>{" "}
+                  on Unsplash
+                </figcaption>
+              )}
+            </figure>
+          )}
+          </div>
         </Container>
-      )}
+      </div>
 
-      <Section>
-        <Container className="max-w-3xl">
-          <article
-            className="prose prose-lg max-w-none
+      <Section className="bg-background">
+        <Container>
+          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,46rem)_16rem] lg:justify-center">
+            <article
+            id="article"
+            className="prose prose-lg max-w-none rounded-3xl border border-border bg-background p-7 shadow-sm sm:p-10
               prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight
               prose-h2:mt-12 prose-h2:text-2xl
               prose-h3:mt-8 prose-h3:text-xl
@@ -150,6 +148,29 @@ export default async function BlogPostPage({
               dark:prose-invert"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+            <aside className="hidden lg:sticky lg:top-28 lg:block">
+              <div className="overflow-hidden rounded-3xl border border-border bg-surface p-6">
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-primary">Guide details</p>
+                <dl className="mt-5 space-y-4 text-sm">
+                  <div className="flex justify-between gap-3 border-b border-border pb-3">
+                    <dt className="text-subtle">Topic</dt>
+                    <dd className="font-medium">{post.category}</dd>
+                  </div>
+                  <div className="flex justify-between gap-3 border-b border-border pb-3">
+                    <dt className="text-subtle">Reading time</dt>
+                    <dd className="font-medium">{post.readingTime} min</dd>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <dt className="text-subtle">Published</dt>
+                    <dd className="text-right font-medium">{formatDate(post.date)}</dd>
+                  </div>
+                </dl>
+                <Link href="/book" className="mt-6 flex items-center justify-center rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-sm shadow-primary/20 hover:bg-primary-hover">
+                  Apply it to my search
+                </Link>
+              </div>
+            </aside>
+          </div>
         </Container>
       </Section>
 
