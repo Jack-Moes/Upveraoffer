@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history, so the language check can scan every commit.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -20,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Language check (English only, including git history)
+        run: npm run check:lang:all
 
       - name: Lint
         run: npx eslint src --max-warnings=0

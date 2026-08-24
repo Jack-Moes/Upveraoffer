@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:lang": "node scripts/check-language.mjs",
+    "check:lang:all": "node scripts/check-language.mjs --all"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

@@ -18,10 +18,30 @@ npm run dev        # http://localhost:3000
 Other scripts:
 
 ```bash
-npm run build      # production build
-npm start          # serve the production build
-npm run lint       # eslint
+npm run build          # production build
+npm start              # serve the production build
+npm run lint           # eslint
+npm run check:lang     # English-only check on tracked files and filenames
+npm run check:lang:all # same, plus every commit message and file version
 ```
+
+### English-only guard
+
+This project is English-only, and that is enforced rather than assumed.
+`npm run check:lang` scans every tracked file, filename, commit message and
+historical file version for Hangul, Chinese and Japanese characters, and
+fails with an exact file and line if it finds any. CI runs the deep version
+on every push.
+
+**Use this instead of grep.** Git Bash on Windows runs in a non-UTF-8 locale,
+so `grep "[<hangul-range>]"` matches byte-wise rather than by character and
+reports false positives on almost every file, binaries included. That is a
+property of the shell, not of the repository.
+
+The checker's own source is deliberately pure ASCII: it writes its character
+ranges as backslash-u escape sequences rather than literal characters. If you
+replace those with literals, the script will match its own source and fail on
+every run.
 
 ---
 
