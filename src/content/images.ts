@@ -5,7 +5,8 @@
  * be dropped into a page without both. If you add an image here, also add a
  * row to public/images/CREDITS.md.
  *
- * All entries are Unsplash License (free for commercial use).
+ * Every source below permits commercial use. See public/images/CREDITS.md
+ * for the exact source page and licence.
  */
 
 export type SiteImage = {
@@ -17,6 +18,41 @@ export type SiteImage = {
 };
 
 export const images = {
+  teamMeeting: {
+    src: "/images/workplace/four-men-meeting.jpg",
+    alt: "Four software professionals in a relaxed meeting room with laptops open on the table",
+    credit: "Sidney Zou",
+    creditUrl:
+      "https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U",
+  },
+  developerOffice: {
+    src: "/images/workplace/developers-office.jpg",
+    alt: "Software developers working at laptops and large monitors in a shared office",
+    credit: "cottonbro studio",
+    creditUrl:
+      "https://www.pexels.com/photo/men-sitting-at-the-desks-in-an-office-and-using-computers-6804068/",
+  },
+  workshop: {
+    src: "/images/workplace/workshop-audience.jpg",
+    alt: "An engaged audience attending a practical workshop in a modern office",
+    credit: "Viridiana Rivera",
+    creditUrl:
+      "https://www.pexels.com/photo/business-workshop-with-engaged-audience-29581807/",
+  },
+  coachingSession: {
+    src: "/images/workplace/laptop-session.jpg",
+    alt: "Two professionals reviewing work together on a laptop at an office table",
+    credit: "Antoni Shkraba",
+    creditUrl:
+      "https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/",
+  },
+  companyEvent: {
+    src: "/images/workplace/company-event.jpg",
+    alt: "A professional learning event in a bright room with laptops on the tables",
+    credit: "Matheus Bertelli",
+    creditUrl:
+      "https://www.pexels.com/photo/people-during-digital-presentation-18999535/",
+  },
   hero: {
     src: "/images/site/hero.jpg",
     alt: "A person in a blue sweater working at a laptop by a window",
@@ -59,5 +95,6 @@ export type ImageKey = keyof typeof images;
 
 /** Small caption used under photographs. */
 export function creditLine(image: SiteImage) {
-  return `Photo by ${image.credit} on Unsplash`;
+  const library = image.creditUrl.includes("pexels.com") ? "Pexels" : "Unsplash";
+  return `Photo by ${image.credit} on ${library}`;
 }

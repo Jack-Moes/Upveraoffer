@@ -24,6 +24,23 @@ export default function ServicesPage() {
         intro="Three services that map to the three places a search stalls. Take one, or run all three as a single sequence."
       />
 
+      <Container className="-mt-8 sm:-mt-10">
+        <div className="group relative aspect-[21/8] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-xl shadow-primary/10">
+          <Image
+            src={images.workshop.src}
+            alt={images.workshop.alt}
+            fill
+            priority
+            sizes="(min-width: 1152px) 72rem, 100vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent" />
+          <p className="absolute bottom-5 left-5 rounded-full bg-ink/80 px-4 py-2 text-sm font-medium text-white backdrop-blur">
+            Practical coaching, live feedback, real repetition
+          </p>
+        </div>
+      </Container>
+
       <Section>
         <Container>
           <div className="space-y-6">

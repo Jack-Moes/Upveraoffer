@@ -65,7 +65,7 @@ function AdminSetup() {
           </p>
           <div className="mt-6 space-y-2 rounded-2xl bg-ink p-5 font-mono text-sm text-ink-foreground">
             <p>ADMIN_USERNAME=admin</p>
-            <p>ADMIN_PASSWORD=use-at-least-12-characters</p>
+            <p>ADMIN_PASSWORD=use-at-least-6-characters</p>
             <p>ADMIN_SESSION_SECRET=use-a-random-32-character-secret</p>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-subtle">

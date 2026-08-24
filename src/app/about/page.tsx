@@ -1,166 +1,282 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Container, Section, Eyebrow } from "@/components/ui/Container";
-import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
+import { Container, Section } from "@/components/ui/Container";
+import { Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
+import { ButtonLink, ArrowRight } from "@/components/ui/Button";
 import { site } from "@/content/site";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why Upveraoffer exists, what we believe about job searching, and how we work with the people we take on.",
+    "Learn how Upveraoffer's four-person Houston team approaches resume writing, interview preparation, and technical coaching.",
   alternates: { canonical: "/about" },
 };
 
+const disciplines = [
+  {
+    number: "01",
+    title: "Hiring signal",
+    body: "We find the evidence recruiters and hiring managers need, then make it easy to see in your resume and portfolio.",
+  },
+  {
+    number: "02",
+    title: "Interview systems",
+    body: "We turn scattered experience into clear stories you can deliver naturally under pressure.",
+  },
+  {
+    number: "03",
+    title: "Technical practice",
+    body: "We coach the reasoning, communication, and recovery habits that coding assessments actually expose.",
+  },
+  {
+    number: "04",
+    title: "Search strategy",
+    body: "We connect every application, conversation, and result so the next move is based on evidence instead of guesswork.",
+  },
+];
+
 const beliefs = [
   {
-    title: "The market isn’t a meritocracy",
-    body: "Plenty of excellent engineers go unhired for months because their materials misrepresent them and nobody ever tells them why. Presentation isn’t the same as substance, but a search fails without both.",
+    number: "01",
+    title: "The market is not a meritocracy",
+    body: "Excellent candidates go unseen because their materials hide the evidence. Presentation is not the same as substance, but a search needs both.",
   },
   {
-    title: "Feedback has to be specific to be useful",
-    body: "“Be more confident” isn’t feedback. “You spent ninety seconds on setup and thirty on your own decisions, so flip that” is. We give the second kind, in writing, after every session.",
+    number: "02",
+    title: "Feedback must be specific",
+    body: "'Be more confident' changes nothing. We show you the exact sentence, decision, or habit to fix, and what to do instead.",
   },
   {
+    number: "03",
     title: "Practice beats advice",
-    body: "Nobody has ever read their way to being good at interviews. The gains come from doing it under pressure and getting corrected straight afterwards.",
+    body: "The gains come from doing the work under realistic pressure, reviewing it honestly, and repeating with a clearer target.",
   },
   {
-    title: "Honesty is the whole product",
-    body: "We’ll tell you when your résumé isn’t ready, when your target is unrealistic, and when you don’t need to hire us at all. A service that only ever agrees with you is worth nothing.",
+    number: "04",
+    title: "Honesty is the product",
+    body: "We will tell you when a target is unrealistic, when your materials are not ready, and when you do not need to hire us.",
+  },
+];
+
+const gallery = [
+  {
+    image: images.developerOffice,
+    kicker: "In the work",
+    title: "Technical experience at the table",
+  },
+  {
+    image: images.workshop,
+    kicker: "In the room",
+    title: "Practical sessions, useful notes",
+  },
+  {
+    image: images.companyEvent,
+    kicker: "In the community",
+    title: "Learning works better together",
   },
 ];
 
 export default function AboutPage() {
-  // Only render the founder block once there is a real photo and name to show.
-  const founder = site.founder;
-  const showFounder = Boolean(founder.name && founder.photo);
-
   return (
     <>
-      <PageHeader
-        eyebrow="About"
-        title="We built the service we wanted during our own job searches."
-        intro="Upveraoffer exists because the gap between being capable and being hired is real, unfair, and mostly fixable with structure and honest feedback."
-      />
-
-      <Section>
-        <Container>
-          <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr]">
-            <div className="max-w-2xl">
-              <Eyebrow>Our story</Eyebrow>
-              <div className="space-y-5 text-lg leading-relaxed text-muted">
-                {/* TODO(founder): replace the three paragraphs below with your
-                    real story: why you started this, what you did before, and
-                    what you saw that made the gap obvious. Specific beats
-                    polished; people hire the person, not the prose. */}
-                <p>
-                  Every job search has the same quiet moment. Dozens of
-                  applications sent, no replies, and no way to tell whether the
-                  problem is the market, the résumé, or something invisible in
-                  between. Nobody writes back to explain.
-                </p>
-                <p>
-                  We started {site.name} to close that loop. Not with
-                  motivational advice, and not with a template. With a
-                  diagnostic that tells you which part of your search is
-                  failing, and then the work to fix it.
-                </p>
-                <p>
-                  We work with a deliberately small number of clients at once.
-                  The work is hands-on, the feedback is direct, and we’d rather
-                  turn someone away than take their money for a package that
-                  doesn’t match what they need.
-                </p>
+      <section className="relative overflow-hidden bg-ink text-ink-foreground">
+        <div
+          aria-hidden="true"
+          className="ambient-float absolute -right-40 -top-48 h-[38rem] w-[38rem] rounded-full bg-primary/30 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-56 left-1/4 h-96 w-96 rounded-full bg-accent/15 blur-3xl"
+        />
+        <Container className="relative py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16">
+            <div className="fade-up">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-soft">
+                About Upveraoffer
+              </p>
+              <h1 className="mt-6 max-w-xl font-display text-5xl font-semibold leading-[1.03] sm:text-6xl">
+                Four people. One clear standard for feedback.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70 sm:text-xl">
+                We are a small Houston team that helps technical candidates find
+                the exact place their search is breaking, fix it, and move with
+                more confidence.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-5">
+                <ButtonLink href="/book" size="lg">
+                  Book a free consult <ArrowRight />
+                </ButtonLink>
+                <a
+                  href="#how-we-work"
+                  className="text-sm font-semibold text-white underline decoration-white/30 underline-offset-8 transition hover:decoration-white"
+                >
+                  How we work
+                </a>
               </div>
             </div>
 
-            <div className="space-y-5">
-              <Card className="bg-surface">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
-                  Founded
+            <figure className="fade-up-delay">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
+                <Image
+                  src={images.teamMeeting.src}
+                  alt={images.teamMeeting.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 44rem, 100vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <figcaption className="mt-4 text-xs uppercase tracking-[0.14em] text-ink-foreground/45">
+                Focused work. Straight conversation.
+              </figcaption>
+            </figure>
+          </div>
+        </Container>
+      </section>
+
+      <Section id="how-we-work">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
+              <Image
+                src={images.coachingSession.src}
+                alt={images.coachingSession.alt}
+                fill
+                sizes="(min-width: 1024px) 38rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                Why we started
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl">
+                A job search should be a diagnosis, not a guessing game.
+              </h2>
+              <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
+                <p>
+                  Applications disappear, interviews stall, or a timed assessment
+                  turns preparation into a blank screen. Most candidates never get
+                  told which part broke.
                 </p>
-                <p className="mt-2 font-display text-3xl font-semibold">
-                  {site.foundedYear}
+                <p>
+                  Upveraoffer closes that loop. We look at the whole sequence,
+                  identify the constraint, and work on the smallest set of changes
+                  that can move the search forward.
                 </p>
-              </Card>
-              <Card className="bg-surface">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
-                  Where we work
-                </p>
-                <p className="mt-2 font-display text-xl font-semibold">
-                  Remote, worldwide
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  Sessions run on your time zone, not ours.
-                </p>
-              </Card>
-              <Card className="bg-surface">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
-                  Get in touch
-                </p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="mt-2 block font-display text-lg font-semibold text-primary underline-offset-4 hover:underline"
-                >
-                  {site.email}
-                </a>
-              </Card>
+              </div>
+              <div className="mt-8 grid grid-cols-3 gap-3">
+                {[
+                  ["4", "People"],
+                  ["1:1", "Coaching"],
+                  ["24h", "Follow-up"],
+                ].map(([value, label]) => (
+                  <div key={label} className="rounded-2xl border border-border bg-surface p-4">
+                    <p className="font-display text-2xl font-semibold text-primary">{value}</p>
+                    <p className="mt-1 text-xs leading-snug text-muted">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {showFounder && (
-        <Section className="border-t border-border bg-surface">
-          <Container>
-            <div className="grid items-center gap-10 lg:grid-cols-[20rem_1fr]">
-              <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-surface-2">
-                <Image
-                  src={founder.photo}
-                  alt={`${founder.name}, ${founder.role} at ${site.name}`}
-                  fill
-                  sizes="(min-width: 1024px) 20rem, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <Eyebrow>{founder.role}</Eyebrow>
-                <h2 className="font-display text-3xl font-semibold">
-                  {founder.name}
-                </h2>
-                <p className="mt-5 text-lg leading-relaxed text-muted">
-                  {founder.bio}
-                </p>
-              </div>
-            </div>
-          </Container>
-        </Section>
-      )}
-
       <Section className="border-y border-border bg-surface">
         <Container>
-          <SectionHeading
-            eyebrow="What we believe"
-            title="Four things that shape how we work."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {beliefs.map((b) => (
-              <Card key={b.title}>
-                <h3 className="font-display text-lg font-semibold">{b.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{b.body}</p>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="The team"
+              title="Four disciplines, one shared method."
+              intro="We keep the team small so context never gets lost between a resume review, an interview session, and technical practice."
+            />
+            <p className="max-w-xs text-sm leading-relaxed text-muted">
+              Based in {site.location}. Working with candidates across U.S. and
+              international time zones.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {disciplines.map((item) => (
+              <Card key={item.number} className="group min-h-64 p-7">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs font-semibold text-primary">{item.number}</span>
+                  <span
+                    aria-hidden="true"
+                    className="h-2 w-2 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150"
+                  />
+                </div>
+                <h3 className="mt-12 font-display text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
               </Card>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* TODO(founder): add a team section here once you have coach bios:
-          name, photo, one paragraph of relevant credentials. Real credentials
-          are the single strongest trust signal on a page like this. */}
+      <Section>
+        <Container>
+          <SectionHeading
+            eyebrow="How it feels"
+            title="Serious work without the corporate theater."
+            intro="Laptops open, useful notes, and direct conversation. The work is structured; the atmosphere does not need to be stiff."
+          />
+          <div className="mt-12 grid gap-6 lg:grid-cols-12">
+            {gallery.map((item, index) => (
+              <figure
+                key={item.title}
+                className={`group ${index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-7" : "lg:col-span-12"}`}
+              >
+                <div
+                  className={`relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${index === 2 ? "aspect-[16/7]" : "aspect-[4/3]"}`}
+                >
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes={index === 2 ? "100vw" : "(min-width: 1024px) 50vw, 100vw"}
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  />
+                </div>
+                <figcaption className="mt-4 flex items-baseline gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                    {item.kicker}
+                  </span>
+                  <span className="font-display text-lg font-semibold">{item.title}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-y border-border bg-surface">
+        <Container>
+          <SectionHeading
+            eyebrow="What we believe"
+            title="Four things that shape every engagement."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {beliefs.map((belief) => (
+              <Card key={belief.number} className="group relative overflow-hidden p-7 sm:p-8">
+                <span className="font-mono text-xs font-semibold text-primary">{belief.number}</span>
+                <h3 className="mt-5 font-display text-xl font-semibold">{belief.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{belief.body}</p>
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-8 -right-3 font-display text-8xl font-semibold text-primary/5"
+                >
+                  {belief.number}
+                </span>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       <CTABanner
-        title="Talk to us before you decide anything."
-        body="The consult is genuinely free and genuinely useful. Worst case, you get an honest outside read on your search and go do the rest yourself."
+        title="Talk to the team before you decide anything."
+        body="The consult is free and useful on purpose. Bring the materials and the history of your search; we will tell you what we see."
         secondary={{ href: "/faq", label: "Read the FAQ" }}
       />
     </>

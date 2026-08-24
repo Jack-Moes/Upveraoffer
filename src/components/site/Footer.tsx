@@ -21,6 +21,9 @@ export function Footer() {
               {site.tagline} A job search partner for the whole thing: résumés,
               interviews, and coding assessments.
             </p>
+            <p className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-subtle">
+              {site.location} · Remote worldwide
+            </p>
             <div className="mt-5 flex flex-wrap gap-3">
               {site.socials.map((s) => (
                 <a

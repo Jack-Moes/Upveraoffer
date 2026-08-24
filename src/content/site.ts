@@ -8,16 +8,17 @@
 
 export const site = {
   name: "Upveraoffer",
-  legalName: "Upveraoffer", // PLACEHOLDER: registered legal entity name
+  legalName: "Upveraoffer LLC",
   tagline: "From résumé to offer.",
   description:
     "Upveraoffer is a job search partner for the whole process. We help you write a résumé that gets read, prepare for interviews you’ll pass, and clear the coding tests standing between you and the offer.",
 
   /** Used for canonical URLs, sitemap, and Open Graph. */
-  url: "https://upveraoffer.com", // PLACEHOLDER: set to your real domain
+  url: "https://upveraoffer.com",
 
-  email: "hello@upveraoffer.com", // PLACEHOLDER
-  phone: "", // PLACEHOLDER: leave empty to hide from the site
+  email: "hello@upveraoffer.com",
+  phone: "",
+  location: "Houston, Texas",
 
   /**
    * Cal.com booking handle, used by the booking embed.
@@ -46,10 +47,10 @@ export const site = {
    * misrepresentation, and it is trivially exposed by a reverse image search.
    */
   founder: {
-    name: "", // e.g. "Jack Moes"
-    role: "Founder and lead coach",
-    photo: "", // e.g. "/images/site/founder.jpg"
-    bio: "", // two or three sentences of genuine, checkable background
+    name: "",
+    role: "",
+    photo: "",
+    bio: "",
   },
 } as const;
 

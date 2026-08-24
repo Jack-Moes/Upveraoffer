@@ -46,15 +46,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-border bg-surface">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary/10 blur-3xl"
+          className="ambient-float pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary/10 blur-3xl"
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-52 left-[-10rem] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl"
         />
         <Container className="relative py-20 sm:py-28">
-          <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr]">
-            <div>
+          <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-muted">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Now accepting new clients
@@ -88,22 +88,25 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Photograph with the four-stage journey card overlapping it. */}
-            <div className="relative lg:pl-14">
-              <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-2xl shadow-primary/10">
+            {/* Team photograph with the four-stage journey card overlapping it. */}
+            <div className="fade-up-delay relative lg:pl-10">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
                 <Image
-                  src={images.hero.src}
-                  alt={images.hero.alt}
+                  src={images.teamMeeting.src}
+                  alt={images.teamMeeting.alt}
                   fill
                   priority
-                  sizes="(min-width: 1024px) 30rem, 100vw"
-                  className="object-cover"
+                  sizes="(min-width: 1024px) 42rem, 100vw"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.02]"
                 />
                 {/* Warms the photo toward the brand and lifts card contrast. */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-linear-to-t from-ink/45 via-transparent to-transparent"
                 />
+                <span className="absolute right-5 top-5 rounded-full border border-white/20 bg-ink/80 px-4 py-2 text-xs font-medium text-white backdrop-blur">
+                  A real working session
+                </span>
               </div>
 
               <div className="mt-6 rounded-3xl border border-border bg-background p-6 shadow-xl shadow-primary/5 lg:absolute lg:-left-2 lg:bottom-8 lg:mt-0 lg:w-72 lg:p-7">
@@ -236,10 +239,10 @@ export default function HomePage() {
                 The full process
               </ButtonLink>
 
-              <div className="relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 lg:block">
-                <Image
-                  src={images.process.src}
-                  alt={images.process.alt}
+                <div className="relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10 lg:block">
+                  <Image
+                    src={images.coachingSession.src}
+                  alt={images.coachingSession.alt}
                   fill
                   sizes="30rem"
                   className="object-cover"

@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 
 const COOKIE_NAME = "upveraoffer_admin";
 const SESSION_LIFETIME_SECONDS = 8 * 60 * 60;
+const MIN_PASSWORD_LENGTH = 6;
 
 type SessionPayload = {
   role: "admin";
@@ -44,7 +45,8 @@ export function getAdminConfiguration() {
   const config = credentials();
 
   return {
-    configured: config.password.length >= 12 && config.secret.length >= 32,
+    configured:
+      config.password.length >= MIN_PASSWORD_LENGTH && config.secret.length >= 32,
     username: config.username,
   };
 }
@@ -54,7 +56,12 @@ export function validateAdminCredentials(
   password: string,
 ): boolean {
   const config = credentials();
-  if (config.password.length < 12 || config.secret.length < 32) return false;
+  if (
+    config.password.length < MIN_PASSWORD_LENGTH ||
+    config.secret.length < 32
+  ) {
+    return false;
+  }
 
   return (
     safeEqual(username, config.username) && safeEqual(password, config.password)

@@ -67,7 +67,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-card border border-border bg-background p-6 transition-colors",
+        "rounded-card border border-border bg-background p-6 transition-all duration-300",
         className,
       )}
     >

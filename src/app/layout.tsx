@@ -75,6 +75,12 @@ const organizationLd = {
   description: site.description,
   foundingDate: String(site.foundedYear),
   areaServed: "Worldwide",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Houston",
+    addressRegion: "TX",
+    addressCountry: "US",
+  },
   sameAs: site.socials.map((s) => s.href),
   serviceType: [
     "Resume and CV writing",

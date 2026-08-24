@@ -26,6 +26,21 @@ for each one.
 | `services/interview.jpg` | Interview service | Vitaly Gariev | [Unsplash](https://unsplash.com/@silverkblack) | Unsplash License |
 | `services/coding.jpg` | Coding test service | Nubelson Fernandes | [Unsplash](https://unsplash.com/@nublson) | Unsplash License |
 
+## Workplace and event photography
+
+These are licensed editorial workplace images. They illustrate the kind of
+collaboration, technical work, and group learning discussed on the site; they
+are not employee portraits or claims that the pictured locations belong to
+Upveraoffer.
+
+| File | Used on | Photographer | Source | Licence |
+|---|---|---|---|---|
+| `workplace/four-men-meeting.jpg` | Home and About hero | Sidney Zou | [Unsplash](https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U) | Unsplash License |
+| `workplace/developers-office.jpg` | About and Contact | cottonbro studio | [Pexels](https://www.pexels.com/photo/men-sitting-at-the-desks-in-an-office-and-using-computers-6804068/) | Pexels License |
+| `workplace/workshop-audience.jpg` | About and Services | Viridiana Rivera | [Pexels](https://www.pexels.com/photo/business-workshop-with-engaged-audience-29581807/) | Pexels License |
+| `workplace/laptop-session.jpg` | Home, About, Process, and Booking | Antoni Shkraba | [Pexels](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
+| `workplace/company-event.jpg` | About gallery | Matheus Bertelli | [Pexels](https://www.pexels.com/photo/people-during-digital-presentation-18999535/) | Pexels License |
+
 ## Testimonial portraits — demonstration content
 
 These four portraits stand in as client avatars in `src/content/testimonials.ts`.

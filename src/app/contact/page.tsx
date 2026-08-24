@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHeader, Card } from "@/components/site/Blocks";
 import { ContactForm } from "@/components/site/ContactForm";
 import { site } from "@/content/site";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -36,6 +38,17 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
+                <Image
+                  src={images.developerOffice.src}
+                  alt={images.developerOffice.alt}
+                  fill
+                  sizes="(min-width: 1024px) 24rem, 100vw"
+                  className="object-cover"
+                />
+                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3.5 py-2 text-xs font-medium text-white backdrop-blur">Your message reaches a real coach</p>
+              </div>
               <Card className="bg-surface">
                 <h2 className="font-display text-lg font-semibold">
                   Prefer to talk?

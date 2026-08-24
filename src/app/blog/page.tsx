@@ -35,11 +35,11 @@ export default function BlogIndexPage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border bg-surface">
-        <div aria-hidden="true" className="absolute -right-28 -top-40 h-[32rem] w-[32rem] rounded-full bg-primary/15 blur-3xl" />
+        <div aria-hidden="true" className="ambient-float absolute -right-28 -top-40 h-[32rem] w-[32rem] rounded-full bg-primary/15 blur-3xl" />
         <div aria-hidden="true" className="absolute -bottom-48 left-1/4 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
         <Container className="relative py-20 sm:py-28">
           <div className="grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
-            <div className="max-w-3xl">
+            <div className="fade-up max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-3.5 py-1.5 text-xs font-semibold text-primary shadow-sm backdrop-blur">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 The Upveraoffer field guide
@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
               )}
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl bg-ink p-7 text-ink-foreground shadow-2xl shadow-primary/15 sm:p-8">
+            <div className="fade-up-delay relative overflow-hidden rounded-3xl bg-ink p-7 text-ink-foreground shadow-2xl shadow-primary/15 sm:p-8">
               <div aria-hidden="true" className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/35 blur-3xl" />
               <div className="relative">
                 <div className="flex items-center justify-between">
