@@ -116,8 +116,9 @@ page switches to the full layout automatically.
 
 ## Contact form setup
 
-The form at `/contact` posts to `src/app/api/contact/route.ts`, which sends
-email via [Resend](https://resend.com).
+The form at `/contact` posts to `src/app/api/contact/route.ts`. Every valid
+message is saved to the private admin inbox. [Resend](https://resend.com) is
+optional and adds an email notification.
 
 1. Create a Resend account and verify your sending domain.
 2. Copy `.env.example` to `.env.local` and fill in:
@@ -131,8 +132,8 @@ CONTACT_TO_EMAIL=you@yourdomain.com
 3. Add the same three variables in Vercel under
    **Project Settings → Environment Variables**, then redeploy.
 
-Until those are set the form returns an honest error telling visitors to email
-you directly — it never silently drops a message.
+Until those are set, messages are still accepted and remain available in
+`/admin`; only the email notification is skipped.
 
 The route includes a honeypot field and a simple in-memory rate limit
 (5 submissions per IP per hour). The rate limit resets on cold start and is
@@ -142,23 +143,36 @@ per-instance; move it to Vercel KV or Upstash if volume ever justifies it.
 
 ## Admin dashboard
 
-The private operations dashboard is available at `/admin`. It shows current
-content counts, integration status, and launch-readiness warnings. It is not
-linked from the public navigation and is excluded from search indexing.
+The private control center is available at `/admin`. It manages client
+messages, consultation requests, prices, blog drafts and publishing, and
+client feedback. It also shows integration status and launch-readiness
+warnings. It is not linked from public navigation and is excluded from search
+indexing.
 
 Configure these server-only variables locally and in Vercel before signing in:
 
 ```bash
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=use-at-least-12-characters
+ADMIN_PASSWORD=use-at-least-6-characters
 ADMIN_SESSION_SECRET=use-a-random-32-character-secret
+ADMIN_DATA_DIR=/path/to/a/persistent/writable/directory
 ```
 
 The dashboard uses a signed, HTTP-only, eight-hour session cookie. Login
 attempts are rate limited. Do not commit real credentials.
 
-Content remains source-backed in `src/content/`; update those files and deploy
-the commit. Persistent editing from the dashboard requires a database or CMS.
+Admin changes and private submissions are written to
+`ADMIN_DATA_DIR/control-center.json`. When `ADMIN_DATA_DIR` is omitted, the
+local default is `.data/control-center.json`, which is ignored by Git.
+
+The built-in file store is appropriate for local or single-server hosting. A
+Vercel function filesystem is ephemeral, so production Vercel deployments
+must point this storage layer at a durable database before relying on it for
+client messages or bookings.
+
+The `/book` page uses the built-in consultation request form when no Cal.com
+handle is configured. Requests appear immediately in the admin booking
+tracker, where they can be confirmed, completed, or cancelled.
 
 ---
 

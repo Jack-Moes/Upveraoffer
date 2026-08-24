@@ -20,6 +20,9 @@
 # production
 /build
 
+# private runtime data (messages, bookings, and admin content overrides)
+/.data/
+
 # misc
 .DS_Store
 *.pem

@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AdminLoginForm } from "@/components/admin/AdminLoginForm";
+import { AdminControlCenter } from "@/components/admin/AdminControlCenter";
 import { Card } from "@/components/site/Blocks";
 import { ButtonLink, buttonClass } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Container";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPostDrafts, getAllPosts } from "@/lib/blog";
 import {
   getAdminConfiguration,
   isAdminAuthenticated,
 } from "@/lib/admin-auth";
 import { site } from "@/content/site";
-import { services } from "@/content/services";
-import { plans } from "@/content/pricing";
-import { getTestimonials } from "@/content/testimonials";
+import {
+  getAdminFeedbackEntries,
+  getPublicPlans,
+  getPublicTestimonials,
+} from "@/lib/managed-content";
+import { readAdminStore } from "@/lib/admin-store";
 import { logoutAdmin } from "./actions";
 
 export const dynamic = "force-dynamic";
@@ -119,8 +123,12 @@ export default async function AdminPage() {
   }
 
   const posts = getAllPosts();
-  const testimonials = getTestimonials();
-  const contactConfigured = Boolean(
+  const postDrafts = getAllPostDrafts();
+  const testimonials = getPublicTestimonials();
+  const feedbackEntries = getAdminFeedbackEntries();
+  const plans = getPublicPlans();
+  const adminStore = readAdminStore();
+  const emailConfigured = Boolean(
     process.env.RESEND_API_KEY && process.env.CONTACT_FROM_EMAIL,
   );
 
@@ -143,17 +151,17 @@ export default async function AdminPage() {
     {
       title: "Consultation booking",
       detail: site.calcom
-        ? `Cal.com is connected with ${site.calcom}.`
-        : "Cal.com is not connected; visitors are sent to the contact fallback.",
-      status: site.calcom ? "ready" : "attention",
+        ? `Cal.com is connected with ${site.calcom}; calls can also be tracked below.`
+        : "The built-in consultation request form and booking tracker are active.",
+      status: "ready",
       href: "/book",
     },
     {
       title: "Contact delivery",
-      detail: contactConfigured
-        ? "Resend and the sending address are configured on this server."
-        : "Resend credentials are missing; form submissions cannot be delivered.",
-      status: contactConfigured ? "ready" : "attention",
+      detail: emailConfigured
+        ? "Messages are saved to the inbox and Resend email notifications are active."
+        : "Messages are saved to the inbox. Resend email notifications are not configured.",
+      status: emailConfigured ? "ready" : "review",
       href: "/contact",
     },
     {
@@ -215,10 +223,10 @@ export default async function AdminPage() {
         <Container>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: services.length, label: "Services" },
-              { value: plans.length, label: "Pricing packages" },
+              { value: adminStore.messages.filter((message) => message.status === "new").length, label: "New messages" },
+              { value: adminStore.bookings.filter((booking) => booking.status === "requested").length, label: "Call requests" },
               { value: posts.length, label: "Blog posts" },
-              { value: testimonials.length, label: "Testimonials" },
+              { value: plans.length, label: "Pricing packages" },
             ].map((item) => (
               <Card key={item.label} className="group relative overflow-hidden bg-surface p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
                 <span aria-hidden="true" className="absolute -right-3 -top-5 font-display text-8xl font-semibold text-primary/5">{item.value}</span>
@@ -283,14 +291,18 @@ export default async function AdminPage() {
             ))}
           </div>
 
-          <Card className="mt-12 border-primary/30 bg-primary-soft">
-            <h2 className="font-display text-xl font-semibold">Editing content</h2>
-            <p className="mt-3 max-w-3xl leading-relaxed text-muted">
-              This deployment reads content from <code>src/content</code>. Update
-              those files through the repository and deploy the commit; browser-based
-              editing would require a persistent CMS or database integration.
-            </p>
-          </Card>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-border bg-surface">
+        <Container>
+          <AdminControlCenter
+            messages={adminStore.messages}
+            bookings={adminStore.bookings}
+            plans={plans}
+            posts={postDrafts}
+            feedback={feedbackEntries}
+          />
         </Container>
       </Section>
     </>

@@ -8,7 +8,8 @@ import {
   SectionHeading,
   FaqAccordion,
 } from "@/components/site/Blocks";
-import { plans, comparison, pricingFaq, currencySymbol, currency } from "@/content/pricing";
+import { comparison, pricingFaq, currencySymbol, currency } from "@/content/pricing";
+import { getPublicPlans } from "@/lib/managed-content";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -45,6 +46,7 @@ function Cell({ value }: { value: boolean | string }) {
 }
 
 export default function PricingPage() {
+  const plans = getPublicPlans();
   return (
     <>
       <PageHeader

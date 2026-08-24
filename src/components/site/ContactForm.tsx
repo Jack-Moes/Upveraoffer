@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { plans } from "@/content/pricing";
+import type { Plan } from "@/content/pricing";
 import { services } from "@/content/services";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -15,7 +15,7 @@ const field =
 
 const label = "mb-1.5 block text-sm font-medium text-foreground";
 
-export function ContactForm() {
+export function ContactForm({ plans }: { plans: Pick<Plan, "id" | "name">[] }) {
   const params = useSearchParams();
   const presetPlan = params.get("plan") ?? "";
 

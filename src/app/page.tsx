@@ -6,9 +6,9 @@ import { SectionHeading, Card, CTABanner } from "@/components/site/Blocks";
 import { IconBadge } from "@/components/site/ServiceIcon";
 import { services } from "@/content/services";
 import { steps, pillars } from "@/content/process";
-import { plans, currencySymbol } from "@/content/pricing";
+import { currencySymbol } from "@/content/pricing";
 import { images } from "@/content/images";
-import { getTestimonials } from "@/content/testimonials";
+import { getPublicPlans, getPublicTestimonials } from "@/lib/managed-content";
 import { TestimonialCard, FeaturedTestimonial } from "@/components/site/Testimonials";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
@@ -38,7 +38,8 @@ const stalls = [
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
-  const feedback = getTestimonials();
+  const feedback = getPublicTestimonials();
+  const plans = getPublicPlans();
 
   return (
     <>

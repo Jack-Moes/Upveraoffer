@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import { readAdminStore, type StoredPost } from "@/lib/admin-store";
 
 const BLOG_DIR = path.join(process.cwd(), "src", "content", "blog");
 
@@ -23,6 +24,11 @@ export type PostMeta = {
 };
 
 export type Post = PostMeta & { html: string };
+export type PostDraft = PostMeta & {
+  body: string;
+  published: boolean;
+  isBuiltIn: boolean;
+};
 
 function readFileFor(slug: string) {
   const file = path.join(BLOG_DIR, `${slug}.md`);
@@ -47,7 +53,7 @@ function toMeta(slug: string, data: Record<string, unknown>, body: string): Post
   };
 }
 
-export function getPostSlugs(): string[] {
+function getMarkdownPostSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
   return fs
     .readdirSync(BLOG_DIR)
@@ -55,24 +61,101 @@ export function getPostSlugs(): string[] {
     .map((f) => f.replace(/\.md$/, ""));
 }
 
+function storedToMeta(post: StoredPost): PostMeta {
+  return toMeta(post.slug, post, post.body);
+}
+
+export function getPostSlugs(): string[] {
+  const store = readAdminStore();
+  const visibleMarkdown = getMarkdownPostSlugs().filter(
+    (slug) => !store.hiddenPostSlugs.includes(slug),
+  );
+  const stored = store.posts
+    .filter((post) => post.published)
+    .map((post) => post.slug);
+  return [...new Set([...visibleMarkdown, ...stored])];
+}
+
 export function getAllPosts(): PostMeta[] {
-  return getPostSlugs()
+  const store = readAdminStore();
+  const stored = new Map(store.posts.map((post) => [post.slug, post]));
+  const markdown = getMarkdownPostSlugs()
+    .filter((slug) => !store.hiddenPostSlugs.includes(slug))
     .map((slug) => {
+      const override = stored.get(slug);
+      if (override) return override.published ? storedToMeta(override) : null;
       const raw = readFileFor(slug);
       if (!raw) return null;
       const { data, content } = matter(raw);
       return toMeta(slug, data, content);
     })
-    .filter((p): p is PostMeta => p !== null)
+    .filter((p): p is PostMeta => p !== null);
+  const custom = store.posts
+    .filter(
+      (post) =>
+        post.published && !getMarkdownPostSlugs().includes(post.slug),
+    )
+    .map(storedToMeta);
+
+  return [...markdown, ...custom]
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
+  const store = readAdminStore();
+  const stored = store.posts.find((post) => post.slug === slug);
+  if (stored) {
+    if (!stored.published) return null;
+    const html = await marked.parse(stored.body, { async: true });
+    return { ...storedToMeta(stored), html };
+  }
+  if (store.hiddenPostSlugs.includes(slug)) return null;
+
   const raw = readFileFor(slug);
   if (!raw) return null;
   const { data, content } = matter(raw);
   const html = await marked.parse(content, { async: true });
   return { ...toMeta(slug, data, content), html };
+}
+
+export function getAllPostDrafts(): PostDraft[] {
+  const store = readAdminStore();
+  const stored = new Map(store.posts.map((post) => [post.slug, post]));
+  const builtIns = getMarkdownPostSlugs()
+    .filter((slug) => !store.hiddenPostSlugs.includes(slug))
+    .map((slug) => {
+      const override = stored.get(slug);
+      if (override) {
+        return {
+          ...storedToMeta(override),
+          body: override.body,
+          published: override.published,
+          isBuiltIn: true,
+        };
+      }
+      const raw = readFileFor(slug);
+      if (!raw) return null;
+      const { data, content } = matter(raw);
+      return {
+        ...toMeta(slug, data, content),
+        body: content.trim(),
+        published: true,
+        isBuiltIn: true,
+      };
+    })
+    .filter((post): post is PostDraft => post !== null);
+  const custom = store.posts
+    .filter((post) => !getMarkdownPostSlugs().includes(post.slug))
+    .map((post) => ({
+      ...storedToMeta(post),
+      body: post.body,
+      published: post.published,
+      isBuiltIn: false,
+    }));
+
+  return [...builtIns, ...custom].sort((a, b) =>
+    a.date < b.date ? 1 : -1,
+  );
 }
 
 export function getCategories(): string[] {

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { randomUUID } from "node:crypto";
 import { Resend } from "resend";
 import { site } from "@/content/site";
+import { updateAdminStore } from "@/lib/admin-store";
 
 export const runtime = "nodejs";
 
@@ -87,19 +89,37 @@ export async function POST(request: Request) {
   const to = process.env.CONTACT_TO_EMAIL || site.email;
   const from = process.env.CONTACT_FROM_EMAIL;
 
-  // Without credentials the form must not pretend it delivered anything.
-  if (!apiKey || !from) {
-    console.error(
-      "[contact] RESEND_API_KEY and/or CONTACT_FROM_EMAIL is not set — message not delivered.",
-      { name, email, service, plan },
-    );
+  try {
+    await updateAdminStore((store) => {
+      store.messages.unshift({
+        id: randomUUID(),
+        createdAt: new Date().toISOString(),
+        name,
+        email,
+        currentRole,
+        targetRole,
+        service,
+        plan,
+        message,
+        status: "new",
+      });
+      return store;
+    });
+  } catch (error) {
+    console.error("[contact] Could not save message to the admin inbox:", error);
     return NextResponse.json(
       {
         ok: false,
-        error: `Our contact form is not connected yet. Please email us directly at ${site.email}.`,
+        error: `We could not save that. Please email ${site.email} directly.`,
       },
-      { status: 503 },
+      { status: 500 },
     );
+  }
+
+  // Email is an optional notification. The private inbox is the source of
+  // truth even when Resend has not been connected yet.
+  if (!apiKey || !from) {
+    return NextResponse.json({ ok: true, notification: "stored-only" });
   }
 
   const text = [
@@ -128,18 +148,12 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("[contact] Resend rejected the message:", error);
-      return NextResponse.json(
-        { ok: false, error: `We could not send that. Please email ${site.email} directly.` },
-        { status: 502 },
-      );
+      return NextResponse.json({ ok: true, notification: "email-failed" });
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, notification: "email-sent" });
   } catch (err) {
     console.error("[contact] Unexpected failure:", err);
-    return NextResponse.json(
-      { ok: false, error: `We could not send that. Please email ${site.email} directly.` },
-      { status: 500 },
-    );
+    return NextResponse.json({ ok: true, notification: "email-failed" });
   }
 }

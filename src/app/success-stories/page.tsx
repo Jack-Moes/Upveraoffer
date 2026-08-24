@@ -3,7 +3,8 @@ import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { TestimonialGrid } from "@/components/site/Testimonials";
-import { getTestimonials, getMetrics } from "@/content/testimonials";
+import { getMetrics } from "@/content/testimonials";
+import { getPublicTestimonials } from "@/lib/managed-content";
 
 export const metadata: Metadata = {
   title: "Results",
@@ -28,7 +29,7 @@ const commitments = [
 ];
 
 export default function SuccessStoriesPage() {
-  const items = getTestimonials();
+  const items = getPublicTestimonials();
   const metrics = getMetrics();
   const hasStories = items.length > 0;
 

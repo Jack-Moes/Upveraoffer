@@ -7,6 +7,7 @@ import { PageHeader, Card } from "@/components/site/Blocks";
 import { ContactForm } from "@/components/site/ContactForm";
 import { site } from "@/content/site";
 import { images } from "@/content/images";
+import { getPublicPlans } from "@/lib/managed-content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const plans = getPublicPlans();
   return (
     <>
       <PageHeader
@@ -33,7 +35,7 @@ export default function ContactPage() {
                   <div className="h-96 animate-pulse rounded-card bg-surface" />
                 }
               >
-                <ContactForm />
+                <ContactForm plans={plans} />
               </Suspense>
             </div>
 

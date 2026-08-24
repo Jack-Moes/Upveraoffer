@@ -1,36 +1,15 @@
 import Link from "next/link";
 import { site } from "@/content/site";
-import { ButtonLink } from "@/components/ui/Button";
+import { BookingRequestForm } from "@/components/site/BookingRequestForm";
 
 /**
- * Cal.com scheduling embed.
- *
- * Set `calcom` in src/content/site.ts to "<username>/<event-slug>" to turn
- * this on. Until then it renders an honest fallback that routes people to the
- * contact form rather than showing a broken iframe.
+ * Uses Cal.com when a handle is configured. Otherwise the built-in request
+ * form saves calls directly to the private admin booking tracker.
  */
 export function BookingEmbed() {
   const handle = site.calcom;
 
-  if (!handle) {
-    return (
-      <div className="rounded-card border border-dashed border-border bg-surface p-10 text-center">
-        <h2 className="font-display text-xl font-semibold">
-          Online booking is opening shortly
-        </h2>
-        <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted">
-          Self-serve booking isn’t live yet. Send us a message with a couple of
-          times that suit you and we’ll confirm a slot the same day.
-        </p>
-        <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-          <ButtonLink href="/contact">Request a consult</ButtonLink>
-          <ButtonLink href={`mailto:${site.email}`} variant="secondary">
-            Email us
-          </ButtonLink>
-        </div>
-      </div>
-    );
-  }
+  if (!handle) return <BookingRequestForm />;
 
   const src = `https://cal.com/${handle}?embed=true&layout=month_view`;
 
@@ -48,7 +27,7 @@ export function BookingEmbed() {
         <Link href="/contact" className="text-primary underline underline-offset-4">
           Send us a message
         </Link>{" "}
-        and we’ll book you in by hand.
+        and we will book you in by hand.
       </p>
     </div>
   );
