@@ -140,6 +140,28 @@ per-instance; move it to Vercel KV or Upstash if volume ever justifies it.
 
 ---
 
+## Admin dashboard
+
+The private operations dashboard is available at `/admin`. It shows current
+content counts, integration status, and launch-readiness warnings. It is not
+linked from the public navigation and is excluded from search indexing.
+
+Configure these server-only variables locally and in Vercel before signing in:
+
+```bash
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=use-at-least-12-characters
+ADMIN_SESSION_SECRET=use-a-random-32-character-secret
+```
+
+The dashboard uses a signed, HTTP-only, eight-hour session cookie. Login
+attempts are rate limited. Do not commit real credentials.
+
+Content remains source-backed in `src/content/`; update those files and deploy
+the commit. Persistent editing from the dashboard requires a database or CMS.
+
+---
+
 ## Project structure
 
 ```
@@ -151,6 +173,7 @@ src/
 │  ├─ icon.svg              Favicon
 │  ├─ opengraph-image.tsx   Generated social share card
 │  ├─ sitemap.ts / robots.ts
+│  ├─ admin/                 Protected operations dashboard
 │  ├─ services/[slug]/      Service detail pages
 │  ├─ blog/[slug]/          Blog posts
 │  └─ api/contact/          Contact form handler
