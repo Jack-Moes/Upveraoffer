@@ -80,59 +80,67 @@ const developerProfiles = [
 const gallery = [
   {
     image: images.teamHoliday,
-    kicker: "Off the clock",
-    title: "A small team, properly celebrated",
+    kicker: "Holiday night",
+    title: "One last evening before the year wrapped up.",
+    note: "Warm drinks, cold weather, and nothing left on the agenda.",
     layout: "lg:col-span-7",
-    frame: "aspect-[4/3]",
+    frame: "h-[28rem] lg:h-[34rem]",
   },
   {
     image: images.teamSightseeing,
-    kicker: "On the road",
-    title: "A quieter change of view",
+    kicker: "A day out",
+    title: "A new place with no schedule to keep.",
+    note: "Phones mostly away. Cameras occasionally out.",
     layout: "lg:col-span-5",
-    frame: "aspect-[4/3]",
+    frame: "h-[28rem] lg:h-[34rem]",
   },
   {
     image: images.teamSailing,
-    kicker: "Team offsite",
-    title: "A different kind of problem solving",
+    kicker: "On the water",
+    title: "An afternoon with the weather in charge.",
+    note: "No deck. No stand-up. A very different kind of teamwork.",
     layout: "lg:col-span-7",
-    frame: "aspect-[16/9]",
+    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamHike,
-    kicker: "Outside",
-    title: "Room to reset",
+    kicker: "Trail day",
+    title: "We took the longer route.",
+    note: "An early start, a clear day, and a view worth the climb.",
     layout: "lg:col-span-5",
-    frame: "aspect-[4/3]",
+    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamLounge,
-    kicker: "Between sessions",
-    title: "Conversation without an agenda",
+    kicker: "Slow morning",
+    title: "Coffee before anyone made a plan.",
+    note: "The conversation lasted longer than the coffee did.",
     layout: "lg:col-span-6",
-    frame: "aspect-[3/2]",
+    frame: "h-[25rem] lg:h-[30rem]",
   },
   {
     image: images.teamVolunteer,
-    kicker: "In the community",
-    title: "Useful work beyond our own",
+    kicker: "Community day",
+    title: "An afternoon spent being useful.",
+    note: "Packing, sorting, and working alongside local volunteers.",
     layout: "lg:col-span-6",
-    frame: "aspect-[3/2]",
+    frame: "h-[25rem] lg:h-[30rem]",
   },
   {
     image: images.teamGolf,
     kicker: "Weekend round",
-    title: "Focus of a different kind",
+    title: "Eighteen holes. Zero work talk.",
+    note: "The scores stayed private. The photos did not.",
     layout: "lg:col-span-5",
-    frame: "aspect-[3/2]",
+    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamDinner,
-    kicker: "After hours",
-    title: "A table worth slowing down for",
+    kicker: "Late table",
+    title: "The best conversation started after dinner.",
+    note: "No occasion required. Just time together at the end of a long week.",
     layout: "lg:col-span-7",
-    frame: "aspect-[3/2]",
+    frame: "h-[25rem] lg:h-[29rem]",
   },
 ];
 
@@ -357,36 +365,77 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section>
-        <Container>
-          <SectionHeading
-            eyebrow="Life together"
-            title="A team should have stories beyond the meeting room."
-            intro="The work stays serious. The people doing it still make time for holidays, new places, open water, community work, and the occasional trail with no agenda attached."
-          />
-          <div className="mt-12 grid gap-6 lg:grid-cols-12">
-            {gallery.map((item) => (
+      <Section className="relative overflow-hidden border-y border-border bg-surface">
+        <div
+          aria-hidden="true"
+          className="absolute -left-48 top-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -right-48 bottom-40 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
+        />
+        <Container className="relative">
+          <div className="grid gap-8 border-b border-border pb-10 lg:grid-cols-12 lg:items-end lg:pb-14">
+            <div className="lg:col-span-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                Team, off duty
+              </p>
+              <h2 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                We work hard. We also leave the office.
+              </h2>
+            </div>
+            <div className="lg:col-span-4 lg:pb-1">
+              <p className="max-w-md text-base leading-relaxed text-muted sm:text-lg">
+                Eight real days with the people behind Upveraoffer: holiday evenings,
+                time outdoors, community work, and meals that ran late.
+              </p>
+              <div className="mt-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
+                <span className="h-px w-10 bg-primary" />
+                Photo notes · 01—08
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:mt-10 lg:grid-cols-12 lg:gap-6">
+            {gallery.map((item, index) => (
               <figure
                 key={item.title}
-                className={`group ${item.layout}`}
+                className={`group relative ${item.layout}`}
               >
                 <div
-                  className={`photo-frame relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${item.frame}`}
+                  className={`photo-frame relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink shadow-2xl shadow-primary/10 ${item.frame}`}
                 >
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1024px) 58vw, 100vw"
-                    className="photo-media object-cover"
+                    className="photo-media object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                   />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-black/15 transition-colors duration-700 group-hover:via-black/5"
+                  />
+                  <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/15 bg-black/25 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-md sm:left-6 sm:top-6">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent transition-transform duration-500 group-hover:scale-[1.7]" />
+                    {String(index + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-soft">
+                      {item.kicker}
+                    </p>
+                    <h3 className="mt-2 max-w-xl font-display text-2xl font-semibold leading-tight sm:text-3xl">
+                      {item.title}
+                    </h3>
+                    <div className="grid grid-rows-[1fr] transition-[grid-template-rows,opacity,transform] duration-500 ease-out lg:grid-rows-[0fr] lg:opacity-0 lg:translate-y-3 lg:group-hover:grid-rows-[1fr] lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+                      <div className="overflow-hidden">
+                        <p className="max-w-lg pt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+                          {item.note}
+                        </p>
+                      </div>
+                    </div>
+                  </figcaption>
                 </div>
-                <figcaption className="mt-4 flex items-baseline gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                    {item.kicker}
-                  </span>
-                  <span className="font-display text-lg font-semibold">{item.title}</span>
-                </figcaption>
               </figure>
             ))}
           </div>
