@@ -47,10 +47,10 @@ export const site = {
    * misrepresentation, and it is trivially exposed by a reverse image search.
    */
   founder: {
-    name: "",
-    role: "",
-    photo: "",
-    bio: "",
+    name: "Founder",
+    role: "Founder & Team Manager",
+    photo: "/images/site/founder-team-manager.jpg",
+    bio: "One of Upveraoffer’s four senior developers, he leads the team while staying close to the technical work and every client engagement.",
   },
 } as const;
 

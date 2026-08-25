@@ -188,7 +188,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="The team"
-              title="Four disciplines, one shared method."
+              title="Four senior developers. One shared method."
               intro="We keep the team small so context never gets lost between a resume review, an interview session, and technical practice."
             />
             <p className="max-w-xs text-sm leading-relaxed text-muted">
@@ -196,7 +196,52 @@ export default function AboutPage() {
               international time zones.
             </p>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="mt-12 grid overflow-hidden rounded-[2rem] border border-border bg-background shadow-xl shadow-primary/10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="photo-frame relative min-h-[28rem] overflow-hidden bg-surface-2 lg:min-h-[32rem]">
+              <Image
+                src={images.founderPortrait.src}
+                alt={images.founderPortrait.alt}
+                fill
+                sizes="(min-width: 1024px) 28rem, 100vw"
+                className="photo-media object-cover object-center"
+              />
+            </div>
+            <div className="relative flex flex-col justify-center overflow-hidden bg-ink p-8 text-ink-foreground sm:p-12">
+              <div
+                aria-hidden="true"
+                className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/25 blur-3xl"
+              />
+              <div className="relative">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-soft">
+                  {site.founder.role}
+                </p>
+                <h3 className="mt-5 max-w-xl font-display text-3xl font-semibold leading-tight sm:text-4xl">
+                  Engineering leadership that stays close to the work.
+                </h3>
+                <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70">
+                  {site.founder.bio}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {["Senior software engineer", "Team of four", "Client work oversight"].map(
+                    (label) => (
+                      <span
+                        key={label}
+                        className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-ink-foreground/75"
+                      >
+                        {label}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-12 text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
+            What the team covers
+          </p>
+          <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {disciplines.map((item) => (
               <Card key={item.number} className="group min-h-64 p-7">
                 <div className="flex items-center justify-between">

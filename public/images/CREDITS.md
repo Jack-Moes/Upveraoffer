@@ -22,6 +22,7 @@ for each one.
 | `site/hero.jpg` | Home hero | Jan Baborák | [Unsplash](https://unsplash.com/@janbaborak) | Unsplash License |
 | `site/process.jpg` | Home, `/process` | JESHOOTS.COM | [Unsplash](https://unsplash.com/@jeshoots) | Unsplash License |
 | `site/consult.jpg` | `/book` | Kelly Sikkema | [Unsplash](https://unsplash.com/@kellysikkema) | Unsplash License |
+| `site/founder-team-manager.jpg` | About founder profile | Upveraoffer identity reference, AI-assisted environmental portrait | Provided by the company | Company-provided source |
 | `services/resume-review.jpg` | Résumé service | Sora Shimazaki | [Pexels](https://www.pexels.com/photo/woman-filling-job-application-form-in-office-with-boss-5668858/) | Pexels License |
 | `services/interview.jpg` | Interview service | Vitaly Gariev | [Unsplash](https://unsplash.com/@silverkblack) | Unsplash License |
 | `services/coding.jpg` | Coding test service | Nubelson Fernandes | [Unsplash](https://unsplash.com/@nublson) | Unsplash License |

@@ -18,6 +18,12 @@ export type SiteImage = {
 };
 
 export const images = {
+  founderPortrait: {
+    src: "/images/site/founder-team-manager.jpg",
+    alt: "Upveraoffer founder and team manager seated at a desk with an open laptop",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
+  },
   teamMeeting: {
     src: "/images/workplace/four-men-meeting.jpg",
     alt: "Four software professionals in a relaxed meeting room with laptops open on the table",
@@ -117,6 +123,11 @@ export type ImageKey = keyof typeof images;
 
 /** Small caption used under photographs. */
 export function creditLine(image: SiteImage) {
-  const library = image.creditUrl.includes("pexels.com") ? "Pexels" : "Unsplash";
-  return `Photo by ${image.credit} on ${library}`;
+  if (image.creditUrl.includes("pexels.com")) {
+    return `Photo by ${image.credit} on Pexels`;
+  }
+  if (image.creditUrl.includes("unsplash.com")) {
+    return `Photo by ${image.credit} on Unsplash`;
+  }
+  return `Photo courtesy of ${image.credit}`;
 }
