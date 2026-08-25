@@ -61,19 +61,32 @@ const beliefs = [
 
 const gallery = [
   {
-    image: images.seniorTeam,
-    kicker: "In the work",
-    title: "Laptops open, decisions visible",
+    image: images.teamHoliday,
+    kicker: "Off the clock",
+    title: "A small team, properly celebrated",
+    layout: "lg:col-span-7",
+    frame: "aspect-[4/3]",
   },
   {
-    image: images.seniorEngineer,
-    kicker: "In the room",
-    title: "Senior judgment, applied directly",
+    image: images.teamSightseeing,
+    kicker: "On the road",
+    title: "New places, no agenda",
+    layout: "lg:col-span-5",
+    frame: "aspect-[4/3]",
   },
   {
-    image: images.companyEvent,
-    kicker: "In the community",
-    title: "Learning works better together",
+    image: images.teamSailing,
+    kicker: "Team offsite",
+    title: "A different kind of problem solving",
+    layout: "lg:col-span-7",
+    frame: "aspect-[16/9]",
+  },
+  {
+    image: images.teamHike,
+    kicker: "Outside",
+    title: "Room to reset",
+    layout: "lg:col-span-5",
+    frame: "aspect-[4/3]",
   },
 ];
 
@@ -262,24 +275,24 @@ export default function AboutPage() {
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="How it feels"
-            title="Serious work without the corporate theater."
-            intro="Laptops open, useful notes, and direct conversation. The work is structured; the atmosphere does not need to be stiff."
+            eyebrow="Life together"
+            title="A team should have stories beyond the meeting room."
+            intro="The work stays serious. The people doing it still make time for holidays, new places, open water, and the occasional trail with no agenda attached."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-12">
-            {gallery.map((item, index) => (
+            {gallery.map((item) => (
               <figure
                 key={item.title}
-                className={`group ${index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-7" : "lg:col-span-12"}`}
+                className={`group ${item.layout}`}
               >
                 <div
-                  className={`photo-frame relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${index === 2 ? "aspect-[16/7]" : "aspect-[4/3]"}`}
+                  className={`photo-frame relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${item.frame}`}
                 >
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
-                    sizes={index === 2 ? "100vw" : "(min-width: 1024px) 50vw, 100vw"}
+                    sizes="(min-width: 1024px) 58vw, 100vw"
                     className="photo-media object-cover"
                   />
                 </div>

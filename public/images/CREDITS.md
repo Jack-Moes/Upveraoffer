@@ -42,17 +42,18 @@ Upveraoffer.
 
 ## Company identity composites
 
-The founder's identity comes from a company-provided reference photograph.
-The settings, supporting people, clothing, and equipment in these images were
-created with an AI-assisted image workflow and reviewed before publication.
+Where the founder appears, his identity comes from a company-provided reference
+photograph. Supporting teammate and company-life scenes follow the company's
+creative direction and were reviewed before publication.
 
 | File | Used on | Identity source | Production | Licence |
 |---|---|---|---|---|
 | `workplace/team-company-studio.jpg` | Home and About hero | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
-| `workplace/team-code-review.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
-| `workplace/founder-workstation.jpg` | About and Contact | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
-| `workplace/team-tech-event.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 | `workplace/team-equipment-interior.jpg` | About interior | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
+| `workplace/team-holiday-square.jpg` | About gallery and Contact | Company creative direction | AI-assisted company-life scene | Company-provided source |
+| `workplace/team-sightseeing.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
+| `workplace/team-sailing-offsite.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
+| `workplace/team-hike-overlook.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
 
 ## About the Unsplash License
 

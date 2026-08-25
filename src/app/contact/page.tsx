@@ -42,14 +42,14 @@ export default function ContactPage() {
             <aside className="space-y-5">
               <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
                 <Image
-                  src={images.seniorEngineer.src}
-                  alt={images.seniorEngineer.alt}
+                  src={images.teamHoliday.src}
+                  alt={images.teamHoliday.alt}
                   fill
                   sizes="(min-width: 1024px) 24rem, 100vw"
                   className="photo-media object-cover"
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent" />
-                <p className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3.5 py-2 text-xs font-medium text-white backdrop-blur">Your message reaches a real coach</p>
+                <p className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3.5 py-2 text-xs font-medium text-white backdrop-blur">A small team that answers directly</p>
               </div>
               <Card className="bg-surface">
                 <h2 className="font-display text-lg font-semibold">

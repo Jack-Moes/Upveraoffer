@@ -30,9 +30,9 @@ export const images = {
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
-  seniorTeam: {
-    src: "/images/workplace/team-code-review.jpg",
-    alt: "The founder and three senior developers conducting a focused code review at a dual-monitor desktop workstation",
+  teamHoliday: {
+    src: "/images/workplace/team-holiday-square.jpg",
+    alt: "Three Upveraoffer developers sharing warm drinks at an outdoor holiday market",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
@@ -43,9 +43,9 @@ export const images = {
     creditUrl:
       "https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/",
   },
-  seniorEngineer: {
-    src: "/images/workplace/founder-workstation.jpg",
-    alt: "The founder working at a dual-monitor engineering workstation with a desktop tower and Dell laptop",
+  teamSightseeing: {
+    src: "/images/workplace/team-sightseeing.jpg",
+    alt: "Two Upveraoffer developers sightseeing along a sunny waterfront promenade",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
@@ -69,9 +69,15 @@ export const images = {
     creditUrl:
       "https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/",
   },
-  companyEvent: {
-    src: "/images/workplace/team-tech-event.jpg",
-    alt: "The founder presenting a system architecture diagram with three senior developers and an audience",
+  teamSailing: {
+    src: "/images/workplace/team-sailing-offsite.jpg",
+    alt: "Three Upveraoffer developers spending a breezy afternoon sailing together",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
+  },
+  teamHike: {
+    src: "/images/workplace/team-hike-overlook.jpg",
+    alt: "Three Upveraoffer developers pausing together at a wooded trail overlook",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
