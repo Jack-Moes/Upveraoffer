@@ -61,7 +61,7 @@ export const images = {
       "https://www.pexels.com/photo/elegant-modern-office-interior-design-with-glass-walls-33342712/",
   },
   coachingSession: {
-    src: "/images/workplace/laptop-session.jpg",
+    src: "/images/workplace/laptop-session-v2.jpg",
     alt: "Two professionals reviewing work together on a laptop at an office table",
     credit: "Antoni Shkraba",
     creditUrl:

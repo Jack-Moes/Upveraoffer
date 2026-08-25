@@ -36,7 +36,7 @@ Upveraoffer.
 | File | Used on | Photographer | Source | Licence |
 |---|---|---|---|---|
 | `workplace/four-men-meeting.jpg` | Home and About hero | Sidney Zou | [Unsplash](https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U) | Unsplash License |
-| `workplace/laptop-session.jpg` | Home, About, Process, and Booking | Antoni Shkraba | [Pexels](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
+| `workplace/laptop-session-v2.jpg` | Home, About, Process, and Booking | AI-assisted edit of a photo by Antoni Shkraba | [Pexels original](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
 | `workplace/company-event.jpg` | About gallery | Matheus Bertelli | [Pexels](https://www.pexels.com/photo/people-during-digital-presentation-18999535/) | Pexels License |
 | `workplace/senior-team-laptops.jpg` | About gallery | Ofspace LLC, Culture | [Pexels](https://www.pexels.com/photo/man-people-woman-desk-8128190/) | Pexels License |
 | `workplace/senior-engineer.jpg` | About and Contact | Kindel Media | [Pexels](https://www.pexels.com/photo/man-using-a-laptop-at-the-office-7651656/) | Pexels License |
