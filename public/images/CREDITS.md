@@ -48,19 +48,19 @@ follow the company's creative direction and were reviewed before publication.
 
 | File | Used on | Identity source | Production | Licence |
 |---|---|---|---|---|
-| `people/indian-developer.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `people/vietnamese-developer.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `people/chinese-developer.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `workplace/team-company-studio.jpg` | Home and About hero | Four canonical team identities | AI-assisted company scene | Company creative asset |
-| `workplace/team-equipment-interior.jpg` | About interior | Three canonical developer identities | AI-assisted company scene | Company creative asset |
-| `workplace/team-holiday-square.jpg` | About gallery and Contact | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sightseeing.jpg` | About gallery | Four canonical team identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sailing-offsite.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-hike-overlook.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-lounge.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-volunteer-day.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-golf-day.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-dinner.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `people/indian-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
+| `people/vietnamese-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
+| `people/chinese-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
+| `workplace/team-company-studio-v2.jpg` | Home and About hero | Four canonical team identities | AI-assisted company scene | Company creative asset |
+| `workplace/team-equipment-interior-v2.jpg` | About interior | Three canonical developer identities | AI-assisted company scene | Company creative asset |
+| `workplace/team-holiday-square-v2.jpg` | About gallery and Contact | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sightseeing-v2.jpg` | About gallery | Four canonical team identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sailing-offsite-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-hike-overlook-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-lounge-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-volunteer-day-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-golf-day-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-dinner-v2.jpg` | About gallery | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
 
 ## About the Unsplash License
 
