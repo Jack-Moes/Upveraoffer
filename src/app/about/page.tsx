@@ -70,7 +70,7 @@ const gallery = [
   {
     image: images.teamSightseeing,
     kicker: "On the road",
-    title: "New places, no agenda",
+    title: "A quieter change of view",
     layout: "lg:col-span-5",
     frame: "aspect-[4/3]",
   },

@@ -45,7 +45,7 @@ export const images = {
   },
   teamSightseeing: {
     src: "/images/workplace/team-sightseeing.jpg",
-    alt: "Two Upveraoffer developers sightseeing along a sunny waterfront promenade",
+    alt: "The founder and three Upveraoffer developers exploring an outdoor sculpture garden",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },

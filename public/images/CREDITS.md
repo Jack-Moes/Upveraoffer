@@ -51,7 +51,7 @@ creative direction and were reviewed before publication.
 | `workplace/team-company-studio.jpg` | Home and About hero | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 | `workplace/team-equipment-interior.jpg` | About interior | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 | `workplace/team-holiday-square.jpg` | About gallery and Contact | Company creative direction | AI-assisted company-life scene | Company-provided source |
-| `workplace/team-sightseeing.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
+| `workplace/team-sightseeing.jpg` | About gallery | Company-provided founder portrait and creative direction | AI-assisted company-life scene | Company-provided source |
 | `workplace/team-sailing-offsite.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
 | `workplace/team-hike-overlook.jpg` | About gallery | Company creative direction | AI-assisted company-life scene | Company-provided source |
 
