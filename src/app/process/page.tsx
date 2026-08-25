@@ -22,14 +22,14 @@ export default function ProcessPage() {
       />
 
       <Container className="-mt-8 sm:-mt-10">
-        <div className="relative aspect-21/9 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
+        <div className="photo-frame relative aspect-21/9 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
           <Image
             src={images.coachingSession.src}
             alt={images.coachingSession.alt}
             fill
             priority
             sizes="(min-width: 1152px) 72rem, 100vw"
-            className="object-cover"
+            className="photo-media object-cover"
           />
         </div>
       </Container>

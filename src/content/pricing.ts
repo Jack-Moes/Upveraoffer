@@ -1,8 +1,8 @@
 /**
  * Pricing tiers.
  *
- * TODO(founder): every price below is a PLACEHOLDER. Set real numbers,
- * and set `currency` to whatever you actually bill in, before launch.
+ * Public package pricing. These values also seed the admin-managed prices.
+ * Keep `currency` aligned with the checkout or invoicing system.
  */
 
 export const currency = "USD";
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
   {
     id: "foundation",
     name: "Foundation",
-    price: 390, // PLACEHOLDER
+    price: 149,
     cadence: "one-time",
     tagline: "Fix the document that’s costing you interviews.",
     bestFor: "You’re applying and hearing nothing back.",
@@ -41,7 +41,7 @@ export const plans: Plan[] = [
   {
     id: "interview-ready",
     name: "Interview Ready",
-    price: 990, // PLACEHOLDER
+    price: 599,
     cadence: "one-time",
     tagline: "Everything in Foundation, plus rehearsal until it’s second nature.",
     bestFor: "You’re getting interviews and losing them.",
@@ -60,7 +60,7 @@ export const plans: Plan[] = [
   {
     id: "full-offer",
     name: "Full Offer",
-    price: 1890, // PLACEHOLDER
+    price: 999,
     cadence: "one-time",
     tagline: "The whole path, coding assessments included.",
     bestFor: "You’re going for engineering roles with a coding test in the loop.",

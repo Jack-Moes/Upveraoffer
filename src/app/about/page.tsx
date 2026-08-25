@@ -61,14 +61,14 @@ const beliefs = [
 
 const gallery = [
   {
-    image: images.developerOffice,
+    image: images.seniorTeam,
     kicker: "In the work",
-    title: "Technical experience at the table",
+    title: "Laptops open, decisions visible",
   },
   {
-    image: images.workshop,
+    image: images.seniorEngineer,
     kicker: "In the room",
-    title: "Practical sessions, useful notes",
+    title: "Senior judgment, applied directly",
   },
   {
     image: images.companyEvent,
@@ -117,14 +117,14 @@ export default function AboutPage() {
             </div>
 
             <figure className="fade-up-delay">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
+              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
                 <Image
                   src={images.teamMeeting.src}
                   alt={images.teamMeeting.alt}
                   fill
                   priority
                   sizes="(min-width: 1024px) 44rem, 100vw"
-                  className="object-cover object-center"
+                  className="photo-media object-cover object-center"
                 />
               </div>
               <figcaption className="mt-4 text-xs uppercase tracking-[0.14em] text-ink-foreground/45">
@@ -138,13 +138,13 @@ export default function AboutPage() {
       <Section id="how-we-work">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
+            <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
               <Image
                 src={images.coachingSession.src}
                 alt={images.coachingSession.alt}
                 fill
                 sizes="(min-width: 1024px) 38rem, 100vw"
-                className="object-cover"
+                className="photo-media object-cover"
               />
             </div>
             <div>
@@ -228,14 +228,14 @@ export default function AboutPage() {
                 className={`group ${index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-7" : "lg:col-span-12"}`}
               >
                 <div
-                  className={`relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${index === 2 ? "aspect-[16/7]" : "aspect-[4/3]"}`}
+                  className={`photo-frame relative overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10 ${index === 2 ? "aspect-[16/7]" : "aspect-[4/3]"}`}
                 >
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
                     sizes={index === 2 ? "100vw" : "(min-width: 1024px) 50vw, 100vw"}
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                    className="photo-media object-cover"
                   />
                 </div>
                 <figcaption className="mt-4 flex items-baseline gap-3">
@@ -246,6 +246,46 @@ export default function AboutPage() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-y border-border bg-ink text-ink-foreground">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-soft">
+                Space to think
+              </p>
+              <h2 className="mt-4 max-w-md font-display text-3xl font-semibold leading-tight sm:text-4xl">
+                A calm setting for exacting work.
+              </h2>
+              <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-foreground/65">
+                Quiet focus for deep work, then a clear room for the conversations
+                that move a search forward. No theater, no crowded handoffs.
+              </p>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {[
+                { image: images.officeExterior, label: "Arrival" },
+                { image: images.officeInterior, label: "Workspace" },
+              ].map((item) => (
+                <figure key={item.label}>
+                  <div className="photo-frame relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
+                    <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      fill
+                      sizes="(min-width: 640px) 22rem, 100vw"
+                      className="photo-media object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-ink-foreground/50">
+                    {item.label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>

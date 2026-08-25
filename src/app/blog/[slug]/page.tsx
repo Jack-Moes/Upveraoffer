@@ -102,14 +102,14 @@ export default async function BlogPostPage({
           </div>
           {post.cover && (
             <figure>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
+              <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
               <Image
                 src={post.cover}
                 alt={post.coverAlt}
                 fill
                 sizes="(min-width: 1024px) 34rem, 100vw"
                 priority
-                className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                className="photo-media object-cover"
               />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/20 via-transparent to-transparent" />
               </div>
@@ -183,13 +183,13 @@ export default async function BlogPostPage({
                 <Link key={r.slug} href={`/blog/${r.slug}`} className="group">
                   <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
                     {r.cover && (
-                      <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+                      <div className="photo-frame relative aspect-[16/9] overflow-hidden bg-surface-2">
                         <Image
                           src={r.cover}
                           alt={r.coverAlt}
                           fill
                           sizes="(min-width: 768px) 22rem, 100vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="photo-media object-cover"
                         />
                       </div>
                     )}

@@ -76,14 +76,14 @@ export default async function ServiceDetailPage({
               </div>
             </div>
 
-            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
+            <div className="photo-frame relative aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
               <Image
                 src={images[service.slug].src}
                 alt={images[service.slug].alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 28rem, 100vw"
-                className="object-cover"
+                className="photo-media object-cover"
               />
             </div>
           </div>
@@ -173,13 +173,13 @@ export default async function ServiceDetailPage({
             {others.map((other) => (
               <Link key={other.slug} href={`/services/${other.slug}`} className="group">
                 <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
-                  <div className="relative aspect-16/9 overflow-hidden bg-surface-2">
+                  <div className="photo-frame relative aspect-16/9 overflow-hidden bg-surface-2">
                     <Image
                       src={images[other.slug].src}
                       alt={images[other.slug].alt}
                       fill
                       sizes="(min-width: 768px) 24rem, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="photo-media object-cover"
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">

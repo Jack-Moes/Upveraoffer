@@ -62,13 +62,13 @@ export default function BookPage() {
                 </ul>
               </Card>
 
-              <div className="relative aspect-4/3 overflow-hidden rounded-card border border-border bg-surface-2">
+              <div className="photo-frame relative aspect-4/3 overflow-hidden rounded-card border border-border bg-surface-2">
                 <Image
                   src={images.coachingSession.src}
                   alt={images.coachingSession.alt}
                   fill
                   sizes="(min-width: 1024px) 22rem, 100vw"
-                  className="object-cover"
+                  className="photo-media object-cover"
                 />
               </div>
 

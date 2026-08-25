@@ -45,7 +45,6 @@ export const testimonials: Testimonial[] = [
     service: "Résumé & CV",
     outcome: "4 interviews in 3 weeks",
     rating: 5,
-    photo: "/images/people/a1.jpg",
   },
   {
     quote:
@@ -55,7 +54,6 @@ export const testimonials: Testimonial[] = [
     service: "Interview Prep",
     outcome: "Offer accepted",
     rating: 5,
-    photo: "/images/people/a2.jpg",
   },
   {
     quote:
@@ -65,7 +63,6 @@ export const testimonials: Testimonial[] = [
     service: "Coding Tests",
     outcome: "Passed on-site assessment",
     rating: 5,
-    photo: "/images/people/a3.jpg",
   },
   {
     quote:
@@ -75,7 +72,6 @@ export const testimonials: Testimonial[] = [
     service: "Everything",
     outcome: "Offer in 8 weeks",
     rating: 5,
-    photo: "/images/people/a4.jpg",
   },
   {
     quote:

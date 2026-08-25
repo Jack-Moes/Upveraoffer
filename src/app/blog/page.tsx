@@ -129,8 +129,8 @@ export default function BlogIndexPage() {
                   </span>
                 </div>
                 {featured.cover && (
-                  <div className="relative min-h-80 overflow-hidden lg:min-h-[32rem]">
-                    <Image src={featured.cover} alt={featured.coverAlt} fill sizes="(min-width: 1024px) 40rem, 100vw" priority className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                  <div className="photo-frame relative min-h-80 overflow-hidden lg:min-h-[32rem]">
+                    <Image src={featured.cover} alt={featured.coverAlt} fill sizes="(min-width: 1024px) 40rem, 100vw" priority className="photo-media object-cover" />
                     <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/50 via-transparent to-transparent lg:bg-linear-to-r lg:from-ink/45 lg:to-transparent" />
                   </div>
                 )}
@@ -143,8 +143,8 @@ export default function BlogIndexPage() {
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                     <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
                       {post.cover && (
-                        <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
-                          <Image src={post.cover} alt={post.coverAlt} fill sizes="(min-width: 768px) 34rem, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
+                        <div className="photo-frame relative aspect-[16/9] overflow-hidden bg-surface-2">
+                          <Image src={post.cover} alt={post.coverAlt} fill sizes="(min-width: 768px) 34rem, 100vw" className="photo-media object-cover" />
                           <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-ink/75 px-3 py-1.5 font-mono text-xs text-white backdrop-blur">0{index + 2}</span>
                         </div>
                       )}

@@ -25,19 +25,40 @@ export const images = {
     creditUrl:
       "https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U",
   },
-  developerOffice: {
-    src: "/images/workplace/developers-office.jpg",
-    alt: "Software developers working at laptops and large monitors in a shared office",
-    credit: "cottonbro studio",
+  seniorTeam: {
+    src: "/images/workplace/senior-team-laptops.jpg",
+    alt: "Four software professionals collaborating around a table with their laptops open",
+    credit: "Ofspace LLC, Culture",
     creditUrl:
-      "https://www.pexels.com/photo/men-sitting-at-the-desks-in-an-office-and-using-computers-6804068/",
+      "https://www.pexels.com/photo/man-people-woman-desk-8128190/",
   },
   workshop: {
-    src: "/images/workplace/workshop-audience.jpg",
-    alt: "An engaged audience attending a practical workshop in a modern office",
-    credit: "Viridiana Rivera",
+    src: "/images/workplace/modern-workshop.jpg",
+    alt: "Professionals taking notes during a focused business workshop",
+    credit: "Pavel Danilyuk",
     creditUrl:
-      "https://www.pexels.com/photo/business-workshop-with-engaged-audience-29581807/",
+      "https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/",
+  },
+  seniorEngineer: {
+    src: "/images/workplace/senior-engineer.jpg",
+    alt: "An Asian software professional working on a laptop at a bright office table",
+    credit: "Kindel Media",
+    creditUrl:
+      "https://www.pexels.com/photo/man-using-a-laptop-at-the-office-7651656/",
+  },
+  officeExterior: {
+    src: "/images/workplace/office-exterior.jpg",
+    alt: "A contemporary glass office building framed by trees in warm evening light",
+    credit: "Musa Nicholas Dibal",
+    creditUrl:
+      "https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/",
+  },
+  officeInterior: {
+    src: "/images/workplace/office-interior.jpg",
+    alt: "A refined modern conference room with glass walls and a marble table",
+    credit: "Essentia Media",
+    creditUrl:
+      "https://www.pexels.com/photo/elegant-modern-office-interior-design-with-glass-walls-33342712/",
   },
   coachingSession: {
     src: "/images/workplace/laptop-session.jpg",
@@ -72,10 +93,11 @@ export const images = {
     creditUrl: "https://unsplash.com/@kellysikkema",
   },
   resume: {
-    src: "/images/services/resume.jpg",
-    alt: "Printed pages laid out on a wooden desk",
-    credit: "pure julia",
-    creditUrl: "https://unsplash.com/@purejulia",
+    src: "/images/services/resume-review.jpg",
+    alt: "A professional reviewing an application document beside an open laptop",
+    credit: "Sora Shimazaki",
+    creditUrl:
+      "https://www.pexels.com/photo/woman-filling-job-application-form-in-office-with-boss-5668858/",
   },
   interview: {
     src: "/images/services/interview.jpg",

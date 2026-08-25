@@ -91,14 +91,14 @@ export default function HomePage() {
 
             {/* Team photograph with the four-stage journey card overlapping it. */}
             <div className="fade-up-delay relative lg:pl-10">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
+              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
                 <Image
                   src={images.teamMeeting.src}
                   alt={images.teamMeeting.alt}
                   fill
                   priority
                   sizes="(min-width: 1024px) 42rem, 100vw"
-                  className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  className="photo-media object-cover"
                 />
                 {/* Warms the photo toward the brand and lifts card contrast. */}
                 <div
@@ -187,13 +187,13 @@ export default function HomePage() {
                 key={service.slug}
                 className="group flex flex-col overflow-hidden p-0 hover:border-primary/40"
               >
-                <div className="relative aspect-16/10 overflow-hidden bg-surface-2">
+                <div className="photo-frame relative aspect-16/10 overflow-hidden bg-surface-2">
                   <Image
                     src={images[service.slug].src}
                     alt={images[service.slug].alt}
                     fill
                     sizes="(min-width: 1024px) 22rem, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="photo-media object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
@@ -240,13 +240,13 @@ export default function HomePage() {
                 The full process
               </ButtonLink>
 
-                <div className="relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10 lg:block">
+                <div className="photo-frame relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10 lg:block">
                   <Image
                     src={images.coachingSession.src}
                   alt={images.coachingSession.alt}
                   fill
                   sizes="30rem"
-                  className="object-cover"
+                  className="photo-media object-cover"
                 />
               </div>
             </div>
@@ -385,13 +385,13 @@ export default function HomePage() {
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                   <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
                     {post.cover && (
-                      <div className="relative aspect-[16/9] overflow-hidden bg-surface-2">
+                      <div className="photo-frame relative aspect-[16/9] overflow-hidden bg-surface-2">
                         <Image
                           src={post.cover}
                           alt={post.coverAlt}
                           fill
                           sizes="(min-width: 768px) 22rem, 100vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="photo-media object-cover"
                         />
                       </div>
                     )}
