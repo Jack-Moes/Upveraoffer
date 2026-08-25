@@ -39,7 +39,6 @@ Upveraoffer.
 | `workplace/laptop-session-v2.jpg` | Home, About, Process, and Booking | AI-assisted edit of a photo by Antoni Shkraba | [Pexels original](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
 | `workplace/modern-workshop.jpg` | Services | Pavel Danilyuk | [Pexels](https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/) | Pexels License |
 | `workplace/office-exterior.jpg` | About | Musa Nicholas Dibal | [Pexels](https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/) | Pexels License |
-| `workplace/office-interior.jpg` | About | Essentia Media | [Pexels](https://www.pexels.com/photo/elegant-modern-office-interior-design-with-glass-walls-33342712/) | Pexels License |
 
 ## Company identity composites
 
@@ -53,6 +52,7 @@ created with an AI-assisted image workflow and reviewed before publication.
 | `workplace/team-code-review.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 | `workplace/founder-workstation.jpg` | About and Contact | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 | `workplace/team-tech-event.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
+| `workplace/team-equipment-interior.jpg` | About interior | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 
 ## About the Unsplash License
 

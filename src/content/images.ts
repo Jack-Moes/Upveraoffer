@@ -57,11 +57,10 @@ export const images = {
       "https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/",
   },
   officeInterior: {
-    src: "/images/workplace/office-interior.jpg",
-    alt: "A refined modern conference room with glass walls and a marble table",
-    credit: "Essentia Media",
-    creditUrl:
-      "https://www.pexels.com/photo/elegant-modern-office-interior-design-with-glass-walls-33342712/",
+    src: "/images/workplace/team-equipment-interior.jpg",
+    alt: "The founder and three developers in an office with a desktop tower, dual monitors, TV, Mac and Dell laptops, and printer",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
   },
   coachingSession: {
     src: "/images/workplace/laptop-session-v2.jpg",
