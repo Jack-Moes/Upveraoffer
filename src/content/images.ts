@@ -118,8 +118,8 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamDinner: {
-    src: "/images/workplace/team-dinner-v2.jpg",
-    alt: "Three Upveraoffer developers sharing an early dinner after an event",
+    src: "/images/workplace/team-dinner-manager-v3.jpg",
+    alt: "Upveraoffer's founder and three senior developers sharing dinner after an event",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
