@@ -9,7 +9,7 @@ import { images } from "@/content/images";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn how Upveraoffer's six-person Houston team approaches resume writing, interview preparation, technical coaching, and customer assistance.",
+    "Learn how Upveraoffer's seven-person Houston team approaches resume writing, interview preparation, technical coaching, and customer assistance.",
   alternates: { canonical: "/about" },
 };
 
@@ -82,6 +82,11 @@ const teammateProfiles = [
   },
   {
     image: images.usCustomerAssistance,
+    label: "Customer assistance",
+    detail: "U.S.-based · Client care",
+  },
+  {
+    image: images.chineseCustomerAssistance,
     label: "Customer assistance",
     detail: "U.S.-based · Client care",
   },
@@ -173,7 +178,7 @@ export default function AboutPage() {
                 About Upveraoffer
               </p>
               <h1 className="mt-6 max-w-xl font-display text-5xl font-semibold leading-[1.03] sm:text-6xl">
-                Six people. One clear standard for feedback.
+                Seven people. One clear standard for feedback.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70 sm:text-xl">
                 We are a small Houston team that helps technical candidates find
@@ -245,7 +250,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-8 grid grid-cols-3 gap-3">
                 {[
-                  ["6", "People"],
+                  ["7", "People"],
                   ["1:1", "Coaching"],
                   ["24h", "Follow-up"],
                 ].map(([value, label]) => (
@@ -265,7 +270,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="The team"
-              title="Four senior developers. Two customer-assistance specialists."
+              title="Four senior developers. Three customer-assistance specialists."
               intro="We keep the team small so context never gets lost between a resume review, an interview session, technical practice, and the questions that come up between calls."
             />
             <p className="max-w-xs text-sm leading-relaxed text-muted">
@@ -300,7 +305,7 @@ export default function AboutPage() {
                   {site.founder.bio}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Senior software engineer", "Team of six", "Client work oversight"].map(
+                  {["Senior software engineer", "Team of seven", "Client work oversight"].map(
                     (label) => (
                       <span
                         key={label}
@@ -321,7 +326,7 @@ export default function AboutPage() {
                 The rest of the team
               </p>
               <h3 className="mt-3 font-display text-2xl font-semibold">
-                Three senior developers. Two customer-assistance specialists.
+                Three senior developers. Three customer-assistance specialists.
               </h3>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted">
@@ -329,7 +334,7 @@ export default function AboutPage() {
               the final practice session.
             </p>
           </div>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {teammateProfiles.map((member) => (
               <figure
                 key={member.image.src}
