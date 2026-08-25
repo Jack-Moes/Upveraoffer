@@ -9,7 +9,7 @@ import { images } from "@/content/images";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn how Upveraoffer's four-person Houston team approaches resume writing, interview preparation, and technical coaching.",
+    "Learn how Upveraoffer's six-person Houston team approaches resume writing, interview preparation, technical coaching, and customer assistance.",
   alternates: { canonical: "/about" },
 };
 
@@ -59,7 +59,7 @@ const beliefs = [
   },
 ];
 
-const developerProfiles = [
+const teammateProfiles = [
   {
     image: images.indianDeveloper,
     label: "Senior developer",
@@ -74,6 +74,16 @@ const developerProfiles = [
     image: images.chineseDeveloper,
     label: "Senior developer",
     detail: "U.S.-based · Core team",
+  },
+  {
+    image: images.indianCustomerAssistance,
+    label: "Customer assistance",
+    detail: "U.S.-based · Client care",
+  },
+  {
+    image: images.usCustomerAssistance,
+    label: "Customer assistance",
+    detail: "U.S.-based · Client care",
   },
 ];
 
@@ -163,7 +173,7 @@ export default function AboutPage() {
                 About Upveraoffer
               </p>
               <h1 className="mt-6 max-w-xl font-display text-5xl font-semibold leading-[1.03] sm:text-6xl">
-                Four people. One clear standard for feedback.
+                Six people. One clear standard for feedback.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70 sm:text-xl">
                 We are a small Houston team that helps technical candidates find
@@ -235,7 +245,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-8 grid grid-cols-3 gap-3">
                 {[
-                  ["4", "People"],
+                  ["6", "People"],
                   ["1:1", "Coaching"],
                   ["24h", "Follow-up"],
                 ].map(([value, label]) => (
@@ -255,8 +265,8 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="The team"
-              title="Four senior developers. One shared method."
-              intro="We keep the team small so context never gets lost between a resume review, an interview session, and technical practice."
+              title="Four senior developers. Two customer-assistance specialists."
+              intro="We keep the team small so context never gets lost between a resume review, an interview session, technical practice, and the questions that come up between calls."
             />
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               Based in {site.location}. Working with candidates across U.S. and
@@ -290,7 +300,7 @@ export default function AboutPage() {
                   {site.founder.bio}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Senior software engineer", "Team of four", "Client work oversight"].map(
+                  {["Senior software engineer", "Team of six", "Client work oversight"].map(
                     (label) => (
                       <span
                         key={label}
@@ -311,7 +321,7 @@ export default function AboutPage() {
                 The rest of the team
               </p>
               <h3 className="mt-3 font-display text-2xl font-semibold">
-                Three senior developers, three distinct perspectives.
+                Three senior developers. Two customer-assistance specialists.
               </h3>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted">
@@ -319,8 +329,8 @@ export default function AboutPage() {
               the final practice session.
             </p>
           </div>
-          <div className="mt-6 grid gap-5 sm:grid-cols-3">
-            {developerProfiles.map((member) => (
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {teammateProfiles.map((member) => (
               <figure
                 key={member.image.src}
                 className="group overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-lg shadow-primary/5"
@@ -330,7 +340,7 @@ export default function AboutPage() {
                     src={member.image.src}
                     alt={member.image.alt}
                     fill
-                    sizes="(min-width: 640px) 33vw, 100vw"
+                    sizes="(min-width: 1024px) 14rem, (min-width: 640px) 50vw, 100vw"
                     className="photo-media object-cover"
                   />
                 </div>

@@ -89,7 +89,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Team photograph with the four-stage journey card overlapping it. */}
+            {/* Team photograph with the journey card overlapping it. */}
             <div className="fade-up-delay relative lg:pl-10">
               <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
                 <Image
