@@ -2,35 +2,47 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 
-/**
- * Wordmark + mark. The mark is an ascending bar chart resolving into an
- * upward arrow — "up" and "offer" in one shape.
- */
+/** Wordmark + mark. A continuous U rises into an arrow: momentum, made clear. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" className={cn("h-8 w-8", className)}>
-      <rect width="32" height="32" rx="9" className="fill-primary" />
-      <path
-        d="M9 21.5v-4.2M15.5 21.5v-7.4M22 21.5v-2"
-        stroke="currentColor"
-        className="text-primary-foreground/55"
-        strokeWidth="2.4"
-        strokeLinecap="round"
+      <defs>
+        <linearGradient
+          id="upvera-mark"
+          x1="5"
+          y1="4"
+          x2="27"
+          y2="29"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#7C5CFC" />
+          <stop offset="1" stopColor="#4A38CC" />
+        </linearGradient>
+      </defs>
+      <rect width="32" height="32" rx="9.5" fill="url(#upvera-mark)" />
+      <rect
+        x="0.75"
+        y="0.75"
+        width="30.5"
+        height="30.5"
+        rx="8.75"
+        fill="none"
+        stroke="white"
+        strokeOpacity="0.16"
+        strokeWidth="1.5"
       />
       <path
-        d="M9.5 17 15.5 11.5 19 14.5 24 9.5"
-        stroke="currentColor"
-        className="text-primary-foreground"
-        strokeWidth="2.4"
+        d="M8.75 9.75v7.9c0 4.2 2.65 6.85 6.65 6.85s6.6-2.65 6.6-6.85V9.8"
+        stroke="white"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
       />
       <path
-        d="M20 9.5h4.5V14"
-        stroke="currentColor"
-        className="text-primary-foreground"
-        strokeWidth="2.4"
+        d="m17.75 13.85 4.25-4.2 4.25 4.2"
+        stroke="white"
+        strokeWidth="2.7"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
@@ -44,13 +56,13 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "inline-flex items-center gap-2.5 rounded-lg font-display text-lg font-semibold tracking-tight text-foreground",
+        "inline-flex items-center gap-2.5 rounded-lg font-display text-[1.05rem] font-semibold tracking-[-0.025em] text-foreground",
         className,
       )}
       aria-label={`${site.name} — home`}
     >
-      <LogoMark />
-      <span>
+      <LogoMark className="h-9 w-9" />
+      <span className="leading-none">
         Upvera<span className="text-primary">offer</span>
       </span>
     </Link>

@@ -59,6 +59,24 @@ const beliefs = [
   },
 ];
 
+const developerProfiles = [
+  {
+    image: images.indianDeveloper,
+    label: "Senior developer",
+    detail: "U.S.-based · Core team",
+  },
+  {
+    image: images.vietnameseDeveloper,
+    label: "Senior developer",
+    detail: "U.S.-based · Core team",
+  },
+  {
+    image: images.chineseDeveloper,
+    label: "Senior developer",
+    detail: "U.S.-based · Core team",
+  },
+];
+
 const gallery = [
   {
     image: images.teamHoliday,
@@ -87,6 +105,34 @@ const gallery = [
     title: "Room to reset",
     layout: "lg:col-span-5",
     frame: "aspect-[4/3]",
+  },
+  {
+    image: images.teamLounge,
+    kicker: "Between sessions",
+    title: "Conversation without an agenda",
+    layout: "lg:col-span-6",
+    frame: "aspect-[3/2]",
+  },
+  {
+    image: images.teamVolunteer,
+    kicker: "In the community",
+    title: "Useful work beyond our own",
+    layout: "lg:col-span-6",
+    frame: "aspect-[3/2]",
+  },
+  {
+    image: images.teamGolf,
+    kicker: "Weekend round",
+    title: "Focus of a different kind",
+    layout: "lg:col-span-5",
+    frame: "aspect-[3/2]",
+  },
+  {
+    image: images.teamDinner,
+    kicker: "After hours",
+    title: "A table worth slowing down for",
+    layout: "lg:col-span-7",
+    frame: "aspect-[3/2]",
   },
 ];
 
@@ -251,6 +297,45 @@ export default function AboutPage() {
             </div>
           </div>
 
+          <div className="mt-12 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                The rest of the team
+              </p>
+              <h3 className="mt-3 font-display text-2xl font-semibold">
+                Three senior developers, three distinct perspectives.
+              </h3>
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-muted">
+              The same people stay close to the work from the first review through
+              the final practice session.
+            </p>
+          </div>
+          <div className="mt-6 grid gap-5 sm:grid-cols-3">
+            {developerProfiles.map((member) => (
+              <figure
+                key={member.image.src}
+                className="group overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-lg shadow-primary/5"
+              >
+                <div className="photo-frame relative aspect-[4/5] overflow-hidden bg-surface-2">
+                  <Image
+                    src={member.image.src}
+                    alt={member.image.alt}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="photo-media object-cover"
+                  />
+                </div>
+                <figcaption className="p-5">
+                  <p className="font-display text-lg font-semibold">{member.label}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-subtle">
+                    {member.detail}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
           <p className="mt-12 text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
             What the team covers
           </p>
@@ -277,7 +362,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Life together"
             title="A team should have stories beyond the meeting room."
-            intro="The work stays serious. The people doing it still make time for holidays, new places, open water, and the occasional trail with no agenda attached."
+            intro="The work stays serious. The people doing it still make time for holidays, new places, open water, community work, and the occasional trail with no agenda attached."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-12">
             {gallery.map((item) => (
