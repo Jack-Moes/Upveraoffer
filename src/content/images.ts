@@ -25,18 +25,16 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamMeeting: {
-    src: "/images/workplace/four-men-meeting.jpg",
-    alt: "Four software professionals in a relaxed meeting room with laptops open on the table",
-    credit: "Sidney Zou",
-    creditUrl:
-      "https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U",
+    src: "/images/workplace/team-company-studio.jpg",
+    alt: "The founder and three senior developers reviewing work across Dell and Mac laptops in an equipped studio",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
   },
   seniorTeam: {
-    src: "/images/workplace/senior-team-laptops.jpg",
-    alt: "Four software professionals collaborating around a table with their laptops open",
-    credit: "Ofspace LLC, Culture",
-    creditUrl:
-      "https://www.pexels.com/photo/man-people-woman-desk-8128190/",
+    src: "/images/workplace/team-code-review.jpg",
+    alt: "The founder and three senior developers conducting a focused code review at a dual-monitor desktop workstation",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
   },
   workshop: {
     src: "/images/workplace/modern-workshop.jpg",
@@ -46,11 +44,10 @@ export const images = {
       "https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/",
   },
   seniorEngineer: {
-    src: "/images/workplace/senior-engineer.jpg",
-    alt: "An Asian software professional working on a laptop at a bright office table",
-    credit: "Kindel Media",
-    creditUrl:
-      "https://www.pexels.com/photo/man-using-a-laptop-at-the-office-7651656/",
+    src: "/images/workplace/founder-workstation.jpg",
+    alt: "The founder working at a dual-monitor engineering workstation with a desktop tower and Dell laptop",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
   },
   officeExterior: {
     src: "/images/workplace/office-exterior.jpg",
@@ -74,11 +71,10 @@ export const images = {
       "https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/",
   },
   companyEvent: {
-    src: "/images/workplace/company-event.jpg",
-    alt: "A professional learning event in a bright room with laptops on the tables",
-    credit: "Matheus Bertelli",
-    creditUrl:
-      "https://www.pexels.com/photo/people-during-digital-presentation-18999535/",
+    src: "/images/workplace/team-tech-event.jpg",
+    alt: "The founder presenting a system architecture diagram with three senior developers and an audience",
+    credit: "Upveraoffer",
+    creditUrl: "https://upveraoffer.com",
   },
   hero: {
     src: "/images/site/hero.jpg",

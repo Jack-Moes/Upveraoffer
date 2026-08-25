@@ -36,14 +36,23 @@ Upveraoffer.
 
 | File | Used on | Photographer | Source | Licence |
 |---|---|---|---|---|
-| `workplace/four-men-meeting.jpg` | Home and About hero | Sidney Zou | [Unsplash](https://unsplash.com/photos/four-men-in-a-meeting-room-with-laptops-7cahomYTo1U) | Unsplash License |
 | `workplace/laptop-session-v2.jpg` | Home, About, Process, and Booking | AI-assisted edit of a photo by Antoni Shkraba | [Pexels original](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
-| `workplace/company-event.jpg` | About gallery | Matheus Bertelli | [Pexels](https://www.pexels.com/photo/people-during-digital-presentation-18999535/) | Pexels License |
-| `workplace/senior-team-laptops.jpg` | About gallery | Ofspace LLC, Culture | [Pexels](https://www.pexels.com/photo/man-people-woman-desk-8128190/) | Pexels License |
-| `workplace/senior-engineer.jpg` | About and Contact | Kindel Media | [Pexels](https://www.pexels.com/photo/man-using-a-laptop-at-the-office-7651656/) | Pexels License |
 | `workplace/modern-workshop.jpg` | Services | Pavel Danilyuk | [Pexels](https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/) | Pexels License |
 | `workplace/office-exterior.jpg` | About | Musa Nicholas Dibal | [Pexels](https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/) | Pexels License |
 | `workplace/office-interior.jpg` | About | Essentia Media | [Pexels](https://www.pexels.com/photo/elegant-modern-office-interior-design-with-glass-walls-33342712/) | Pexels License |
+
+## Company identity composites
+
+The founder's identity comes from a company-provided reference photograph.
+The settings, supporting people, clothing, and equipment in these images were
+created with an AI-assisted image workflow and reviewed before publication.
+
+| File | Used on | Identity source | Production | Licence |
+|---|---|---|---|---|
+| `workplace/team-company-studio.jpg` | Home and About hero | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
+| `workplace/team-code-review.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
+| `workplace/founder-workstation.jpg` | About and Contact | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
+| `workplace/team-tech-event.jpg` | About gallery | Company-provided founder portrait | AI-assisted company scene | Company-provided source |
 
 ## About the Unsplash License
 
