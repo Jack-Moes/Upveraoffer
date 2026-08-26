@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { PageHeader, Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { steps, pillars } from "@/content/process";
-import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "How it works",
@@ -22,15 +20,32 @@ export default function ProcessPage() {
       />
 
       <Container className="-mt-8 sm:-mt-10">
-        <div className="photo-frame relative aspect-21/9 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
-          <Image
-            src={images.process.src}
-            alt={images.process.alt}
-            fill
-            priority
-            sizes="(min-width: 1152px) 72rem, 100vw"
-            className="photo-media object-cover"
-          />
+        <div className="editorial-grid relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink p-6 text-ink-foreground shadow-2xl shadow-primary/10 sm:p-9 lg:p-12">
+          <div aria-hidden="true" className="absolute -right-24 -top-32 h-80 w-80 rounded-full border border-primary/25" />
+          <div className="relative flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-7">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-primary-soft">Your engagement map</p>
+              <p className="mt-2 font-display text-2xl font-semibold sm:text-3xl">One clear path from stuck to ready.</p>
+            </div>
+            <span className="rounded-full border border-accent/30 bg-accent/10 px-4 py-2 font-mono text-xs text-accent">Built around your diagnosis</span>
+          </div>
+
+          <ol className="relative mt-8 grid gap-3 lg:grid-cols-4">
+            <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-white/15 lg:block" />
+            {steps.map((step, index) => (
+              <li key={step.number} className="relative rounded-2xl border border-white/10 bg-white/[0.045] p-6 backdrop-blur-sm">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary font-mono text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20">
+                    {step.number}
+                  </span>
+                  <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink-foreground/45">{step.duration}</span>
+                </div>
+                <h2 className="mt-8 font-display text-2xl font-semibold">{step.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-ink-foreground/60">{step.summary}</p>
+                <p className="mt-8 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-primary-soft">Stage {index + 1} of 4</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </Container>
 

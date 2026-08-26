@@ -134,12 +134,6 @@ export const images = {
     credit: "Jan Baborák",
     creditUrl: "https://unsplash.com/@janbaborak",
   },
-  process: {
-    src: "/images/site/process.jpg",
-    alt: "An open notebook, phone and laptop arranged on a white desk",
-    credit: "JESHOOTS.COM",
-    creditUrl: "https://unsplash.com/@jeshoots",
-  },
   consult: {
     src: "/images/site/consult.jpg",
     alt: "A spiral notebook and pen resting on a wooden table",
