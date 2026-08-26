@@ -44,7 +44,7 @@ export default function BlogIndexPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 The Upveraoffer field guide
               </div>
-              <h1 className="mt-7 font-display text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 font-display text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl">
                 Useful advice for the
                 <span className="block bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                   moments that matter.

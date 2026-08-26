@@ -13,7 +13,7 @@ export function Footer() {
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
             Ready when you are
           </p>
-          <p className="mt-5 max-w-5xl font-display text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">
+          <p className="mt-5 max-w-5xl font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
             Better feedback.<br />Fewer wasted applications.
           </p>
         </div>

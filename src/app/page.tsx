@@ -54,7 +54,7 @@ export default function HomePage() {
               <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
                 <span className="h-2 w-2 rounded-full bg-primary" /> Houston-built · Working worldwide
               </p>
-              <h1 className="mt-7 max-w-4xl font-display text-[3.6rem] leading-[.9] sm:text-7xl lg:text-[6.4rem]">
+              <h1 className="mt-7 max-w-4xl font-display text-[3.1rem] leading-[.96] sm:text-6xl lg:text-[5.2rem]">
                 Stop guessing.<br /><span className="text-primary-soft">Find the break.</span>
               </h1>
               <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-foreground/65 sm:text-xl">

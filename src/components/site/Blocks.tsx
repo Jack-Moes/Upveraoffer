@@ -20,7 +20,7 @@ export function PageHeader({
       <Container className="relative py-20 sm:py-28 lg:py-32">
         <div className="max-w-4xl">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          <h1 className="font-display text-5xl leading-[0.98] text-ink-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl leading-[1.02] text-ink-foreground sm:text-5xl lg:text-[4rem]">
             {title}
           </h1>
           {intro && (
@@ -52,7 +52,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
+      <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {intro && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>}
@@ -138,7 +138,7 @@ export function CTABanner({
               <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
                 <span className="h-2 w-2 rounded-full bg-primary" /> Your next move
               </p>
-              <h2 className="font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
+              <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-foreground/65">

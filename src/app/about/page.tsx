@@ -172,7 +172,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-soft">
                 About Upveraoffer
               </p>
-              <h1 className="mt-6 max-w-xl font-display text-5xl font-semibold leading-[1.03] sm:text-6xl">
+              <h1 className="mt-6 max-w-xl font-display text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl">
                 Six people. One clear standard for feedback.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70 sm:text-xl">
