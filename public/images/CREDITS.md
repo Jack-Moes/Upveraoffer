@@ -12,6 +12,21 @@ If you cannot name the licence, do not ship the image.
 | `blog/coding-test.jpg` | Chris Ried | [Unsplash](https://unsplash.com/@cdr6934) | Unsplash License |
 | `blog/story-bank.jpg` | Christina @ wocintechchat.com | [Unsplash](https://unsplash.com/@wocintechchat) | Unsplash License |
 
+## Testimonial avatars
+
+The testimonial profiles are demonstration content. These photorealistic
+portraits are fictional identities created specifically for this design; they
+do not depict customers or imply endorsement by a real person.
+
+| File | Used on | Production | Licence |
+|---|---|---|---|
+| `testimonials/daniel-reyes-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+| `testimonials/priya-nair-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+| `testimonials/marcus-adeyemi-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+| `testimonials/sofia-almeida-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+| `testimonials/tom-whitfield-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+| `testimonials/hannah-kobayashi-v1.jpg` | Testimonial avatar | AI-assisted fictional portrait | Company creative asset |
+
 ## Site and service images
 
 Registered in `src/content/images.ts`, which holds the alt text and credit
