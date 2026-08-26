@@ -64,8 +64,8 @@ export default function BookPage() {
 
               <div className="photo-frame relative aspect-4/3 overflow-hidden rounded-card border border-border bg-surface-2">
                 <Image
-                  src={images.coachingSession.src}
-                  alt={images.coachingSession.alt}
+                  src={images.consult.src}
+                  alt={images.consult.alt}
                   fill
                   sizes="(min-width: 1024px) 22rem, 100vw"
                   className="photo-media object-cover"

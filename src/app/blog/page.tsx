@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { Card, CTABanner } from "@/components/site/Blocks";
 import { getAllPosts, getCategories, formatDate } from "@/lib/blog";
@@ -114,8 +113,9 @@ export default function BlogIndexPage() {
             </div>
 
             <Link href={`/blog/${featured.slug}`} className="group block">
-              <article className="relative grid overflow-hidden rounded-[2rem] bg-ink text-ink-foreground shadow-2xl shadow-primary/10 lg:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative z-10 flex flex-col justify-center p-8 sm:p-12 lg:p-14">
+              <article className="editorial-grid relative overflow-hidden rounded-[2rem] bg-ink text-ink-foreground shadow-2xl shadow-primary/10">
+                <div aria-hidden="true" className="absolute -right-16 -top-28 h-80 w-80 rounded-full border border-primary/25" />
+                <div className="relative z-10 flex min-h-[30rem] max-w-4xl flex-col justify-center p-8 sm:p-12 lg:p-14">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-ink-foreground/60">
                     <span className="rounded-full bg-white/10 px-3 py-1.5 font-medium text-accent">{featured.category}</span>
                     <span>{featured.readingTime} min read</span>
@@ -128,12 +128,6 @@ export default function BlogIndexPage() {
                     Read the guide <Arrow />
                   </span>
                 </div>
-                {featured.cover && (
-                  <div className="photo-frame relative min-h-80 overflow-hidden lg:min-h-[32rem]">
-                    <Image src={featured.cover} alt={featured.coverAlt} fill sizes="(min-width: 1024px) 40rem, 100vw" priority className="photo-media object-cover" />
-                    <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/50 via-transparent to-transparent lg:bg-linear-to-r lg:from-ink/45 lg:to-transparent" />
-                  </div>
-                )}
               </article>
             </Link>
 
@@ -142,13 +136,8 @@ export default function BlogIndexPage() {
                 {rest.map((post, index) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                     <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
-                      {post.cover && (
-                        <div className="photo-frame relative aspect-[16/9] overflow-hidden bg-surface-2">
-                          <Image src={post.cover} alt={post.coverAlt} fill sizes="(min-width: 768px) 34rem, 100vw" className="photo-media object-cover" />
-                          <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-ink/75 px-3 py-1.5 font-mono text-xs text-white backdrop-blur">0{index + 2}</span>
-                        </div>
-                      )}
                       <div className="flex flex-1 flex-col p-7 sm:p-8">
+                        <span className="mb-10 font-mono text-xs text-primary">/0{index + 2}</span>
                         <div className="flex items-center gap-2 text-xs text-subtle">
                           <span className="rounded-full bg-primary-soft px-2.5 py-1 font-medium text-primary">{post.category}</span>
                           <span>{post.readingTime} min read</span>

@@ -42,8 +42,8 @@ export default function ContactPage() {
             <aside className="space-y-5">
               <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
                 <Image
-                  src={images.teamHoliday.src}
-                  alt={images.teamHoliday.alt}
+                  src={images.hero.src}
+                  alt={images.hero.alt}
                   fill
                   sizes="(min-width: 1024px) 24rem, 100vw"
                   className="photo-media object-cover"

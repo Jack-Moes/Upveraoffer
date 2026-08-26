@@ -7,8 +7,7 @@ import { services } from "@/content/services";
 import { steps } from "@/content/process";
 import { currencySymbol } from "@/content/pricing";
 import { images } from "@/content/images";
-import { getPublicPlans, getPublicTestimonials } from "@/lib/managed-content";
-import { TestimonialCard, FeaturedTestimonial } from "@/components/site/Testimonials";
+import { getPublicPlans } from "@/lib/managed-content";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 const stalls = [
@@ -40,7 +39,6 @@ const stalls = [
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
-  const feedback = getPublicTestimonials();
   const plans = getPublicPlans();
 
   return (
@@ -122,13 +120,11 @@ export default function HomePage() {
           <div className="mt-14 grid gap-5 lg:grid-cols-12">
             {services.map((service, index) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className={index === 0 ? "group lg:col-span-6" : "group lg:col-span-3"}>
-                <article className="h-full overflow-hidden rounded-[1.75rem] border border-border bg-background">
-                  <div className="photo-frame relative aspect-[4/3] overflow-hidden bg-surface-2">
-                    <Image src={images[service.slug].src} alt={images[service.slug].alt} fill sizes="(min-width: 1024px) 36rem, 100vw" className="photo-media object-cover" />
-                    <span className="absolute left-4 top-4 rounded-lg bg-background/90 px-3 py-2 font-mono text-xs text-primary backdrop-blur">0{index + 1}</span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-3xl">{service.name}</h3>
+                <article className="editorial-grid relative flex h-full min-h-[23rem] flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background p-7 sm:p-8">
+                  <span className="font-mono text-xs text-primary">/0{index + 1}</span>
+                  <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-primary/20" />
+                  <div className="mt-auto">
+                    <h3 className="font-display text-3xl lg:text-4xl">{service.name}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted">{service.short}</p>
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary">Explore <ArrowRight className="transition-transform group-hover:translate-x-1" /></span>
                   </div>
@@ -158,27 +154,22 @@ export default function HomePage() {
 
       <Section>
         <Container>
-          <div className="grid items-end gap-10 lg:grid-cols-[.75fr_1.25fr]">
+          <div className="grid items-end gap-10 lg:grid-cols-[.8fr_1.2fr]">
             <div>
               <SectionHeading eyebrow="The people" title="Small enough to remember the whole story." intro="Four senior developers and two customer-assistance specialists. Your context does not disappear between calls." />
               <ButtonLink href="/about" variant="secondary" className="mt-8">Meet all six</ButtonLink>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="photo-frame relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-surface-2"><Image src={images.teamHoliday.src} alt={images.teamHoliday.alt} fill sizes="30rem" className="photo-media object-cover" /></div>
-              <div className="photo-frame relative mt-12 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-surface-2"><Image src={images.teamHike.src} alt={images.teamHike.alt} fill sizes="30rem" className="photo-media object-cover" /></div>
+            <div className="grid gap-px overflow-hidden rounded-[2rem] border border-border bg-border sm:grid-cols-3">
+              {[["4", "Senior engineers"], ["2", "Client-care specialists"], ["1", "Shared client context"]].map(([value, label]) => (
+                <div key={label} className="flex min-h-56 flex-col justify-between bg-surface p-7 sm:p-8">
+                  <span className="font-mono text-xs uppercase tracking-[.14em] text-primary">Team structure</span>
+                  <div><p className="font-display text-6xl text-foreground">{value}</p><p className="mt-3 text-sm leading-relaxed text-muted">{label}</p></div>
+                </div>
+              ))}
             </div>
           </div>
         </Container>
       </Section>
-
-      {feedback.length > 0 && (
-        <Section className="border-y border-border bg-surface">
-          <Container>
-            <SectionHeading eyebrow="Client evidence" title="Specific feedback creates specific progress." intro="Published only with the client's written permission." />
-            <div className="mt-12 space-y-5"><FeaturedTestimonial t={feedback[0]} />{feedback.length > 1 && <div className="grid gap-5 md:grid-cols-3">{feedback.slice(1, 4).map((testimonial) => <TestimonialCard key={testimonial.quote} t={testimonial} />)}</div>}</div>
-          </Container>
-        </Section>
-      )}
 
       <Section>
         <Container>
@@ -203,11 +194,12 @@ export default function HomePage() {
           <Container>
             <div className="flex flex-wrap items-end justify-between gap-8"><SectionHeading eyebrow="Field notes" title="Useful before you ever hire us." intro="Clear thinking for résumés, interviews, and technical screens." /><ButtonLink href="/blog" variant="secondary">Read all notes</ButtonLink></div>
             <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <article className="h-full overflow-hidden rounded-[1.75rem] border border-border bg-background">
-                    {post.cover && <div className="photo-frame relative aspect-[16/10] overflow-hidden"><Image src={post.cover} alt={post.coverAlt} fill sizes="(min-width: 768px) 24rem, 100vw" className="photo-media object-cover" /></div>}
-                    <div className="p-6"><p className="font-mono text-xs text-primary">{post.category} · {post.readingTime} min</p><h3 className="mt-4 font-display text-2xl leading-tight group-hover:text-primary">{post.title}</h3><p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p></div>
+                  <article className="relative flex h-full min-h-72 flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background p-6">
+                    <span className="font-mono text-xs text-primary">/0{index + 1}</span>
+                    <div aria-hidden="true" className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-accent/15" />
+                    <div className="mt-auto"><p className="font-mono text-xs text-primary">{post.category} · {post.readingTime} min</p><h3 className="mt-4 font-display text-2xl leading-tight group-hover:text-primary">{post.title}</h3><p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p></div>
                   </article>
                 </Link>
               ))}

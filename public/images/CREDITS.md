@@ -34,8 +34,8 @@ for each one.
 
 | File | Used on | Photographer | Source | Licence |
 |---|---|---|---|---|
-| `site/hero.jpg` | Home hero | Jan Baborák | [Unsplash](https://unsplash.com/@janbaborak) | Unsplash License |
-| `site/process.jpg` | Home, `/process` | JESHOOTS.COM | [Unsplash](https://unsplash.com/@jeshoots) | Unsplash License |
+| `site/hero.jpg` | Contact sidebar | Jan Baborák | [Unsplash](https://unsplash.com/@janbaborak) | Unsplash License |
+| `site/process.jpg` | `/process` | JESHOOTS.COM | [Unsplash](https://unsplash.com/@jeshoots) | Unsplash License |
 | `site/consult.jpg` | `/book` | Kelly Sikkema | [Unsplash](https://unsplash.com/@kellysikkema) | Unsplash License |
 | `site/founder-team-manager.jpg` | About founder profile | Upveraoffer identity reference, AI-assisted environmental portrait | Provided by the company | Company-provided source |
 | `services/resume-review.jpg` | Résumé service | Sora Shimazaki | [Pexels](https://www.pexels.com/photo/woman-filling-job-application-form-in-office-with-boss-5668858/) | Pexels License |
@@ -51,7 +51,7 @@ Upveraoffer.
 
 | File | Used on | Photographer | Source | Licence |
 |---|---|---|---|---|
-| `workplace/laptop-session-v2.jpg` | Home, About, Process, and Booking | AI-assisted edit of a photo by Antoni Shkraba | [Pexels original](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
+| `workplace/laptop-session-v2.jpg` | Archive; not currently rendered | AI-assisted edit of a photo by Antoni Shkraba | [Pexels original](https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/) | Pexels License |
 | `workplace/modern-workshop.jpg` | Services | Pavel Danilyuk | [Pexels](https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/) | Pexels License |
 | `workplace/office-exterior.jpg` | About | Musa Nicholas Dibal | [Pexels](https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/) | Pexels License |
 
@@ -90,12 +90,12 @@ follow the company's creative direction and were reviewed before publication.
 | `workplace/team-volunteer-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-golf-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-dinner-v4.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-company-studio-v5.jpg` | Home and About hero | Complete six-person team | AI-assisted company scene | Company creative asset |
-| `workplace/team-equipment-interior-v5.jpg` | About interior | Complete six-person team | AI-assisted company scene | Company creative asset |
-| `workplace/team-holiday-square-v5.jpg` | Home, About gallery, and Contact | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-company-studio-v5.jpg` | Home hero | Complete six-person team | AI-assisted company scene | Company creative asset |
+| `workplace/team-equipment-interior-v5.jpg` | About hero | Complete six-person team | AI-assisted company scene | Company creative asset |
+| `workplace/team-holiday-square-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-sightseeing-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-sailing-offsite-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-hike-overlook-v5.jpg` | Home and About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-hike-overlook-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-lounge-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-volunteer-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-golf-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |

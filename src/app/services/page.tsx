@@ -50,15 +50,6 @@ export default function ServicesPage() {
                 className="grid gap-8 rounded-card border border-border bg-background p-7 sm:p-9 lg:grid-cols-[1fr_1.2fr]"
               >
                 <div>
-                  <div className="photo-frame relative mb-7 aspect-16/9 overflow-hidden rounded-2xl bg-surface-2">
-                    <Image
-                      src={images[service.slug].src}
-                      alt={images[service.slug].alt}
-                      fill
-                      sizes="(min-width: 1024px) 26rem, 100vw"
-                      className="photo-media object-cover"
-                    />
-                  </div>
                   <IconBadge icon={service.icon} />
                   <h2 className="mt-5 font-display text-2xl font-semibold">
                     {service.name}

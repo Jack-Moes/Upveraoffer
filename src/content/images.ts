@@ -92,13 +92,6 @@ export const images = {
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
-  coachingSession: {
-    src: "/images/workplace/laptop-session-v2.jpg",
-    alt: "Two professionals reviewing work together on a laptop at an office table",
-    credit: "Antoni Shkraba",
-    creditUrl:
-      "https://www.pexels.com/photo/employees-using-a-laptop-in-the-office-7163386/",
-  },
   teamSailing: {
     src: "/images/workplace/team-sailing-offsite-v5.jpg",
     alt: "Upveraoffer's six-person team working together aboard a sailboat",

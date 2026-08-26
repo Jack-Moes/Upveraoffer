@@ -196,8 +196,8 @@ export default function AboutPage() {
             <figure className="fade-up-delay">
               <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
                 <Image
-                  src={images.teamMeeting.src}
-                  alt={images.teamMeeting.alt}
+                  src={images.officeInterior.src}
+                  alt={images.officeInterior.alt}
                   fill
                   priority
                   sizes="(min-width: 1024px) 44rem, 100vw"
@@ -217,8 +217,8 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
               <Image
-                src={images.officeInterior.src}
-                alt={images.officeInterior.alt}
+                src={images.officeExterior.src}
+                alt={images.officeExterior.alt}
                 fill
                 sizes="(min-width: 1024px) 38rem, 100vw"
                 className="photo-media object-cover"
@@ -454,7 +454,7 @@ export default function AboutPage() {
 
       <Section className="border-y border-border bg-ink text-ink-foreground">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-soft">
                 Space to think
@@ -467,25 +467,17 @@ export default function AboutPage() {
                 that move a search forward. No theater, no crowded handoffs.
               </p>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 sm:grid-cols-3">
               {[
-                { image: images.officeExterior, label: "Arrival" },
-                { image: images.officeInterior, label: "Workspace" },
-              ].map((item) => (
-                <figure key={item.label}>
-                  <div className="photo-frame relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
-                    <Image
-                      src={item.image.src}
-                      alt={item.image.alt}
-                      fill
-                      sizes="(min-width: 640px) 22rem, 100vw"
-                      className="photo-media object-cover"
-                    />
-                  </div>
-                  <figcaption className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-ink-foreground/50">
-                    {item.label}
-                  </figcaption>
-                </figure>
+                ["Quiet", "Protected time for deep review"],
+                ["Direct", "One owner from diagnosis to follow-up"],
+                ["Practical", "Every session ends with the next action"],
+              ].map(([title, body], index) => (
+                <div key={title} className="bg-ink p-7 sm:min-h-56 sm:p-8">
+                  <span className="font-mono text-xs text-primary-soft">/0{index + 1}</span>
+                  <h3 className="mt-12 font-display text-2xl font-bold">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-foreground/55">{body}</p>
+                </div>
               ))}
             </div>
           </div>

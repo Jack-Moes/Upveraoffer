@@ -173,15 +173,6 @@ export default async function ServiceDetailPage({
             {others.map((other) => (
               <Link key={other.slug} href={`/services/${other.slug}`} className="group">
                 <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
-                  <div className="photo-frame relative aspect-16/9 overflow-hidden bg-surface-2">
-                    <Image
-                      src={images[other.slug].src}
-                      alt={images[other.slug].alt}
-                      fill
-                      sizes="(min-width: 768px) 24rem, 100vw"
-                      className="photo-media object-cover"
-                    />
-                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     <IconBadge icon={other.icon} />
                     <h3 className="mt-5 font-display text-lg font-semibold group-hover:text-primary">
