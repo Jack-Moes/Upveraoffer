@@ -62,17 +62,17 @@ const beliefs = [
 const teammateProfiles = [
   {
     image: images.indianDeveloper,
-    label: "Senior developer",
+    label: "Senior Backend Engineer",
     detail: "U.S.-based · Core team",
   },
   {
     image: images.vietnameseDeveloper,
-    label: "Senior developer",
+    label: "Senior AI Engineer",
     detail: "U.S.-based · Core team",
   },
   {
     image: images.chineseDeveloper,
-    label: "Senior developer",
+    label: "Senior AI/ML Engineer",
     detail: "U.S.-based · Core team",
   },
   {
