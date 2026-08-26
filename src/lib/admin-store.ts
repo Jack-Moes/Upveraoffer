@@ -30,6 +30,8 @@ export type StoredBooking = {
   email: string;
   requestedDate: string;
   requestedTime: string;
+  /** Canonical UTC start for calendar-based bookings. */
+  slotStart?: string;
   timezone: string;
   service: string;
   notes: string;
