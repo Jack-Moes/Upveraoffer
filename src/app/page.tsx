@@ -68,7 +68,7 @@ export default function HomePage() {
             </div>
 
             <div className="fade-up-delay relative">
-              <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
                 <Image src={images.teamMeeting.src} alt={images.teamMeeting.alt} fill priority sizes="(min-width: 1024px) 42rem, 100vw" className="photo-media object-cover" />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur-md">

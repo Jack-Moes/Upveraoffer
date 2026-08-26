@@ -25,7 +25,7 @@ export default function ServicesPage() {
       />
 
       <Container className="-mt-8 sm:-mt-10">
-        <div className="photo-frame relative aspect-[21/8] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-xl shadow-primary/10">
+        <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-xl shadow-primary/10">
           <Image
             src={images.workshop.src}
             alt={images.workshop.alt}

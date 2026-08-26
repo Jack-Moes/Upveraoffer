@@ -102,7 +102,7 @@ export default async function BlogPostPage({
           </div>
           {post.cover && (
             <figure>
-              <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
+              <div className="photo-frame relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
               <Image
                 src={post.cover}
                 alt={post.coverAlt}

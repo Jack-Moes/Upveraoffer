@@ -63,26 +63,31 @@ const teammateProfiles = [
   {
     image: images.indianDeveloper,
     label: "Senior Backend Engineer",
+    objectClass: "object-cover",
     detail: "U.S.-based · Core team",
   },
   {
     image: images.vietnameseDeveloper,
     label: "Senior AI Engineer",
+    objectClass: "object-cover",
     detail: "U.S.-based · Core team",
   },
   {
     image: images.chineseDeveloper,
     label: "Senior AI/ML Engineer",
+    objectClass: "object-contain",
     detail: "U.S.-based · Core team",
   },
   {
     image: images.indianCustomerAssistance,
     label: "Customer assistance",
+    objectClass: "object-cover",
     detail: "U.S.-based · Client care",
   },
   {
     image: images.usCustomerAssistance,
     label: "Customer assistance",
+    objectClass: "object-cover",
     detail: "U.S.-based · Client care",
   },
 ];
@@ -93,64 +98,48 @@ const gallery = [
     kicker: "Holiday night",
     title: "One last evening before the year wrapped up.",
     note: "Warm drinks, cold weather, and nothing left on the agenda.",
-    layout: "lg:col-span-7",
-    frame: "h-[28rem] lg:h-[34rem]",
   },
   {
     image: images.teamSightseeing,
     kicker: "A day out",
     title: "A new place with no schedule to keep.",
     note: "Phones mostly away. Cameras occasionally out.",
-    layout: "lg:col-span-5",
-    frame: "h-[28rem] lg:h-[34rem]",
   },
   {
     image: images.teamSailing,
     kicker: "On the water",
     title: "An afternoon with the weather in charge.",
     note: "No deck. No stand-up. A very different kind of teamwork.",
-    layout: "lg:col-span-7",
-    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamHike,
     kicker: "Trail day",
     title: "We took the longer route.",
     note: "An early start, a clear day, and a view worth the climb.",
-    layout: "lg:col-span-5",
-    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamLounge,
     kicker: "Slow morning",
     title: "Coffee before anyone made a plan.",
     note: "The conversation lasted longer than the coffee did.",
-    layout: "lg:col-span-6",
-    frame: "h-[25rem] lg:h-[30rem]",
   },
   {
     image: images.teamVolunteer,
     kicker: "Community day",
     title: "An afternoon spent being useful.",
     note: "Packing, sorting, and working alongside local volunteers.",
-    layout: "lg:col-span-6",
-    frame: "h-[25rem] lg:h-[30rem]",
   },
   {
     image: images.teamGolf,
     kicker: "Weekend round",
     title: "Eighteen holes. Zero work talk.",
     note: "The scores stayed private. The photos did not.",
-    layout: "lg:col-span-5",
-    frame: "h-[25rem] lg:h-[29rem]",
   },
   {
     image: images.teamDinner,
     kicker: "Late table",
     title: "The best conversation started after dinner.",
     note: "No occasion required. Just time together at the end of a long week.",
-    layout: "lg:col-span-7",
-    frame: "h-[25rem] lg:h-[29rem]",
   },
 ];
 
@@ -214,8 +203,8 @@ export default function AboutPage() {
 
       <Section id="how-we-work">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+            <div className="photo-frame relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
               <Image
                 src={images.officeExterior.src}
                 alt={images.officeExterior.alt}
@@ -275,7 +264,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 grid overflow-hidden rounded-[2rem] border border-border bg-background shadow-xl shadow-primary/10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="photo-frame relative min-h-[28rem] overflow-hidden bg-surface-2 lg:min-h-[32rem]">
+            <div className="photo-frame relative aspect-[4/5] overflow-hidden bg-surface-2">
               <Image
                 src={images.founderPortrait.src}
                 alt={images.founderPortrait.alt}
@@ -341,7 +330,7 @@ export default function AboutPage() {
                     alt={member.image.alt}
                     fill
                     sizes="(min-width: 1024px) 14rem, (min-width: 640px) 50vw, 100vw"
-                    className="photo-media object-cover"
+                    className={`photo-media ${member.objectClass}`}
                   />
                 </div>
                 <figcaption className="p-5">
@@ -406,46 +395,32 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 lg:mt-10 lg:grid-cols-12 lg:gap-6">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:mt-10">
             {gallery.map((item, index) => (
               <figure
                 key={item.title}
-                className={`group relative ${item.layout}`}
+                className="group overflow-hidden rounded-[2rem] border border-border bg-background shadow-xl shadow-primary/5"
               >
                 <div
-                  className={`photo-frame relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink shadow-2xl shadow-primary/10 ${item.frame}`}
+                  className="photo-frame relative aspect-[3/2] overflow-hidden bg-ink"
                 >
                   <Image
                     src={item.image.src}
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1024px) 58vw, 100vw"
-                    className="photo-media object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-black/15 transition-colors duration-700 group-hover:via-black/5"
+                    className="photo-media object-cover"
                   />
                   <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/15 bg-black/25 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-md sm:left-6 sm:top-6">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent transition-transform duration-500 group-hover:scale-[1.7]" />
                     {String(index + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}
                   </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
-                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-soft">
-                      {item.kicker}
-                    </p>
-                    <h3 className="mt-2 max-w-xl font-display text-2xl font-semibold leading-tight sm:text-3xl">
-                      {item.title}
-                    </h3>
-                    <div className="grid grid-rows-[1fr] transition-[grid-template-rows,opacity,transform] duration-500 ease-out lg:grid-rows-[0fr] lg:opacity-0 lg:translate-y-3 lg:group-hover:grid-rows-[1fr] lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
-                      <div className="overflow-hidden">
-                        <p className="max-w-lg pt-3 text-sm leading-relaxed text-white/70 sm:text-base">
-                          {item.note}
-                        </p>
-                      </div>
-                    </div>
-                  </figcaption>
                 </div>
+                <figcaption className="p-6 sm:p-7">
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary">{item.kicker}</p>
+                  <h3 className="mt-2 max-w-xl font-display text-2xl font-semibold leading-tight">{item.title}</h3>
+                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted">{item.note}</p>
+                </figcaption>
               </figure>
             ))}
           </div>

@@ -76,7 +76,7 @@ export default async function ServiceDetailPage({
               </div>
             </div>
 
-            <div className="photo-frame relative aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5">
+            <div className={`photo-frame relative overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-xl shadow-primary/5 ${service.slug === "resume" ? "aspect-[3/2]" : "aspect-[7/5]"}`}>
               <Image
                 src={images[service.slug].src}
                 alt={images[service.slug].alt}
