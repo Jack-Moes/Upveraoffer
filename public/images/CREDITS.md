@@ -43,7 +43,7 @@ Upveraoffer.
 ## Company identity composites
 
 Where the founder appears, his identity comes from a company-provided reference
-photograph. Six canonical teammate identities and every company-life scene
+photograph. Five canonical teammate identities and every company-life scene
 follow the company's creative direction and were reviewed before publication.
 
 | File | Used on | Identity source | Production | Licence |
@@ -54,7 +54,6 @@ follow the company's creative direction and were reviewed before publication.
 | `people/indian-customer-assistance-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/us-customer-assistance-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/indian-customer-assistance-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `people/chinese-customer-assistance-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `workplace/team-company-studio-v2.jpg` | Home and About hero | Four canonical team identities | AI-assisted company scene | Company creative asset |
 | `workplace/team-equipment-interior-v2.jpg` | About interior | Three canonical developer identities | AI-assisted company scene | Company creative asset |
 | `workplace/team-holiday-square-v2.jpg` | About gallery and Contact | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
@@ -76,16 +75,16 @@ follow the company's creative direction and were reviewed before publication.
 | `workplace/team-volunteer-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-golf-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-dinner-v4.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-company-studio-v4.jpg` | Home and About hero | Complete seven-person team | AI-assisted company scene | Company creative asset |
-| `workplace/team-equipment-interior-v4.jpg` | About interior | Complete seven-person team | AI-assisted company scene | Company creative asset |
-| `workplace/team-holiday-square-v4.jpg` | About gallery and Contact | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sightseeing-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sailing-offsite-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-hike-overlook-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-lounge-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-volunteer-day-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-golf-day-v4.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-dinner-v5.jpg` | About gallery | Complete seven-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-company-studio-v5.jpg` | Home and About hero | Complete six-person team | AI-assisted company scene | Company creative asset |
+| `workplace/team-equipment-interior-v5.jpg` | About interior | Complete six-person team | AI-assisted company scene | Company creative asset |
+| `workplace/team-holiday-square-v5.jpg` | Home, About gallery, and Contact | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sightseeing-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sailing-offsite-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-hike-overlook-v5.jpg` | Home and About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-lounge-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-volunteer-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-golf-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-dinner-v6.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 
 ## About the Unsplash License
 

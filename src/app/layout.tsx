@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Sora, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, JetBrains_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { themeScript } from "@/components/site/ThemeToggle";
 import { site } from "@/content/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -98,7 +99,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${sora.variable} ${jetbrains.variable} h-full`}
+      className={`${manrope.variable} ${instrument.variable} ${jetbrains.variable} h-full`}
     >
       <head>
         {/* Applies the stored theme before first paint to avoid a flash. */}

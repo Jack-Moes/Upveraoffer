@@ -3,9 +3,8 @@ import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink, ArrowRight } from "@/components/ui/Button";
 import { SectionHeading, Card, CTABanner } from "@/components/site/Blocks";
-import { IconBadge } from "@/components/site/ServiceIcon";
 import { services } from "@/content/services";
-import { steps, pillars } from "@/content/process";
+import { steps } from "@/content/process";
 import { currencySymbol } from "@/content/pricing";
 import { images } from "@/content/images";
 import { getPublicPlans, getPublicTestimonials } from "@/lib/managed-content";
@@ -14,27 +13,30 @@ import { getAllPosts, formatDate } from "@/lib/blog";
 
 const stalls = [
   {
-    stage: "You apply and hear nothing",
-    cause:
-      "Your résumé reads like a job description. Screeners and recruiters can't find any evidence that you did the work, so they move on.",
-    fix: "Résumé rebuilt around impact",
+    number: "01",
+    stage: "No replies",
+    signal: "Applications disappear into silence.",
+    diagnosis: "Your résumé is hiding the evidence a recruiter needs to see.",
+    action: "Fix the signal",
     href: "/services/resume",
   },
   {
-    stage: "You interview and lose",
-    cause:
-      "You know the material, but the answers wander, it's never clear what you owned, and the interviewer leaves unconvinced.",
-    fix: "Mock interviews with real feedback",
+    number: "02",
+    stage: "No next round",
+    signal: "The conversation feels fine. The rejection still arrives.",
+    diagnosis: "Your answers are not making ownership and judgment clear.",
+    action: "Rehearse the room",
     href: "/services/interview",
   },
   {
-    stage: "You freeze on the assessment",
-    cause:
-      "Hundreds of practice problems and still a blank screen, because nothing you practiced trained the first two minutes.",
-    fix: "Pattern-first coding coaching",
+    number: "03",
+    stage: "No finished test",
+    signal: "You know the material. The timer changes everything.",
+    diagnosis: "Your practice is training volume, not the first two minutes.",
+    action: "Train the pattern",
     href: "/services/coding-test",
   },
-];
+] as const;
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
@@ -43,374 +45,170 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ---------------------------------------------------------- Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-surface">
-        <div
-          aria-hidden="true"
-          className="ambient-float pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary/10 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-52 left-[-10rem] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl"
-        />
-        <Container className="relative py-20 sm:py-28">
-          <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="paper-noise editorial-grid relative overflow-hidden bg-ink text-ink-foreground">
+        <div aria-hidden="true" className="absolute -right-24 top-8 h-80 w-80 rounded-full border border-primary/25" />
+        <div aria-hidden="true" className="absolute right-16 top-32 h-48 w-48 rounded-full border border-primary/15" />
+        <Container className="relative py-16 sm:py-24 lg:py-28">
+          <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
             <div className="fade-up">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                Now accepting new clients
-              </span>
-
-              <h1 className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.06] sm:text-6xl">
-                From résumé
-                <br />
-                to <span className="text-primary">offer</span>.
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                Upveraoffer is a job search partner for the whole process. The
-                résumé that gets you read, the interviews that get you through,
-                and the coding tests standing between you and the offer.
+              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
+                <span className="h-2 w-2 rounded-full bg-primary" /> Houston-built · Working worldwide
               </p>
-
+              <h1 className="mt-7 max-w-4xl font-display text-[3.6rem] leading-[.9] sm:text-7xl lg:text-[6.4rem]">
+                Stop guessing.<br /><span className="text-primary-soft">Find the break.</span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-foreground/65 sm:text-xl">
+                Upveraoffer diagnoses the exact point your job search is failing—résumé, interview, or coding assessment—then helps you fix that first.
+              </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/book" size="lg">
-                  Book a free consult
-                  <ArrowRight />
-                </ButtonLink>
-                <ButtonLink href="/process" size="lg" variant="secondary">
-                  See how it works
+                <ButtonLink href="/book" size="lg">Book a free diagnostic <ArrowRight /></ButtonLink>
+                <ButtonLink href="/process" size="lg" variant="secondary" className="border-white/20 bg-transparent text-white hover:bg-white/10">
+                  See the method
                 </ButtonLink>
               </div>
-
-              <p className="mt-5 text-sm text-subtle">
-                Thirty minutes, no charge, no obligation. You leave with a written
-                read on where your search actually stands.
-              </p>
+              <p className="mt-5 text-sm text-ink-foreground/40">30 minutes · No charge · Written next steps</p>
             </div>
 
-            {/* Team photograph with the journey card overlapping it. */}
-            <div className="fade-up-delay relative lg:pl-10">
-              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
-                <Image
-                  src={images.teamMeeting.src}
-                  alt={images.teamMeeting.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 42rem, 100vw"
-                  className="photo-media object-cover"
-                />
-                {/* Warms the photo toward the brand and lifts card contrast. */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-linear-to-t from-ink/45 via-transparent to-transparent"
-                />
-                <span className="absolute right-5 top-5 rounded-full border border-white/20 bg-ink/80 px-4 py-2 text-xs font-medium text-white backdrop-blur">
-                  A real working session
-                </span>
-              </div>
-
-              <div className="mt-6 rounded-3xl border border-border bg-background p-6 shadow-xl shadow-primary/5 lg:absolute lg:-left-2 lg:bottom-8 lg:mt-0 lg:w-72 lg:p-7">
-                <p className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
-                  The path
-                </p>
-                <ol className="mt-5 space-y-5">
-                  {steps.map((step, i) => (
-                    <li key={step.number} className="relative flex gap-3.5">
-                      {i < steps.length - 1 && (
-                        <span
-                          aria-hidden="true"
-                          className="absolute left-4 top-8 h-[calc(100%+0.35rem)] w-px bg-border"
-                        />
-                      )}
-                      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-surface font-mono text-[0.65rem] font-semibold text-primary">
-                        {step.number}
-                      </span>
-                      <div className="pt-0.5">
-                        <p className="font-display text-sm font-semibold leading-none">
-                          {step.title}
-                        </p>
-                        <p className="mt-1.5 text-xs leading-relaxed text-muted">
-                          {step.summary}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+            <div className="fade-up-delay relative">
+              <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+                <Image src={images.teamMeeting.src} alt={images.teamMeeting.alt} fill priority sizes="(min-width: 1024px) 42rem, 100vw" className="photo-media object-cover" />
+                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent" />
+                <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur-md">
+                  <div>
+                    <p className="text-xs uppercase tracking-[.16em] text-white/50">The Upveraoffer team</p>
+                    <p className="mt-1 font-display text-2xl">Six people. One standard.</p>
+                  </div>
+                  <span className="shrink-0 rounded-lg bg-primary px-3 py-2 text-xs font-bold text-primary-foreground">Meet the team</span>
+                </div>
               </div>
             </div>
           </div>
         </Container>
+
+        <div className="border-t border-white/10">
+          <Container className="grid grid-cols-2 divide-x divide-white/10 py-0 sm:grid-cols-4">
+            {[["6", "people, one context"], ["1:1", "human coaching"], ["24h", "written follow-up"], ["$149", "packages from"]].map(([value, label]) => (
+              <div key={label} className="px-4 py-6 first:pl-0 sm:px-7">
+                <p className="font-display text-3xl text-primary-soft">{value}</p>
+                <p className="mt-1 text-xs uppercase tracking-[.12em] text-white/40">{label}</p>
+              </div>
+            ))}
+          </Container>
+        </div>
       </section>
 
-      {/* ------------------------------------------------ Where it stalls */}
       <Section>
         <Container>
-          <SectionHeading
-            eyebrow="The problem"
-            title="A job search stalls in one of three places."
-            intro="Each one has a different cause and a different fix. Guessing wrong is what turns a three-month search into a nine-month one."
-          />
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {stalls.map((s) => (
-              <Card key={s.stage} className="flex flex-col">
-                <h3 className="font-display text-lg font-semibold">{s.stage}</h3>
-                <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-muted">
-                  {s.cause}
-                </p>
-                <Link
-                  href={s.href}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
-                >
-                  {s.fix}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Card>
+          <SectionHeading eyebrow="The diagnosis" title="Your search is not broken everywhere." intro="Find the stage that is leaking opportunities. Fixing anything else first is expensive motion without progress." />
+          <div className="mt-14 divide-y divide-border border-y border-border">
+            {stalls.map((stall) => (
+              <Link key={stall.number} href={stall.href} className="group grid gap-5 py-8 transition-colors hover:bg-surface sm:grid-cols-[5rem_1fr_1fr_auto] sm:items-center sm:px-5">
+                <span className="font-mono text-xs text-primary">/{stall.number}</span>
+                <div><h3 className="font-display text-3xl">{stall.stage}</h3><p className="mt-2 text-sm text-muted">{stall.signal}</p></div>
+                <p className="max-w-md text-sm leading-relaxed text-muted">{stall.diagnosis}</p>
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-primary">{stall.action} <ArrowRight className="transition-transform group-hover:translate-x-1" /></span>
+              </Link>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* --------------------------------------------------- The services */}
       <Section className="border-y border-border bg-surface">
         <Container>
-          <SectionHeading
-            eyebrow="What we do"
-            title="Three services, built to be used together."
-            intro="Take one if that's all you need. Most people find the pieces build on each other. A stronger résumé gets you more interviews, and interview practice is wasted if the coding test stops you first."
-          />
-
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {services.map((service) => (
-              <Card
-                key={service.slug}
-                className="group flex flex-col overflow-hidden p-0 hover:border-primary/40"
-              >
-                <div className="photo-frame relative aspect-16/10 overflow-hidden bg-surface-2">
-                  <Image
-                    src={images[service.slug].src}
-                    alt={images[service.slug].alt}
-                    fill
-                    sizes="(min-width: 1024px) 22rem, 100vw"
-                    className="photo-media object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                <IconBadge icon={service.icon} />
-                <h3 className="mt-5 font-display text-xl font-semibold">
-                  {service.name}
-                </h3>
-                <p className="mt-3 flex-1 leading-relaxed text-muted">
-                  {service.short}
-                </p>
-                <ul className="mt-5 space-y-2 border-t border-border pt-5">
-                  {service.outcomes.map((o) => (
-                    <li key={o} className="flex gap-2.5 text-sm text-muted">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      {o}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline"
-                >
-                  Explore {service.name}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                </div>
-              </Card>
+          <div className="flex flex-wrap items-end justify-between gap-8">
+            <SectionHeading eyebrow="What we fix" title="Three interventions. No mystery bundle." intro="Use the part you need, or connect the whole path from first scan to signed offer." />
+            <ButtonLink href="/services" variant="secondary">Compare services</ButtonLink>
+          </div>
+          <div className="mt-14 grid gap-5 lg:grid-cols-12">
+            {services.map((service, index) => (
+              <Link key={service.slug} href={`/services/${service.slug}`} className={index === 0 ? "group lg:col-span-6" : "group lg:col-span-3"}>
+                <article className="h-full overflow-hidden rounded-[1.75rem] border border-border bg-background">
+                  <div className="photo-frame relative aspect-[4/3] overflow-hidden bg-surface-2">
+                    <Image src={images[service.slug].src} alt={images[service.slug].alt} fill sizes="(min-width: 1024px) 36rem, 100vw" className="photo-media object-cover" />
+                    <span className="absolute left-4 top-4 rounded-lg bg-background/90 px-3 py-2 font-mono text-xs text-primary backdrop-blur">0{index + 1}</span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-3xl">{service.name}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">{service.short}</p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary">Explore <ArrowRight className="transition-transform group-hover:translate-x-1" /></span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* ----------------------------------------------------- How we work */}
+      <Section className="bg-ink text-ink-foreground">
+        <Container>
+          <SectionHeading eyebrow="The method" title="Four moves. In the right order." intro="The work changes by client. The sequence does not: establish the evidence, build the assets, rehearse under pressure, close deliberately." />
+          <div className="mt-14 grid border-y border-white/10 md:grid-cols-4 md:divide-x md:divide-white/10">
+            {steps.map((step) => (
+              <div key={step.number} className="border-b border-white/10 py-8 md:border-b-0 md:px-7 first:pl-0 last:pr-0">
+                <p className="font-mono text-xs text-primary-soft">/{step.number}</p>
+                <h3 className="mt-8 font-display text-4xl">{step.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-ink-foreground/55">{step.summary}</p>
+                <p className="mt-6 text-xs uppercase tracking-[.14em] text-ink-foreground/35">{step.duration}</p>
+              </div>
+            ))}
+          </div>
+          <ButtonLink href="/process" variant="secondary" className="mt-10 border-white/20 bg-transparent text-white hover:bg-white/10">See the complete process</ButtonLink>
+        </Container>
+      </Section>
+
       <Section>
         <Container>
-          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid items-end gap-10 lg:grid-cols-[.75fr_1.25fr]">
             <div>
-              <SectionHeading
-                eyebrow="How we work"
-                title="Diagnose first. Then prescribe."
-                intro="Most career advice is generic because it was written before anyone looked at your situation. We look first."
-              />
-              <ButtonLink href="/process" variant="secondary" className="mt-8">
-                The full process
-              </ButtonLink>
-
-                <div className="photo-frame relative mt-10 hidden aspect-4/3 overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10 lg:block">
-                  <Image
-                    src={images.coachingSession.src}
-                  alt={images.coachingSession.alt}
-                  fill
-                  sizes="30rem"
-                  className="photo-media object-cover"
-                />
-              </div>
+              <SectionHeading eyebrow="The people" title="Small enough to remember the whole story." intro="Four senior developers and two customer-assistance specialists. Your context does not disappear between calls." />
+              <ButtonLink href="/about" variant="secondary" className="mt-8">Meet all six</ButtonLink>
             </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              {pillars.map((p) => (
-                <Card key={p.title} className="bg-surface">
-                  <h3 className="font-display text-base font-semibold">{p.title}</h3>
-                  <p className="mt-2.5 text-[0.95rem] leading-relaxed text-muted">
-                    {p.body}
-                  </p>
-                </Card>
-              ))}
-              <Card className="bg-primary text-primary-foreground">
-                <h3 className="font-display text-base font-semibold">
-                  Honest feedback, always
-                </h3>
-                <p className="mt-2.5 text-[0.95rem] leading-relaxed text-primary-foreground/80">
-                  If your materials are not ready, we tell you rather than send you
-                  out to find out the expensive way.
-                </p>
-              </Card>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="photo-frame relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-surface-2"><Image src={images.teamHoliday.src} alt={images.teamHoliday.alt} fill sizes="30rem" className="photo-media object-cover" /></div>
+              <div className="photo-frame relative mt-12 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-surface-2"><Image src={images.teamHike.src} alt={images.teamHike.alt} fill sizes="30rem" className="photo-media object-cover" /></div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* ---------------------------------------------------- What people say */}
       {feedback.length > 0 && (
         <Section className="border-y border-border bg-surface">
-          <Container>            <SectionHeading
-              eyebrow="What people say"
-              title="In their words, not ours."
-              intro="Every quote below is published with the client's written permission."
-              align="center"
-            />
-            <div className="mt-12 space-y-5">
-              <FeaturedTestimonial t={feedback[0]} />
-              {feedback.length > 1 && (
-                <div className="grid gap-5 md:grid-cols-3">
-                  {feedback.slice(1, 4).map((t) => (
-                    <TestimonialCard key={t.quote} t={t} />
-                  ))}
-                </div>
-              )}
-            </div>
-            <p className="mt-10 text-center">
-              <Link
-                href="/success-stories"
-                className="font-medium text-primary underline underline-offset-4"
-              >
-                Read all client results
-              </Link>
-            </p>
+          <Container>
+            <SectionHeading eyebrow="Client evidence" title="Specific feedback creates specific progress." intro="Published only with the client's written permission." />
+            <div className="mt-12 space-y-5"><FeaturedTestimonial t={feedback[0]} />{feedback.length > 1 && <div className="grid gap-5 md:grid-cols-3">{feedback.slice(1, 4).map((testimonial) => <TestimonialCard key={testimonial.quote} t={testimonial} />)}</div>}</div>
           </Container>
         </Section>
       )}
 
-      {/* ------------------------------------------------- Pricing preview */}
       <Section>
         <Container>
-          <SectionHeading
-            eyebrow="Pricing"
-            title="Pick the depth your search needs."
-            intro="One-time packages, no subscriptions, no retainer. Payment plans available on request."
-          />
-
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <Card
-                key={plan.id}
-                className={
-                  plan.featured
-                    ? "relative border-primary/50 ring-1 ring-primary/25"
-                    : ""
-                }
-              >
-                {plan.featured && (
-                  <span className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                    Most chosen
-                  </span>
-                )}
-                <h3 className="font-display text-lg font-semibold">{plan.name}</h3>
-                <p className="mt-1.5 text-sm text-muted">{plan.bestFor}</p>
-                <p className="mt-5 font-display text-3xl font-semibold">
-                  {plan.price === null ? (
-                    "Custom"
-                  ) : (
-                    <>
-                      {currencySymbol}
-                      {plan.price.toLocaleString("en-US")}
-                      <span className="ml-1.5 text-sm font-normal text-subtle">
-                        {plan.cadence}
-                      </span>
-                    </>
-                  )}
-                </p>
-                <ButtonLink
-                  href={plan.cta.href}
-                  variant={plan.featured ? "primary" : "secondary"}
-                  className="mt-6 w-full"
-                >
-                  {plan.cta.label}
-                </ButtonLink>
+          <SectionHeading eyebrow="Simple pricing" title="One decision. One payment." intro="No subscription, surprise retainer, or mystery call count." />
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {plans.map((plan, index) => (
+              <Card key={plan.id} className={plan.featured ? "relative border-primary bg-ink text-ink-foreground" : "relative"}>
+                <p className="font-mono text-xs text-primary">/0{index + 1}</p>
+                <h3 className="mt-8 font-display text-4xl">{plan.name}</h3>
+                <p className={`mt-3 min-h-12 text-sm leading-relaxed ${plan.featured ? "text-white/55" : "text-muted"}`}>{plan.bestFor}</p>
+                <p className="mt-8 font-display text-5xl">{plan.price === null ? "Custom" : `${currencySymbol}${plan.price.toLocaleString("en-US")}`}</p>
+                <p className={`mt-2 text-xs uppercase tracking-[.12em] ${plan.featured ? "text-white/35" : "text-subtle"}`}>{plan.cadence}</p>
+                <ButtonLink href={plan.cta.href} variant={plan.featured ? "primary" : "secondary"} className="mt-8 w-full">{plan.cta.label}</ButtonLink>
               </Card>
             ))}
           </div>
-
-          <p className="mt-8 text-center text-sm text-subtle">
-            Full feature comparison on the{" "}
-            <Link href="/pricing" className="text-primary underline underline-offset-4">
-              pricing page
-            </Link>
-            .
-          </p>
         </Container>
       </Section>
 
-      {/* ----------------------------------------------------- Blog teaser */}
       {posts.length > 0 && (
-        <Section>
+        <Section className="border-t border-border bg-surface">
           <Container>
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <SectionHeading
-                eyebrow="Resources"
-                title="Free, and genuinely useful."
-                intro="The same material we teach clients, written up so you can use it whether or not you ever hire us."
-              />
-              <ButtonLink href="/blog" variant="secondary">
-                All articles
-              </ButtonLink>
-            </div>
-
+            <div className="flex flex-wrap items-end justify-between gap-8"><SectionHeading eyebrow="Field notes" title="Useful before you ever hire us." intro="Clear thinking for résumés, interviews, and technical screens." /><ButtonLink href="/blog" variant="secondary">Read all notes</ButtonLink></div>
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <Card className="flex h-full flex-col overflow-hidden p-0 group-hover:border-primary/40">
-                    {post.cover && (
-                      <div className="photo-frame relative aspect-[16/9] overflow-hidden bg-surface-2">
-                        <Image
-                          src={post.cover}
-                          alt={post.coverAlt}
-                          fill
-                          sizes="(min-width: 768px) 22rem, 100vw"
-                          className="photo-media object-cover"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-center gap-2 text-xs text-subtle">
-                      <span className="rounded-full bg-primary-soft px-2.5 py-1 font-medium text-primary">
-                        {post.category}
-                      </span>
-                      <span>{post.readingTime} min read</span>
-                    </div>
-                    <h3 className="mt-4 font-display text-lg font-semibold leading-snug group-hover:text-primary">
-                      {post.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-muted">
-                      {post.description}
-                    </p>
-                    <p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p>
-                    </div>
-                  </Card>
+                  <article className="h-full overflow-hidden rounded-[1.75rem] border border-border bg-background">
+                    {post.cover && <div className="photo-frame relative aspect-[16/10] overflow-hidden"><Image src={post.cover} alt={post.coverAlt} fill sizes="(min-width: 768px) 24rem, 100vw" className="photo-media object-cover" /></div>}
+                    <div className="p-6"><p className="font-mono text-xs text-primary">{post.category} · {post.readingTime} min</p><h3 className="mt-4 font-display text-2xl leading-tight group-hover:text-primary">{post.title}</h3><p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p></div>
+                  </article>
                 </Link>
               ))}
             </div>

@@ -5,21 +5,21 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 " +
-  "hover:-translate-y-0.5 active:translate-y-0 " +
+  "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 " +
+  "hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] " +
   "disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm shadow-primary/20",
+    "border border-primary bg-primary text-primary-foreground shadow-[0_8px_24px_-12px_var(--primary)] hover:border-primary-hover hover:bg-primary-hover",
   secondary:
-    "border border-border bg-background text-foreground hover:bg-surface-2",
-  ghost: "text-foreground hover:bg-surface-2",
+    "border border-foreground/20 bg-background text-foreground hover:border-foreground/45 hover:bg-surface",
+  ghost: "text-foreground hover:bg-surface",
 };
 
 const sizes: Record<Size, string> = {
   md: "h-11 px-5 text-sm",
-  lg: "h-13 px-7 text-base",
+  lg: "h-14 px-7 text-[0.95rem]",
 };
 
 export function buttonClass(variant: Variant = "primary", size: Size = "md", className?: string) {

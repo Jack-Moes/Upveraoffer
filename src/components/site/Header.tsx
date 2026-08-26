@@ -32,9 +32,9 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-background/75 py-3 backdrop-blur-xl">
       <Container>
-        <div className="flex h-18 items-center justify-between gap-4">
+        <div className="flex h-16 items-center justify-between gap-4 rounded-2xl border border-border/80 bg-background/90 px-3 shadow-[0_16px_45px_-35px_hsl(var(--shadow-color))] sm:px-4">
           <Logo />
 
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
@@ -44,9 +44,9 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                      "inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors",
                       isActive(item.href)
-                        ? "text-primary"
+                        ? "bg-primary-soft text-primary"
                         : "text-muted hover:text-foreground",
                     )}
                   >
@@ -81,9 +81,9 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                    "rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors",
                     isActive(item.href)
-                      ? "text-primary"
+                      ? "bg-primary-soft text-primary"
                       : "text-muted hover:text-foreground",
                   )}
                 >
@@ -95,7 +95,7 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <ButtonLink href="/book" className="hidden sm:inline-flex">
+            <ButtonLink href="/book" className="hidden lg:inline-flex">
               Book a free consult
             </ButtonLink>
             <button
@@ -104,7 +104,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border text-foreground lg:hidden"
             >
               <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" aria-hidden="true">
                 {open ? (
@@ -129,10 +129,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div
-          id="mobile-menu"
-          className="border-t border-border bg-background lg:hidden"
-        >
+        <div id="mobile-menu" className="mt-3 overflow-hidden rounded-2xl border border-border bg-background shadow-xl lg:hidden">
           <Container className="py-4">
             <ul className="flex flex-col">
               {nav.map((item) => (
