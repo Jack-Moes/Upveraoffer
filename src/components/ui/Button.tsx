@@ -16,9 +16,9 @@ const variants: Record<Variant, string> = {
     "border border-foreground/25 bg-background text-foreground hover:border-primary hover:text-primary",
   ghost: "text-foreground hover:bg-surface",
   contrast:
-    "border border-[#baf7ff] bg-[#baf7ff] text-[#07121f] shadow-[0_14px_32px_-18px_rgba(0,0,0,0.8)] hover:border-white hover:bg-white",
+    "border border-[#11130f] bg-[#11130f] text-white shadow-[0_14px_32px_-18px_rgba(0,0,0,0.65)] hover:border-[#176b4d] hover:bg-[#176b4d]",
   contrastOutline:
-    "border border-white/55 bg-transparent text-white hover:border-white hover:bg-white hover:text-[#07121f]",
+    "border border-[#11130f]/30 bg-transparent text-[#11130f] hover:border-[#11130f] hover:bg-[#11130f] hover:text-white",
 };
 
 const sizes: Record<Size, string> = {

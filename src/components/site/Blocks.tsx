@@ -123,36 +123,36 @@ export function CTABanner({
   return (
     <Section>
       <Container>
-        <div className="paper-noise relative overflow-hidden rounded-2xl border border-[#4f70ff] bg-[#1232a8] px-8 py-12 text-white shadow-[0_30px_90px_-45px_rgba(18,50,168,0.95)] sm:px-12 sm:py-16 lg:px-16">
+        <div className="paper-noise relative overflow-hidden rounded-2xl border border-[#d8d2c5] bg-[#f3f0e8] px-8 py-12 text-[#11130f] shadow-[0_28px_80px_-50px_rgba(31,35,28,0.55)] sm:px-12 sm:py-16 lg:px-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#baf7ff]"
+            className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#20805e]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(to_right,rgba(255,255,255,0.16)_1px,transparent_1px)] [background-size:5rem_100%]"
+            className="pointer-events-none absolute inset-0 opacity-45 [background-image:linear-gradient(to_right,rgba(17,19,15,0.055)_1px,transparent_1px)] [background-size:5rem_100%]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-[#baf7ff]/40"
+            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-[#20805e]/25"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/25"
+            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-[#11130f]/10"
           />
           <div className="relative grid items-end gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-3xl">
-              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#c9f9ff]">
-                <span className="h-px w-7 bg-[#baf7ff]" /> Your next move
+              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#176b4d]">
+                <span className="h-px w-7 bg-[#20805e]" /> Your next move
               </p>
               <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#e4eaff]">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#4f554c]">
                 {body}
               </p>
             </div>
-            <div className="flex min-w-64 flex-col gap-3 rounded-xl border border-white/20 bg-[#091b68]/55 p-3 shadow-[0_20px_55px_-35px_rgba(0,0,0,0.9)]">
+            <div className="flex min-w-64 flex-col gap-3 rounded-xl border border-[#11130f]/10 bg-white/55 p-3 shadow-[0_20px_55px_-40px_rgba(31,35,28,0.55)] backdrop-blur-sm">
               <ButtonLink href={primary.href} size="lg" variant="contrast">
                 {primary.label}
                 <ArrowRight />
@@ -164,6 +164,9 @@ export function CTABanner({
               >
                 {secondary.label}
               </ButtonLink>
+              <p className="px-2 pb-1 text-center text-xs font-medium text-[#62685f]">
+                30 minutes · No charge
+              </p>
             </div>
           </div>
         </div>
