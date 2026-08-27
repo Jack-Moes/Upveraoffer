@@ -117,8 +117,8 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamDinner: {
-    src: "/images/workplace/team-dinner-american-v7.png",
-    alt: "Upveraoffer's complete six-person team sharing an American dinner after an event",
+    src: "/images/workplace/team-dinner-iced-tea-v8.png",
+    alt: "Upveraoffer's complete six-person team sharing an American dinner with iced tea after an event",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },

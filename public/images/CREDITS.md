@@ -100,7 +100,7 @@ follow the company's creative direction and were reviewed before publication.
 | `workplace/team-lounge-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-volunteer-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-golf-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-dinner-american-v7.png` | About gallery | Complete six-person team sharing a varied American dinner | AI-assisted edit of company creative asset | Company creative asset |
+| `workplace/team-dinner-iced-tea-v8.png` | About gallery | Complete six-person team sharing a varied American dinner with iced tea | AI-assisted edit of company creative asset | Company creative asset |
 
 ## About the Unsplash License
 
