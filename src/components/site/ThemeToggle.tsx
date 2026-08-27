@@ -48,7 +48,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={mode === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted transition-colors hover:border-primary hover:text-primary"
     >
       <svg viewBox="0 0 20 20" className="h-4.5 w-4.5" fill="none" aria-hidden="true">
         {mode === "dark" ? (

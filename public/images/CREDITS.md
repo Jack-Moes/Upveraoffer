@@ -95,6 +95,8 @@ follow the company's creative direction and were reviewed before publication.
 | `workplace/team-holiday-square-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-sightseeing-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-sailing-offsite-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sailing-offsite-v6.png` | About gallery | Complete six-person team in hot-weather summer clothing | AI-assisted edit of company creative asset | Company creative asset |
+| `workplace/team-sailing-offsite-v7.png` | About gallery | Complete six-person team in distinct summer sailing outfits | AI-assisted edit of company creative asset | Company creative asset |
 | `workplace/team-hike-overlook-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-lounge-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-volunteer-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |

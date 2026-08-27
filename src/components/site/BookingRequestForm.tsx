@@ -31,7 +31,7 @@ const TIME_ZONES = [
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const field =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-[0.95rem] text-foreground " +
+  "w-full rounded-lg border border-border bg-background px-4 py-3 text-[0.95rem] text-foreground " +
   "placeholder:text-subtle transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25";
 const label = "mb-1.5 block text-sm font-semibold text-foreground";
 
@@ -262,7 +262,7 @@ export function BookingRequestForm() {
               id="booking-timezone"
               value={timezone}
               onChange={(event) => changeTimezone(event.target.value)}
-              className="rounded-xl border border-border bg-background px-3 py-2.5 text-sm font-semibold focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm font-semibold focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               {!TIME_ZONES.some(([value]) => value === timezone) && <option value={timezone}>{timezone.replaceAll("_", " ")}</option>}
               {TIME_ZONES.map(([value, text]) => <option key={value} value={value}>{text}</option>)}
@@ -281,7 +281,7 @@ export function BookingRequestForm() {
                 aria-label="Previous month"
                 disabled={month <= currentMonth}
                 onClick={() => setMonth(shiftMonth(month, -1))}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-30"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden="true"><path d="m12 5-5 5 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
@@ -290,7 +290,7 @@ export function BookingRequestForm() {
                 aria-label="Next month"
                 disabled={month >= lastMonth}
                 onClick={() => setMonth(shiftMonth(month, 1))}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-30"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden="true"><path d="m8 5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
@@ -349,7 +349,7 @@ export function BookingRequestForm() {
                     aria-pressed={selectedSlot === slot}
                     onClick={() => setSelectedSlot(slot)}
                     className={cn(
-                      "rounded-xl border px-3 py-3 text-sm font-bold transition",
+                      "rounded-lg border px-3 py-3 text-sm font-bold transition",
                       selectedSlot === slot
                         ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/20"
                         : "border-border bg-background hover:border-primary hover:text-primary",
@@ -384,7 +384,7 @@ export function BookingRequestForm() {
         <div><label className={label} htmlFor="booking-service">Main goal</label><select id="booking-service" name="service" defaultValue="" className={field}><option value="">Not sure yet</option><option>Resume and CV</option><option>Interview preparation</option><option>Coding test coaching</option><option>Full job-search support</option></select></div>
         <div><label className={label} htmlFor="booking-notes">Anything we should know?</label><textarea id="booking-notes" name="notes" rows={4} className={field} placeholder="Your target role, deadline, or where the search is stuck." /></div>
 
-        {status === "error" && <p role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-300">{error}</p>}
+        {status === "error" && <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-300">{error}</p>}
 
         <div className="flex flex-wrap items-center gap-4">
           <Button type="submit" size="lg" disabled={status === "sending" || !selectedSlot}>

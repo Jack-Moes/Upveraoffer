@@ -7,13 +7,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="paper-noise editorial-grid mt-auto overflow-hidden bg-ink text-ink-foreground">
+    <footer className="paper-noise mt-auto overflow-hidden border-t-8 border-accent bg-ink text-ink-foreground">
       <Container className="py-16 sm:py-20">
         <div className="border-b border-white/10 pb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
             Ready when you are
           </p>
-          <p className="mt-5 max-w-5xl font-display text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
+          <p className="mt-5 max-w-5xl font-display text-5xl leading-[0.94] sm:text-6xl lg:text-7xl">
             Better feedback.<br />Fewer wasted applications.
           </p>
         </div>
@@ -25,7 +25,7 @@ export function Footer() {
               {site.tagline} A job search partner for the whole thing: résumés,
               interviews, and coding assessments.
             </p>
-            <p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-primary-soft">
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-accent">
               {site.location} · Remote worldwide
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
@@ -35,7 +35,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-sm font-semibold text-ink-foreground/55 underline-offset-4 transition-colors hover:text-primary-soft hover:underline"
+                      className="text-sm font-semibold text-ink-foreground/55 underline-offset-4 transition-colors hover:text-accent hover:underline"
                 >
                   {social.label}
                 </a>
@@ -45,7 +45,7 @@ export function Footer() {
 
           {footerNav.map((group) => (
             <div key={group.title}>
-              <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-primary-soft">
+              <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
                 {group.title}
               </h3>
               <ul className="mt-5 flex flex-col gap-3">

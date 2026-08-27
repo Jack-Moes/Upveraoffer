@@ -9,7 +9,7 @@ import { services } from "@/content/services";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const field =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-[0.95rem] text-foreground " +
+  "w-full rounded-lg border border-border bg-background px-4 py-3 text-[0.95rem] text-foreground " +
   "placeholder:text-subtle transition-colors focus:border-primary focus:outline-none " +
   "focus:ring-2 focus:ring-primary/25";
 
@@ -184,7 +184,7 @@ export function ContactForm({ plans }: { plans: Pick<Plan, "id" | "name">[] }) {
       </label>
 
       {status === "error" && (
-        <p role="alert" className="rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-300">
+        <p role="alert" className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-300">
           {error}
         </p>
       )}

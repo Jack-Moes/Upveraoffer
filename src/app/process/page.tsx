@@ -13,29 +13,29 @@ export const metadata: Metadata = {
 export default function ProcessPage() {
   return (
     <>
-      <section className="paper-noise relative overflow-hidden border-b border-white/10 bg-ink text-ink-foreground">
-        <div aria-hidden="true" className="absolute -right-40 -top-48 h-[34rem] w-[34rem] rounded-full bg-primary/20 blur-3xl" />
+      <section className="paper-noise editorial-grid relative overflow-hidden border-b border-border bg-surface">
+        <div aria-hidden="true" className="absolute -right-40 -top-48 h-[34rem] w-[34rem] rounded-full bg-accent/50 blur-3xl" />
         <Container className="relative py-16 sm:py-20 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
             <div className="max-w-2xl">
               <Eyebrow>How it works</Eyebrow>
-              <h1 className="font-display text-4xl leading-[1.02] text-ink-foreground sm:text-5xl lg:text-[3.8rem]">
+              <h1 className="font-display text-5xl leading-[0.94] sm:text-6xl lg:text-[4.8rem]">
                 Four stages. One connected search.
               </h1>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-foreground/65 sm:text-xl">
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
                 We diagnose the real constraint first, then rebuild, rehearse, and stay through the offer.
               </p>
-              <div className="mt-9 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-ink-foreground/55">
-                <span className="rounded-full border border-white/10 px-4 py-2">No generic plan</span>
-                <span className="rounded-full border border-white/10 px-4 py-2">Written feedback</span>
-                <span className="rounded-full border border-white/10 px-4 py-2">One team throughout</span>
+              <div className="mt-9 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                <span className="rounded-full border border-border bg-background px-4 py-2">No generic plan</span>
+                <span className="rounded-full border border-border bg-background px-4 py-2">Written feedback</span>
+                <span className="rounded-full border border-border bg-background px-4 py-2">One team throughout</span>
               </div>
             </div>
 
-            <ol className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] shadow-2xl shadow-black/20">
+            <ol className="overflow-hidden rounded-2xl border border-border bg-background shadow-2xl shadow-primary/10">
               {steps.map((step, index) => (
-                <li key={step.number} className="group grid grid-cols-[auto_1fr] gap-5 border-b border-white/10 p-5 last:border-b-0 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:p-6">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 font-mono text-xs font-bold text-primary-soft">
+                <li key={step.number} className="group grid grid-cols-[auto_1fr] gap-5 border-b border-border p-5 last:border-b-0 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:p-6">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary/30 bg-primary-soft font-mono text-xs font-bold text-primary">
                     {step.number}
                   </span>
                   <div>
@@ -43,9 +43,9 @@ export default function ProcessPage() {
                       <h2 className="font-display text-xl font-semibold sm:text-2xl">{step.title}</h2>
                       {index < steps.length - 1 && <span aria-hidden="true" className="text-primary/60">→</span>}
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-foreground/55">{step.summary}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">{step.summary}</p>
                   </div>
-                  <span className="col-start-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink-foreground/40 sm:col-start-auto">{step.duration}</span>
+                  <span className="col-start-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-subtle sm:col-start-auto">{step.duration}</span>
                 </li>
               ))}
             </ol>

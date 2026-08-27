@@ -3,55 +3,55 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Editorial diagnostic studio: warm paper, ink, signal green, and cobalt. */
+/* High-contrast platform system: glacier white, graphite, velocity cyan, cobalt. */
 :root {
-  --background: #f8f5ed;
-  --surface: #f0eadf;
-  --surface-2: #e6dfd1;
-  --foreground: #111410;
-  --muted: #565b52;
-  --subtle: #7b8076;
-  --border: #d7d0c2;
+  --background: #ffffff;
+  --surface: #f7f8fa;
+  --surface-2: #ecf3f9;
+  --foreground: #000000;
+  --muted: #5d6c7b;
+  --subtle: #758696;
+  --border: #d9dfe5;
 
-  --primary: #118a57;
-  --primary-hover: #0b6d44;
-  --primary-soft: #dff3e8;
+  --primary: #2d62ff;
+  --primary-hover: #0f31e2;
+  --primary-soft: #d9e5ff;
   --primary-foreground: #ffffff;
 
-  --accent: #3158e6;
-  --accent-strong: #1f42bd;
-  --accent-soft: #e5eafe;
+  --accent: #a8f4ff;
+  --accent-strong: #087f91;
+  --accent-soft: #dbfaff;
 
-  --ink: #111410;
-  --ink-foreground: #f8f5ed;
+  --ink: #000000;
+  --ink-foreground: #ffffff;
 
-  --ring: #118a57;
-  --shadow-color: 105 18% 10%;
+  --ring: #2d62ff;
+  --shadow-color: 218 24% 12%;
 }
 
 .dark {
-  --background: #0f120f;
-  --surface: #171b17;
-  --surface-2: #222722;
-  --foreground: #f4f0e7;
-  --muted: #b4b8ae;
-  --subtle: #8d9288;
-  --border: #303630;
+  --background: #090b0f;
+  --surface: #10141a;
+  --surface-2: #17202b;
+  --foreground: #ffffff;
+  --muted: #b8c3cc;
+  --subtle: #8493a0;
+  --border: #27313b;
 
-  --primary: #66e3a4;
-  --primary-hover: #8bedbc;
-  --primary-soft: #173527;
-  --primary-foreground: #0f120f;
+  --primary: #a8f4ff;
+  --primary-hover: #42e7ff;
+  --primary-soft: #12333a;
+  --primary-foreground: #000000;
 
-  --accent: #8ca2ff;
-  --accent-strong: #aebcff;
-  --accent-soft: #202b55;
+  --accent: #637af4;
+  --accent-strong: #a8f4ff;
+  --accent-soft: #1b2850;
 
-  --ink: #070907;
-  --ink-foreground: #f4f0e7;
+  --ink: #000000;
+  --ink-foreground: #ffffff;
 
-  --ring: #66e3a4;
-  --shadow-color: 120 20% 2%;
+  --ring: #a8f4ff;
+  --shadow-color: 220 30% 2%;
 }
 
 @theme inline {
@@ -77,11 +77,11 @@
 
   --color-ring: var(--ring);
 
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-manrope);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-archivo);
   --font-mono: var(--font-jetbrains);
 
-  --radius-card: 1.5rem;
+  --radius-card: 0.875rem;
 }
 
 @layer base {
@@ -98,16 +98,16 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.05;
+    font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
     text-wrap: balance;
   }
 
@@ -161,9 +161,9 @@
 
 .editorial-grid {
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--border) 48%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--border) 38%, transparent) 1px, transparent 1px);
-  background-size: 4rem 4rem;
+    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent) 30%, transparent) 0, transparent 27%),
+    linear-gradient(to right, color-mix(in srgb, var(--border) 32%, transparent) 1px, transparent 1px);
+  background-size: auto, 5rem 100%;
 }
 
 .paper-noise {
@@ -174,7 +174,7 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
   content: "";
   inset: 0;
-  opacity: 0.035;
+  opacity: 0.018;
   pointer-events: none;
   position: absolute;
   z-index: 0;
@@ -189,8 +189,8 @@
    lifted frame, without zooming or cropping any part of the photograph. */
 .photo-frame {
   transition:
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .photo-media {
@@ -200,8 +200,8 @@
 }
 
 .photo-frame:hover {
-  transform: translateY(-4px) rotate(-0.15deg);
-  box-shadow: 0 26px 64px hsl(var(--shadow-color) / 0.16);
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px hsl(var(--shadow-color) / 0.14);
 }
 
 .photo-frame:hover .photo-media {

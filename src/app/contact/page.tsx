@@ -40,7 +40,7 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-5">
-              <div className="photo-frame relative aspect-[6/7] overflow-hidden rounded-3xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
+              <div className="photo-frame relative aspect-[6/7] overflow-hidden rounded-xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
                 <Image
                   src={images.hero.src}
                   alt={images.hero.alt}

@@ -5,21 +5,21 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 " +
-  "hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] " +
+  "inline-flex items-center justify-center gap-2 rounded-lg font-bold transition-all duration-300 " +
+  "hover:-translate-y-px active:translate-y-0 active:scale-[0.99] " +
   "disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "border border-primary bg-primary text-primary-foreground shadow-[0_8px_24px_-12px_var(--primary)] hover:border-primary-hover hover:bg-primary-hover",
+    "border border-primary bg-primary text-primary-foreground shadow-[0_12px_28px_-18px_var(--primary)] hover:border-primary-hover hover:bg-primary-hover",
   secondary:
-    "border border-foreground/20 bg-background text-foreground hover:border-foreground/45 hover:bg-surface",
+    "border border-foreground/25 bg-background text-foreground hover:border-primary hover:text-primary",
   ghost: "text-foreground hover:bg-surface",
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-11 px-5 text-sm",
-  lg: "h-14 px-7 text-[0.95rem]",
+  md: "h-11 px-5 text-sm tracking-[-0.01em]",
+  lg: "h-14 px-7 text-[0.95rem] tracking-[-0.01em]",
 };
 
 export function buttonClass(variant: Variant = "primary", size: Size = "md", className?: string) {

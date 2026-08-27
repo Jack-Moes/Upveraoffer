@@ -143,28 +143,63 @@ const gallery = [
   },
 ];
 
+const galleryLayout = [
+  {
+    card: "md:col-span-7",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-5 md:mt-20",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-4 md:mt-3",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-8 md:-mt-10",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-7",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-5 md:mt-16",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-5 md:mt-3",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-7 md:-mt-8",
+    media: "aspect-[3/2]",
+  },
+] as const;
+
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-ink-foreground">
+      <section className="editorial-grid relative overflow-hidden border-b border-border bg-surface">
         <div
           aria-hidden="true"
-          className="ambient-float absolute -right-40 -top-48 h-[38rem] w-[38rem] rounded-full bg-primary/30 blur-3xl"
+          className="ambient-float absolute -right-40 -top-48 h-[38rem] w-[38rem] rounded-full bg-accent/55 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute -bottom-56 left-1/4 h-96 w-96 rounded-full bg-accent/15 blur-3xl"
+          className="absolute -bottom-56 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
         />
         <Container className="relative py-16 sm:py-20 lg:py-24">
           <div className="grid items-center gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16">
             <div className="fade-up">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-soft">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 About Upveraoffer
               </p>
-              <h1 className="mt-6 max-w-xl font-display text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 max-w-2xl font-display text-5xl leading-[0.94] sm:text-6xl lg:text-7xl">
                 Six people. One clear standard for feedback.
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-foreground/70 sm:text-xl">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
                 We are a small Houston team that helps technical candidates find
                 the exact place their search is breaking, fix it, and move with
                 more confidence.
@@ -175,7 +210,7 @@ export default function AboutPage() {
                 </ButtonLink>
                 <a
                   href="#how-we-work"
-                  className="text-sm font-semibold text-white underline decoration-white/30 underline-offset-8 transition hover:decoration-white"
+                  className="text-sm font-semibold text-foreground underline decoration-primary/30 underline-offset-8 transition hover:decoration-primary"
                 >
                   How we work
                 </a>
@@ -183,7 +218,7 @@ export default function AboutPage() {
             </div>
 
             <figure className="fade-up-delay">
-              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/30">
+              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-2xl border border-border bg-background shadow-2xl shadow-primary/10">
                 <Image
                   src={images.officeInterior.src}
                   alt={images.officeInterior.alt}
@@ -193,7 +228,7 @@ export default function AboutPage() {
                   className="photo-media object-cover object-center"
                 />
               </div>
-              <figcaption className="mt-4 text-xs uppercase tracking-[0.14em] text-ink-foreground/45">
+              <figcaption className="mt-4 text-xs uppercase tracking-[0.14em] text-subtle">
                 Focused work. Straight conversation.
               </figcaption>
             </figure>
@@ -204,7 +239,7 @@ export default function AboutPage() {
       <Section id="how-we-work">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-            <div className="photo-frame relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden rounded-[2rem] bg-surface-2 shadow-xl shadow-primary/10">
+            <div className="photo-frame relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden rounded-2xl bg-surface-2 shadow-xl shadow-primary/10">
               <Image
                 src={images.officeExterior.src}
                 alt={images.officeExterior.alt}
@@ -263,7 +298,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid overflow-hidden rounded-[2rem] border border-border bg-background shadow-xl shadow-primary/10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="mt-12 grid overflow-hidden rounded-2xl border border-border bg-background shadow-xl shadow-primary/10 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="photo-frame relative aspect-[4/5] overflow-hidden bg-surface-2">
               <Image
                 src={images.founderPortrait.src}
@@ -322,7 +357,7 @@ export default function AboutPage() {
             {teammateProfiles.map((member) => (
               <figure
                 key={member.image.src}
-                className="group overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-lg shadow-primary/5"
+                className="group overflow-hidden rounded-xl border border-border bg-background shadow-lg shadow-primary/5"
               >
                 <div className="photo-frame relative aspect-[4/5] overflow-hidden bg-surface-2">
                   <Image
@@ -395,14 +430,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:mt-10">
+          <div className="mt-8 grid items-start gap-6 md:grid-cols-12 md:gap-7 lg:mt-10 lg:gap-8">
             {gallery.map((item, index) => (
               <figure
                 key={item.title}
-                className="group overflow-hidden rounded-[2rem] border border-border bg-background shadow-xl shadow-primary/5"
+                className={`group overflow-hidden rounded-2xl border border-border bg-background shadow-xl shadow-primary/5 ${galleryLayout[index].card}`}
               >
                 <div
-                  className="photo-frame relative aspect-[3/2] overflow-hidden bg-ink"
+                  className={`photo-frame relative overflow-hidden bg-ink ${galleryLayout[index].media}`}
                 >
                   <Image
                     src={item.image.src}
@@ -442,7 +477,7 @@ export default function AboutPage() {
                 that move a search forward. No theater, no crowded handoffs.
               </p>
             </div>
-            <div className="grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 sm:grid-cols-3">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
               {[
                 ["Quiet", "Protected time for deep review"],
                 ["Direct", "One owner from diagnosis to follow-up"],

@@ -63,12 +63,12 @@ export default function PricingPage() {
                 key={plan.id}
                 className={
                   plan.featured
-                    ? "relative flex flex-col border-primary/50 ring-1 ring-primary/25"
+                    ? "relative flex flex-col border-accent bg-accent-soft ring-1 ring-accent"
                     : "flex flex-col"
                 }
               >
                 {plan.featured && (
-                  <span className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  <span className="absolute -top-3 left-6 rounded-full bg-ink px-3 py-1 text-xs font-semibold text-white">
                     Most chosen
                   </span>
                 )}

@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 The Upveraoffer field guide
               </div>
-              <h1 className="mt-7 font-display text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl">
+              <h1 className="mt-7 font-display text-5xl leading-[0.94] sm:text-6xl lg:text-7xl">
                 Useful advice for the
                 <span className="block bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                   moments that matter.
@@ -64,7 +64,7 @@ export default function BlogIndexPage() {
               )}
             </div>
 
-            <div className="fade-up-delay relative overflow-hidden rounded-3xl bg-ink p-7 text-ink-foreground shadow-2xl shadow-primary/15 sm:p-8">
+            <div className="fade-up-delay relative overflow-hidden rounded-xl bg-ink p-7 text-ink-foreground shadow-2xl shadow-primary/15 sm:p-8">
               <div aria-hidden="true" className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/35 blur-3xl" />
               <div className="relative">
                 <div className="flex items-center justify-between">
@@ -113,7 +113,7 @@ export default function BlogIndexPage() {
             </div>
 
             <Link href={`/blog/${featured.slug}`} className="group block">
-              <article className="editorial-grid relative overflow-hidden rounded-[2rem] bg-ink text-ink-foreground shadow-2xl shadow-primary/10">
+              <article className="editorial-grid relative overflow-hidden rounded-xl bg-ink text-ink-foreground shadow-2xl shadow-primary/10">
                 <div aria-hidden="true" className="absolute -right-16 -top-28 h-80 w-80 rounded-full border border-primary/25" />
                 <div className="relative z-10 flex min-h-[30rem] max-w-4xl flex-col justify-center p-8 sm:p-12 lg:p-14">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-ink-foreground/60">
@@ -135,7 +135,7 @@ export default function BlogIndexPage() {
               <div className="mt-8 grid gap-6 md:grid-cols-2">
                 {rest.map((post, index) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                    <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
+                    <article className="relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10">
                       <div className="flex flex-1 flex-col p-7 sm:p-8">
                         <span className="mb-10 font-mono text-xs text-primary">/0{index + 2}</span>
                         <div className="flex items-center gap-2 text-xs text-subtle">

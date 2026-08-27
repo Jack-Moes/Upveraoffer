@@ -102,7 +102,7 @@ export default async function BlogPostPage({
           </div>
           {post.cover && (
             <figure>
-              <div className="photo-frame relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-border bg-surface-2 shadow-2xl shadow-primary/15">
+              <div className="photo-frame relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-surface-2 shadow-2xl shadow-primary/15">
               <Image
                 src={post.cover}
                 alt={post.coverAlt}
@@ -133,7 +133,7 @@ export default async function BlogPostPage({
           <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,46rem)_16rem] lg:justify-center">
             <article
             id="article"
-            className="prose prose-lg max-w-none rounded-3xl border border-border bg-background p-7 shadow-sm sm:p-10
+            className="prose prose-lg max-w-none rounded-xl border border-border bg-background p-7 shadow-sm sm:p-10
               prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight
               prose-h2:mt-12 prose-h2:text-2xl
               prose-h3:mt-8 prose-h3:text-xl
@@ -149,7 +149,7 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
             <aside className="hidden lg:sticky lg:top-28 lg:block">
-              <div className="overflow-hidden rounded-3xl border border-border bg-surface p-6">
+              <div className="overflow-hidden rounded-xl border border-border bg-surface p-6">
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-primary">Guide details</p>
                 <dl className="mt-5 space-y-4 text-sm">
                   <div className="flex justify-between gap-3 border-b border-border pb-3">

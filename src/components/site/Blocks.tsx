@@ -14,19 +14,18 @@ export function PageHeader({
   intro?: string;
 }) {
   return (
-    <div className="paper-noise editorial-grid relative overflow-hidden border-b border-white/10 bg-ink text-ink-foreground">
-      <div aria-hidden="true" className="absolute right-[-6rem] top-[-7rem] h-80 w-80 rounded-full border border-primary/30" />
-      <div aria-hidden="true" className="absolute right-[-2rem] top-[-3rem] h-56 w-56 rounded-full border border-primary/20" />
-      <Container className="relative py-20 sm:py-28 lg:py-32">
-        <div className="max-w-4xl">
+    <div className="paper-noise editorial-grid relative overflow-hidden border-b border-border bg-surface">
+      <div aria-hidden="true" className="absolute -right-20 -top-32 h-96 w-96 rounded-full bg-accent/45 blur-3xl" />
+      <Container className="relative py-18 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl text-center [&>p:first-child]:justify-center">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          <h1 className="font-display text-4xl leading-[1.02] text-ink-foreground sm:text-5xl lg:text-[4rem]">
+          <h1 className="font-display text-5xl leading-[0.95] text-foreground sm:text-6xl lg:text-[5.25rem]">
             {title}
           </h1>
           {intro && (
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-foreground/65 sm:text-xl">{intro}</p>
+            <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{intro}</p>
           )}
-          <div aria-hidden="true" className="signal-rule mt-10 h-px max-w-xl bg-primary" />
+          <div aria-hidden="true" className="signal-rule mx-auto mt-10 h-1 w-24 bg-primary" />
         </div>
       </Container>
     </div>
@@ -52,7 +51,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
+      <h2 className="font-display text-4xl leading-[0.98] sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {intro && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>}
@@ -70,7 +69,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-card border border-border bg-background p-7 shadow-[0_18px_50px_-42px_hsl(var(--shadow-color)/.5)] transition-all duration-300 hover:border-foreground/20",
+        "rounded-card border border-border bg-background p-7 shadow-[0_16px_40px_-36px_hsl(var(--shadow-color)/.35)] transition-all duration-300 hover:border-primary/45",
         className,
       )}
     >
@@ -124,29 +123,29 @@ export function CTABanner({
   return (
     <Section>
       <Container>
-        <div className="paper-noise editorial-grid relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink px-8 py-12 text-ink-foreground sm:px-12 sm:py-16 lg:px-16">
+        <div className="paper-noise editorial-grid relative overflow-hidden rounded-2xl border border-primary/15 bg-primary px-8 py-12 text-primary-foreground sm:px-12 sm:py-16 lg:px-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-primary/30"
+            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-white/25"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-primary/20"
+            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/15"
           />
           <div className="relative grid items-end gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-3xl">
-              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
-                <span className="h-2 w-2 rounded-full bg-primary" /> Your next move
+              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/75">
+                <span className="h-px w-7 bg-accent" /> Your next move
               </p>
               <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-foreground/65">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">
                 {body}
               </p>
             </div>
             <div className="flex min-w-60 flex-col gap-3">
-              <ButtonLink href={primary.href} size="lg">
+              <ButtonLink href={primary.href} size="lg" className="border-black bg-black text-white hover:border-accent hover:bg-accent hover:text-black">
                 {primary.label}
                 <ArrowRight />
               </ButtonLink>
@@ -154,7 +153,7 @@ export function CTABanner({
                 href={secondary.href}
                 size="lg"
                 variant="secondary"
-                className="border-white/20 bg-transparent text-ink-foreground hover:bg-white/10"
+                className="border-white/40 bg-white text-primary hover:border-white hover:bg-accent hover:text-black"
               >
                 {secondary.label}
               </ButtonLink>

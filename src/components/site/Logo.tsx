@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true" className={cn("h-10 w-10", className)}>
-      <rect width="40" height="40" rx="12" fill="var(--foreground)" />
+      <rect width="40" height="40" rx="8" fill="var(--foreground)" />
       <path
         d="M8 23h6l3.25-7 5 12 3.5-8H32"
         stroke="var(--background)"
@@ -33,7 +33,7 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "inline-flex items-center gap-3 rounded-lg text-[1rem] font-extrabold tracking-[-0.04em] text-foreground",
+        "inline-flex items-center gap-3 rounded-md font-display text-[1rem] font-bold tracking-[-0.055em] text-foreground",
         className,
       )}
       aria-label={`${site.name} — home`}

@@ -32,22 +32,22 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/75 py-3 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
       <Container>
-        <div className="flex h-16 items-center justify-between gap-4 rounded-2xl border border-border/80 bg-background/90 px-3 shadow-[0_16px_45px_-35px_hsl(var(--shadow-color))] sm:px-4">
+        <div className="flex h-20 items-center justify-between gap-5">
           <Logo />
 
-          <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Main" className="hidden h-full items-center gap-1 lg:flex">
             {nav.map((item) =>
               "children" in item && item.children ? (
                 <div key={item.href} className="group relative">
                   <Link
                     href={item.href}
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors",
+                      "inline-flex h-full items-center gap-1 border-b-2 px-3.5 text-sm font-semibold transition-colors",
                       isActive(item.href)
-                        ? "bg-primary-soft text-primary"
-                        : "text-muted hover:text-foreground",
+                        ? "border-primary text-foreground"
+                        : "border-transparent text-muted hover:text-foreground",
                     )}
                   >
                     {item.label}
@@ -63,12 +63,12 @@ export function Header() {
                     </svg>
                   </Link>
                   <div className="invisible absolute left-0 top-full w-60 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="rounded-2xl border border-border bg-background p-2 shadow-lg shadow-black/5">
+                    <div className="rounded-xl border border-border bg-background p-2 shadow-2xl shadow-black/10">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block rounded-xl px-3 py-2.5 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+                          className="block rounded-lg px-3 py-2.5 text-sm text-muted transition-colors hover:bg-accent-soft hover:text-foreground"
                         >
                           {child.label}
                         </Link>
@@ -81,10 +81,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors",
+                    "inline-flex h-full items-center border-b-2 px-3.5 text-sm font-semibold transition-colors",
                     isActive(item.href)
-                      ? "bg-primary-soft text-primary"
-                      : "text-muted hover:text-foreground",
+                      ? "border-primary text-foreground"
+                      : "border-transparent text-muted hover:text-foreground",
                   )}
                 >
                   {item.label}
@@ -104,7 +104,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border text-foreground lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground lg:hidden"
             >
               <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" aria-hidden="true">
                 {open ? (
@@ -129,7 +129,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div id="mobile-menu" className="mt-3 overflow-hidden rounded-2xl border border-border bg-background shadow-xl lg:hidden">
+        <div id="mobile-menu" className="border-b border-border bg-background shadow-2xl lg:hidden">
           <Container className="py-4">
             <ul className="flex flex-col">
               {nav.map((item) => (

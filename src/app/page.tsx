@@ -43,56 +43,49 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="paper-noise editorial-grid relative overflow-hidden bg-ink text-ink-foreground">
-        <div aria-hidden="true" className="absolute -right-24 top-8 h-80 w-80 rounded-full border border-primary/25" />
-        <div aria-hidden="true" className="absolute right-16 top-32 h-48 w-48 rounded-full border border-primary/15" />
+      <section className="paper-noise editorial-grid relative overflow-hidden border-b border-border bg-surface">
+        <div aria-hidden="true" className="absolute -bottom-[26rem] left-1/2 h-[52rem] w-[52rem] -translate-x-1/2 rounded-full border-[7rem] border-accent/45" />
+        <div aria-hidden="true" className="absolute -bottom-[20rem] left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full border-[5rem] border-primary/10" />
         <Container className="relative py-16 sm:py-24 lg:py-28">
-          <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
-            <div className="fade-up">
-              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary-soft">
-                <span className="h-2 w-2 rounded-full bg-primary" /> Houston-built · Working worldwide
-              </p>
-              <h1 className="mt-7 max-w-4xl font-display text-[3.1rem] leading-[.96] sm:text-6xl lg:text-[5.2rem]">
-                Stop guessing.<br /><span className="text-primary-soft">Find the break.</span>
-              </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-foreground/65 sm:text-xl">
-                Upveraoffer diagnoses the exact point your job search is failing—résumé, interview, or coding assessment—then helps you fix that first.
-              </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/book" size="lg">Book a free diagnostic <ArrowRight /></ButtonLink>
-                <ButtonLink href="/process" size="lg" variant="secondary" className="border-white/20 bg-transparent text-white hover:bg-white/10">
-                  See the method
-                </ButtonLink>
-              </div>
-              <p className="mt-5 text-sm text-ink-foreground/40">30 minutes · No charge · Written next steps</p>
+          <div className="fade-up mx-auto max-w-6xl text-center">
+            <p className="flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              <span className="h-px w-8 bg-primary" /> Houston-built · Working worldwide <span className="h-px w-8 bg-primary" />
+            </p>
+            <h1 className="mt-8 font-display text-[3.5rem] leading-[0.9] sm:text-7xl lg:text-[7rem]">
+              Stop guessing.<br /><span className="text-primary">Find the break.</span>
+            </h1>
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
+              Upveraoffer diagnoses the exact point your job search is failing—résumé, interview, or coding assessment—then helps you fix that first.
+            </p>
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <ButtonLink href="/book" size="lg">Book a free diagnostic <ArrowRight /></ButtonLink>
+              <ButtonLink href="/process" size="lg" variant="secondary">See the method</ButtonLink>
             </div>
-
-            <div className="fade-up-delay relative">
-              <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
-                <Image src={images.teamMeeting.src} alt={images.teamMeeting.alt} fill priority sizes="(min-width: 1024px) 42rem, 100vw" className="photo-media object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent" />
-                <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur-md">
-                  <div>
-                    <p className="text-xs uppercase tracking-[.16em] text-white/50">The Upveraoffer team</p>
-                    <p className="mt-1 font-display text-2xl">Six people. One standard.</p>
-                  </div>
-                  <span className="shrink-0 rounded-lg bg-primary px-3 py-2 text-xs font-bold text-primary-foreground">Meet the team</span>
+            <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+              {[["6", "people, one context"], ["1:1", "human coaching"], ["24h", "written follow-up"], ["$149", "packages from"]].map(([value, label]) => (
+                <div key={label} className="rounded-full border border-border bg-background/85 px-4 py-2 text-sm shadow-sm backdrop-blur">
+                  <strong className="font-display text-foreground">{value}</strong>
+                  <span className="ml-2 text-muted">{label}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="fade-up-delay photo-frame mt-16 overflow-hidden rounded-2xl border border-border bg-ink shadow-2xl shadow-primary/10 sm:mt-20">
+            <div className="relative aspect-[3/2]">
+              <Image src={images.teamMeeting.src} alt={images.teamMeeting.alt} fill priority sizes="(min-width: 1440px) 86rem, 100vw" className="photo-media object-cover object-center" />
+            </div>
+            <div className="flex flex-col gap-3 border-t border-white/20 bg-black p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[.18em] text-accent">Upveraoffer · Houston</p>
+                <p className="mt-2 font-display text-2xl sm:text-3xl">Six people. One shared client context.</p>
               </div>
+              <Link href="/about" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-accent">
+                Meet the team <ArrowRight />
+              </Link>
             </div>
           </div>
         </Container>
-
-        <div className="border-t border-white/10">
-          <Container className="grid grid-cols-2 divide-x divide-white/10 py-0 sm:grid-cols-4">
-            {[["6", "people, one context"], ["1:1", "human coaching"], ["24h", "written follow-up"], ["$149", "packages from"]].map(([value, label]) => (
-              <div key={label} className="px-4 py-6 first:pl-0 sm:px-7">
-                <p className="font-display text-3xl text-primary-soft">{value}</p>
-                <p className="mt-1 text-xs uppercase tracking-[.12em] text-white/40">{label}</p>
-              </div>
-            ))}
-          </Container>
-        </div>
       </section>
 
       <Section>
@@ -120,7 +113,7 @@ export default function HomePage() {
           <div className="mt-14 grid gap-5 lg:grid-cols-12">
             {services.map((service, index) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className={index === 0 ? "group lg:col-span-6" : "group lg:col-span-3"}>
-                <article className="editorial-grid relative flex h-full min-h-[23rem] flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background p-7 sm:p-8">
+                <article className="editorial-grid relative flex h-full min-h-[23rem] flex-col overflow-hidden rounded-xl border border-border bg-background p-7 sm:p-8">
                   <span className="font-mono text-xs text-primary">/0{index + 1}</span>
                   <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-primary/20" />
                   <div className="mt-auto">
@@ -159,7 +152,7 @@ export default function HomePage() {
               <SectionHeading eyebrow="The people" title="Small enough to remember the whole story." intro="Four senior developers and two customer-assistance specialists. Your context does not disappear between calls." />
               <ButtonLink href="/about" variant="secondary" className="mt-8">Meet all six</ButtonLink>
             </div>
-            <div className="grid gap-px overflow-hidden rounded-[2rem] border border-border bg-border sm:grid-cols-3">
+            <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
               {[["4", "Senior engineers"], ["2", "Client-care specialists"], ["1", "Shared client context"]].map(([value, label]) => (
                 <div key={label} className="flex min-h-56 flex-col justify-between bg-surface p-7 sm:p-8">
                   <span className="font-mono text-xs uppercase tracking-[.14em] text-primary">Team structure</span>
@@ -196,7 +189,7 @@ export default function HomePage() {
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {posts.map((post, index) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <article className="relative flex h-full min-h-72 flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background p-6">
+                  <article className="relative flex h-full min-h-72 flex-col overflow-hidden rounded-xl border border-border bg-background p-6">
                     <span className="font-mono text-xs text-primary">/0{index + 1}</span>
                     <div aria-hidden="true" className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-accent/15" />
                     <div className="mt-auto"><p className="font-mono text-xs text-primary">{post.category} · {post.readingTime} min</p><h3 className="mt-4 font-display text-2xl leading-tight group-hover:text-primary">{post.title}</h3><p className="mt-5 text-xs text-subtle">{formatDate(post.date)}</p></div>

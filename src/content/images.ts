@@ -93,8 +93,8 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamSailing: {
-    src: "/images/workplace/team-sailing-offsite-v5.jpg",
-    alt: "Upveraoffer's six-person team working together aboard a sailboat",
+    src: "/images/workplace/team-sailing-offsite-v7.png",
+    alt: "Upveraoffer's six-person team sailing together on a hot summer day",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },

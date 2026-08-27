@@ -72,7 +72,7 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
 /** Large treatment for the strongest single piece of feedback. */
 export function FeaturedTestimonial({ t }: { t: Testimonial }) {
   return (
-    <figure className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-12">
+    <figure className="relative overflow-hidden rounded-xl border border-border bg-surface p-8 sm:p-12">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl"
