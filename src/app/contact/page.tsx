@@ -51,7 +51,6 @@ export default async function ContactPage() {
                   className="photo-media object-cover"
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent" />
-                <p className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3.5 py-2 text-xs font-medium text-white backdrop-blur">A small team that answers directly</p>
               </div>
               <Card className="bg-surface">
                 <h2 className="font-display text-lg font-semibold">
