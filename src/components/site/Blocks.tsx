@@ -123,37 +123,44 @@ export function CTABanner({
   return (
     <Section>
       <Container>
-        <div className="paper-noise editorial-grid relative overflow-hidden rounded-2xl border border-primary/15 bg-primary px-8 py-12 text-primary-foreground sm:px-12 sm:py-16 lg:px-16">
+        <div className="paper-noise relative overflow-hidden rounded-2xl border border-[#4f70ff] bg-[#1232a8] px-8 py-12 text-white shadow-[0_30px_90px_-45px_rgba(18,50,168,0.95)] sm:px-12 sm:py-16 lg:px-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-white/25"
+            className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#baf7ff]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/15"
+            className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(to_right,rgba(255,255,255,0.16)_1px,transparent_1px)] [background-size:5rem_100%]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full border border-[#baf7ff]/40"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border border-white/25"
           />
           <div className="relative grid items-end gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-3xl">
-              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/75">
-                <span className="h-px w-7 bg-accent" /> Your next move
+              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#c9f9ff]">
+                <span className="h-px w-7 bg-[#baf7ff]" /> Your next move
               </p>
               <h2 className="font-display text-3xl leading-[1.05] sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#e4eaff]">
                 {body}
               </p>
             </div>
-            <div className="flex min-w-60 flex-col gap-3">
-              <ButtonLink href={primary.href} size="lg" className="border-black bg-black text-white hover:border-accent hover:bg-accent hover:text-black">
+            <div className="flex min-w-64 flex-col gap-3 rounded-xl border border-white/20 bg-[#091b68]/55 p-3 shadow-[0_20px_55px_-35px_rgba(0,0,0,0.9)]">
+              <ButtonLink href={primary.href} size="lg" variant="contrast">
                 {primary.label}
                 <ArrowRight />
               </ButtonLink>
               <ButtonLink
                 href={secondary.href}
                 size="lg"
-                variant="secondary"
-                className="border-white/40 bg-white text-primary hover:border-white hover:bg-accent hover:text-black"
+                variant="contrastOutline"
               >
                 {secondary.label}
               </ButtonLink>
