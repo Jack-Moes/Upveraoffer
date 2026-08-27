@@ -221,5 +221,5 @@ npm run deploy:cloudflare
 ```
 
 For later releases, run `npm run deploy:cloudflare`. The production site is
-`https://upveraoffer.upveraoffer.workers.dev`; a custom domain can be attached
+`https://www.upveraoffer.workers.dev`; a custom domain can be attached
 later.
