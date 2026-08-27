@@ -81,8 +81,8 @@ export const images = {
       "https://www.pexels.com/photo/modern-office-building-with-glass-facade-33206338/",
   },
   officeInterior: {
-    src: "/images/workplace/team-equipment-interior-v5.jpg",
-    alt: "Upveraoffer's six-person team working with a desktop tower, dual monitors, TV, Dell and Mac laptops, and printers",
+    src: "/images/workplace/team-software-workspace-v6.png",
+    alt: "Upveraoffer's six-person team reviewing product analytics, code, and client conversations in their software workspace",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
