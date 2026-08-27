@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Container, Section } from "@/components/ui/Container";
 import { ButtonLink, ArrowRight } from "@/components/ui/Button";
 import { SectionHeading, Card, CTABanner } from "@/components/site/Blocks";
 import { services } from "@/content/services";
 import { steps } from "@/content/process";
 import { currencySymbol } from "@/content/pricing";
-import { images } from "@/content/images";
 import { getPublicPlans } from "@/lib/managed-content";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
@@ -73,21 +71,6 @@ export default async function HomePage() {
                   <span className="ml-2 text-muted">{label}</span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="fade-up-delay photo-frame mt-16 overflow-hidden rounded-2xl border border-border bg-ink shadow-2xl shadow-primary/10 sm:mt-20">
-            <div className="relative aspect-[3/2]">
-              <Image src={images.teamMeeting.src} alt={images.teamMeeting.alt} fill priority sizes="(min-width: 1440px) 86rem, 100vw" className="photo-media object-cover object-center" />
-            </div>
-            <div className="flex flex-col gap-3 border-t border-white/20 bg-black p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[.18em] text-accent">Upveraoffer · Houston</p>
-                <p className="mt-2 font-display text-2xl sm:text-3xl">Six people. One shared client context.</p>
-              </div>
-              <Link href="/about" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-accent">
-                Meet the team <ArrowRight />
-              </Link>
             </div>
           </div>
         </Container>

@@ -54,12 +54,6 @@ export const images = {
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
-  teamMeeting: {
-    src: "/images/workplace/team-company-studio-v5.jpg",
-    alt: "Upveraoffer's six-person team working across engineering and customer-assistance stations",
-    credit: "Upveraoffer",
-    creditUrl: "https://upveraoffer.com",
-  },
   teamHoliday: {
     src: "/images/workplace/team-holiday-square-v5.jpg",
     alt: "Upveraoffer's six-person team sharing warm drinks at an outdoor holiday market",

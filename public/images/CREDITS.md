@@ -90,7 +90,6 @@ follow the company's creative direction and were reviewed before publication.
 | `workplace/team-volunteer-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-golf-day-v3.jpg` | About gallery | Three developers plus two customer-assistance identities | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-dinner-v4.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-company-studio-v5.jpg` | Home hero | Complete six-person team | AI-assisted company scene | Company creative asset |
 | `workplace/team-equipment-interior-v5.jpg` | About hero | Complete six-person team | AI-assisted company scene | Company creative asset |
 | `workplace/team-holiday-square-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
 | `workplace/team-sightseeing-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
