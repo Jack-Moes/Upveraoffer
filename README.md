@@ -220,5 +220,6 @@ npx wrangler secret bulk .env.local
 npm run deploy:cloudflare
 ```
 
-For later releases, run `npm run deploy:cloudflare`. Cloudflare serves the
-site on its free `workers.dev` domain; a custom domain can be attached later.
+For later releases, run `npm run deploy:cloudflare`. The production site is
+`https://upveraoffer.upveraoffer.workers.dev`; a custom domain can be attached
+later.

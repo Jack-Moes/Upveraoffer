@@ -14,7 +14,7 @@ export const site = {
     "Upveraoffer is a job search partner for the whole process. We help you write a résumé that gets read, prepare for interviews you’ll pass, and clear the coding tests standing between you and the offer.",
 
   /** Used for canonical URLs, sitemap, and Open Graph. */
-  url: "https://upveraoffer.com",
+  url: "https://upveraoffer.upveraoffer.workers.dev",
 
   email: "hello@upveraoffer.com",
   phone: "",
