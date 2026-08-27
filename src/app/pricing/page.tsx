@@ -45,8 +45,10 @@ function Cell({ value }: { value: boolean | string }) {
   return <span className="text-sm text-muted">{value}</span>;
 }
 
-export default function PricingPage() {
-  const plans = getPublicPlans();
+export const dynamic = "force-dynamic";
+
+export default async function PricingPage() {
+  const plans = await getPublicPlans();
   return (
     <>
       <PageHeader

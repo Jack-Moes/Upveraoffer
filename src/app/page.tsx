@@ -37,9 +37,14 @@ const stalls = [
   },
 ] as const;
 
-export default function HomePage() {
-  const posts = getAllPosts().slice(0, 3);
-  const plans = getPublicPlans();
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const [allPosts, plans] = await Promise.all([
+    getAllPosts(),
+    getPublicPlans(),
+  ]);
+  const posts = allPosts.slice(0, 3);
 
   return (
     <>

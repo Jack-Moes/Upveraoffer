@@ -26,8 +26,9 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 class SlotUnavailableError extends Error {}
 
 export async function GET() {
+  const store = await readAdminStore();
   const occupied = new Set(
-    readAdminStore().bookings
+    store.bookings
       .filter((booking) => booking.status !== "cancelled" && booking.slotStart)
       .map((booking) => booking.slotStart as string),
   );

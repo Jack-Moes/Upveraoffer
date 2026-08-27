@@ -28,8 +28,10 @@ const commitments = [
   },
 ];
 
-export default function SuccessStoriesPage() {
-  const items = getPublicTestimonials();
+export const dynamic = "force-dynamic";
+
+export default async function SuccessStoriesPage() {
+  const items = await getPublicTestimonials();
   const metrics = getMetrics();
   const hasStories = items.length > 0;
 

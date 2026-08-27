@@ -92,6 +92,29 @@ export type AdminStore = {
   hiddenFeedbackIds: string[];
 };
 
+type D1RunResult = {
+  success?: boolean;
+  meta?: { changes?: number };
+};
+
+type D1PreparedStatementLike = {
+  bind(...values: unknown[]): D1PreparedStatementLike;
+  first<T>(): Promise<T | null>;
+  run(): Promise<D1RunResult>;
+};
+
+type D1DatabaseLike = {
+  prepare(query: string): D1PreparedStatementLike;
+};
+
+type D1StoreRow = {
+  value: string;
+  version: number;
+};
+
+const STORE_KEY = "control-center";
+const MAX_D1_UPDATE_ATTEMPTS = 6;
+
 function emptyStore(): AdminStore {
   return {
     version: 1,
@@ -135,7 +158,7 @@ function normalize(value: Partial<AdminStore>): AdminStore {
   };
 }
 
-export function readAdminStore(): AdminStore {
+function readLocalAdminStore(): AdminStore {
   const file = dataFile();
   if (!fs.existsSync(file)) return emptyStore();
 
@@ -147,14 +170,88 @@ export function readAdminStore(): AdminStore {
   }
 }
 
+async function cloudflareDatabase(): Promise<D1DatabaseLike | null> {
+  if (process.env.ADMIN_STORAGE !== "d1") return null;
+
+  const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+  const context = await getCloudflareContext({ async: true });
+  const database = (context.env as CloudflareEnv & { DB?: D1DatabaseLike }).DB;
+  if (!database) {
+    throw new Error(
+      "ADMIN_STORAGE is set to d1, but the Cloudflare DB binding is missing.",
+    );
+  }
+  return database;
+}
+
+async function readD1Row(database: D1DatabaseLike): Promise<D1StoreRow | null> {
+  return database
+    .prepare("SELECT value, version FROM admin_store WHERE key = ?")
+    .bind(STORE_KEY)
+    .first<D1StoreRow>();
+}
+
+function parseStore(value: string): AdminStore {
+  try {
+    return normalize(JSON.parse(value) as AdminStore);
+  } catch (error) {
+    console.error("[admin-store] Could not parse the stored D1 state", error);
+    return emptyStore();
+  }
+}
+
+export async function readAdminStore(): Promise<AdminStore> {
+  const database = await cloudflareDatabase();
+  if (!database) return readLocalAdminStore();
+
+  const row = await readD1Row(database);
+  return row ? parseStore(row.value) : emptyStore();
+}
+
 let writeQueue: Promise<void> = Promise.resolve();
 
-export function updateAdminStore(
+async function updateD1AdminStore(
+  database: D1DatabaseLike,
   mutate: (store: AdminStore) => AdminStore | void,
 ): Promise<void> {
+  for (let attempt = 0; attempt < MAX_D1_UPDATE_ATTEMPTS; attempt += 1) {
+    const row = await readD1Row(database);
+    const current = row ? parseStore(row.value) : emptyStore();
+    const result = normalize(mutate(current) ?? current);
+    result.updatedAt = new Date().toISOString();
+    const serialized = JSON.stringify(result);
+
+    const write = row
+      ? await database
+          .prepare(
+            "UPDATE admin_store SET value = ?, version = version + 1, updated_at = ? WHERE key = ? AND version = ?",
+          )
+          .bind(serialized, result.updatedAt, STORE_KEY, row.version)
+          .run()
+      : await database
+          .prepare(
+            "INSERT OR IGNORE INTO admin_store (key, value, version, updated_at) VALUES (?, ?, 1, ?)",
+          )
+          .bind(STORE_KEY, serialized, result.updatedAt)
+          .run();
+
+    if (write.meta?.changes === 1) return;
+  }
+
+  throw new Error(
+    "The admin data changed repeatedly while saving. Please try again.",
+  );
+}
+
+export async function updateAdminStore(
+  mutate: (store: AdminStore) => AdminStore | void,
+): Promise<void> {
+  const database = await cloudflareDatabase();
+  if (database) return updateD1AdminStore(database, mutate);
+
   const operation = writeQueue.then(async () => {
-    const current = readAdminStore();
-    const result = mutate(current) ?? current;
+    const current = readLocalAdminStore();
+    const result = normalize(mutate(current) ?? current);
     result.updatedAt = new Date().toISOString();
 
     const file = dataFile();
@@ -174,5 +271,7 @@ export function updateAdminStore(
 }
 
 export function adminDataLocation(): string {
-  return dataFile();
+  return process.env.ADMIN_STORAGE === "d1"
+    ? "Cloudflare D1 (DB/admin_store)"
+    : dataFile();
 }

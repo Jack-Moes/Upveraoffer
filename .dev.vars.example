@@ -1,0 +1,6 @@
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=use-a-long-unique-password
+ADMIN_SESSION_SECRET=use-a-random-secret-of-at-least-32-characters
+RESEND_API_KEY=
+CONTACT_FROM_EMAIL=Upveraoffer <hello@upveraoffer.com>
+CONTACT_TO_EMAIL=hello@upveraoffer.com

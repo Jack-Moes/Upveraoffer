@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "upveraoffer",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-27",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "ADMIN_STORAGE": "d1"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "upveraoffer",
+      "database_id": "3a3945a4-fcc3-41d1-98a1-9e90f6631012",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

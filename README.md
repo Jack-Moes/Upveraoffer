@@ -4,7 +4,7 @@ Company website for **Upveraoffer** — an end-to-end job search partner coverin
 résumé writing, interview preparation, and coding test coaching.
 
 Built with Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS v4.
-Deployed on Vercel.
+Deployed on Cloudflare Workers with Cloudflare D1 for durable admin data.
 
 ---
 
@@ -129,15 +129,16 @@ CONTACT_FROM_EMAIL="Upveraoffer <hello@yourdomain.com>"
 CONTACT_TO_EMAIL=you@yourdomain.com
 ```
 
-3. Add the same three variables in Vercel under
-   **Project Settings → Environment Variables**, then redeploy.
+3. Upload the same three values as Cloudflare Worker secrets with Wrangler,
+   then redeploy.
 
 Until those are set, messages are still accepted and remain available in
 `/admin`; only the email notification is skipped.
 
 The route includes a honeypot field and a simple in-memory rate limit
 (5 submissions per IP per hour). The rate limit resets on cold start and is
-per-instance; move it to Vercel KV or Upstash if volume ever justifies it.
+per-instance; move it to Cloudflare KV or Durable Objects if volume ever
+justifies it.
 
 ---
 
@@ -149,26 +150,21 @@ client feedback. It also shows integration status and launch-readiness
 warnings. It is not linked from public navigation and is excluded from search
 indexing.
 
-Configure these server-only variables locally and in Vercel before signing in:
+Configure these server-only variables locally and as Cloudflare Worker secrets
+before signing in:
 
 ```bash
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=use-at-least-6-characters
 ADMIN_SESSION_SECRET=use-a-random-32-character-secret
-ADMIN_DATA_DIR=/path/to/a/persistent/writable/directory
 ```
 
 The dashboard uses a signed, HTTP-only, eight-hour session cookie. Login
 attempts are rate limited. Do not commit real credentials.
 
-Admin changes and private submissions are written to
-`ADMIN_DATA_DIR/control-center.json`. When `ADMIN_DATA_DIR` is omitted, the
-local default is `.data/control-center.json`, which is ignored by Git.
-
-The built-in file store is appropriate for local or single-server hosting. A
-Vercel function filesystem is ephemeral, so production Vercel deployments
-must point this storage layer at a durable database before relying on it for
-client messages or bookings.
+Production admin changes and private submissions are stored in Cloudflare D1.
+Local Next.js development uses `.data/control-center.json`, which is ignored
+by Git. Local Wrangler development uses a local D1 database.
 
 The `/book` page uses the built-in consultation request form when no Cal.com
 handle is configured. Requests appear immediately in the admin booking
@@ -214,9 +210,15 @@ the header toggle; the choice persists in `localStorage`. An inline script in
 
 ## Deployment
 
-Pushes to `main` deploy to production automatically. Pull requests get their
-own preview URL.
+The free production deployment runs on Cloudflare Workers. The first-time
+setup is:
 
-To deploy manually or configure the project the first time, see the
-"Deploying" section of the handover notes, or run `vercel` from this directory
-after `npm i -g vercel`.
+```bash
+npx wrangler login
+npx wrangler d1 migrations apply upveraoffer --remote
+npx wrangler secret bulk .env.local
+npm run deploy:cloudflare
+```
+
+For later releases, run `npm run deploy:cloudflare`. Cloudflare serves the
+site on its free `workers.dev` domain; a custom domain can be attached later.

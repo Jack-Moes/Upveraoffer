@@ -36,9 +36,10 @@ function builtInFeedback(): FeedbackEntry[] {
   }));
 }
 
-export function getPublicPlans(): Plan[] {
+export async function getPublicPlans(): Promise<Plan[]> {
+  const store = await readAdminStore();
   const overrides = new Map(
-    readAdminStore().planOverrides.map((override) => [override.id, override]),
+    store.planOverrides.map((override) => [override.id, override]),
   );
 
   return plans.map((plan) => {
@@ -73,8 +74,8 @@ export function getPublicPlans(): Plan[] {
   });
 }
 
-export function getAdminFeedbackEntries(): FeedbackEntry[] {
-  const store = readAdminStore();
+export async function getAdminFeedbackEntries(): Promise<FeedbackEntry[]> {
+  const store = await readAdminStore();
   const overrides = new Map(store.feedback.map((item) => [item.id, item]));
   const builtIns = builtInFeedback()
     .filter((item) => !store.hiddenFeedbackIds.includes(item.id))
@@ -89,8 +90,8 @@ export function getAdminFeedbackEntries(): FeedbackEntry[] {
   return [...builtIns, ...custom];
 }
 
-export function getPublicTestimonials(): Testimonial[] {
-  return getAdminFeedbackEntries()
+export async function getPublicTestimonials(): Promise<Testimonial[]> {
+  return (await getAdminFeedbackEntries())
     .filter((item) => item.published)
     .map((item) => ({
       quote: item.quote,

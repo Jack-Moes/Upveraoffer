@@ -25,6 +25,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Cloudflare's free Worker deployment serves the already-optimized local
+    // assets directly instead of requiring the paid Images binding.
+    unoptimized: true,
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

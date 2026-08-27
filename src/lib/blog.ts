@@ -65,8 +65,8 @@ function storedToMeta(post: StoredPost): PostMeta {
   return toMeta(post.slug, post, post.body);
 }
 
-export function getPostSlugs(): string[] {
-  const store = readAdminStore();
+export async function getPostSlugs(): Promise<string[]> {
+  const store = await readAdminStore();
   const visibleMarkdown = getMarkdownPostSlugs().filter(
     (slug) => !store.hiddenPostSlugs.includes(slug),
   );
@@ -76,8 +76,8 @@ export function getPostSlugs(): string[] {
   return [...new Set([...visibleMarkdown, ...stored])];
 }
 
-export function getAllPosts(): PostMeta[] {
-  const store = readAdminStore();
+export async function getAllPosts(): Promise<PostMeta[]> {
+  const store = await readAdminStore();
   const stored = new Map(store.posts.map((post) => [post.slug, post]));
   const markdown = getMarkdownPostSlugs()
     .filter((slug) => !store.hiddenPostSlugs.includes(slug))
@@ -102,7 +102,7 @@ export function getAllPosts(): PostMeta[] {
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
-  const store = readAdminStore();
+  const store = await readAdminStore();
   const stored = store.posts.find((post) => post.slug === slug);
   if (stored) {
     if (!stored.published) return null;
@@ -118,8 +118,8 @@ export async function getPost(slug: string): Promise<Post | null> {
   return { ...toMeta(slug, data, content), html };
 }
 
-export function getAllPostDrafts(): PostDraft[] {
-  const store = readAdminStore();
+export async function getAllPostDrafts(): Promise<PostDraft[]> {
+  const store = await readAdminStore();
   const stored = new Map(store.posts.map((post) => [post.slug, post]));
   const builtIns = getMarkdownPostSlugs()
     .filter((slug) => !store.hiddenPostSlugs.includes(slug))
@@ -158,8 +158,8 @@ export function getAllPostDrafts(): PostDraft[] {
   );
 }
 
-export function getCategories(): string[] {
-  return [...new Set(getAllPosts().map((p) => p.category))].sort();
+export async function getCategories(): Promise<string[]> {
+  return [...new Set((await getAllPosts()).map((p) => p.category))].sort();
 }
 
 export function formatDate(iso: string): string {

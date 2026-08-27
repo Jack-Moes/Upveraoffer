@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS admin_store (
+  key TEXT PRIMARY KEY NOT NULL,
+  value TEXT NOT NULL,
+  version INTEGER NOT NULL DEFAULT 1,
+  updated_at TEXT NOT NULL
+);

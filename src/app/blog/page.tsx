@@ -25,9 +25,13 @@ function Arrow() {
   );
 }
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts();
-  const categories = getCategories();
+export const dynamic = "force-dynamic";
+
+export default async function BlogIndexPage() {
+  const [posts, categories] = await Promise.all([
+    getAllPosts(),
+    getCategories(),
+  ]);
   const [featured, ...rest] = posts;
   const totalReadingTime = posts.reduce((total, post) => total + post.readingTime, 0);
 

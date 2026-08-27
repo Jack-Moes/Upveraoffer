@@ -4,14 +4,12 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Container";
 import { Card, CTABanner } from "@/components/site/Blocks";
-import { getPost, getPostSlugs, getAllPosts, formatDate } from "@/lib/blog";
+import { getPost, getAllPosts, formatDate } from "@/lib/blog";
 import { site } from "@/content/site";
 
 type Params = { slug: string };
 
-export function generateStaticParams(): Params[] {
-  return getPostSlugs().map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -49,7 +47,7 @@ export default async function BlogPostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const related = getAllPosts()
+  const related = (await getAllPosts())
     .filter((p) => p.slug !== post.slug)
     .slice(0, 2);
 

@@ -16,8 +16,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
-  const plans = getPublicPlans();
+export const dynamic = "force-dynamic";
+
+export default async function ContactPage() {
+  const plans = await getPublicPlans();
   return (
     <>
       <PageHeader

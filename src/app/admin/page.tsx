@@ -63,9 +63,9 @@ function AdminSetup() {
             Secure the dashboard first.
           </h1>
           <p className="mt-4 leading-relaxed text-muted">
-            Add the following server-only environment variables locally and in
-            Vercel, then restart or redeploy the site. The dashboard stays locked
-            until both secrets meet the minimum lengths.
+            Add the following server-only environment variables locally and as
+            Cloudflare Worker secrets, then restart or redeploy the site. The
+            dashboard stays locked until both secrets meet the minimum lengths.
           </p>
           <div className="mt-6 space-y-2 rounded-2xl bg-ink p-5 font-mono text-sm text-ink-foreground">
             <p>ADMIN_USERNAME=admin</p>
@@ -122,12 +122,21 @@ export default async function AdminPage() {
     return <AdminLogin username={configuration.username} />;
   }
 
-  const posts = getAllPosts();
-  const postDrafts = getAllPostDrafts();
-  const testimonials = getPublicTestimonials();
-  const feedbackEntries = getAdminFeedbackEntries();
-  const plans = getPublicPlans();
-  const adminStore = readAdminStore();
+  const [
+    posts,
+    postDrafts,
+    testimonials,
+    feedbackEntries,
+    plans,
+    adminStore,
+  ] = await Promise.all([
+    getAllPosts(),
+    getAllPostDrafts(),
+    getPublicTestimonials(),
+    getAdminFeedbackEntries(),
+    getPublicPlans(),
+    readAdminStore(),
+  ]);
   const emailConfigured = Boolean(
     process.env.RESEND_API_KEY && process.env.CONTACT_FROM_EMAIL,
   );

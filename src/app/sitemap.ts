@@ -3,8 +3,11 @@ import { site } from "@/content/site";
 import { services } from "@/content/services";
 import { getAllPosts } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const posts = await getAllPosts();
 
   const staticRoutes: { path: string; priority: number }[] = [
     { path: "", priority: 1 },
@@ -34,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...getAllPosts().map((p) => ({
+    ...posts.map((p) => ({
       url: `${site.url}/blog/${p.slug}`,
       lastModified: new Date(`${p.date}T00:00:00Z`),
       changeFrequency: "yearly" as const,
