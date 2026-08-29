@@ -8,6 +8,12 @@ import { IconBadge } from "@/components/site/ServiceIcon";
 import { services } from "@/content/services";
 import { images } from "@/content/images";
 
+const serviceVisuals = {
+  resume: images.servicesOverviewResume,
+  interview: images.servicesOverviewInterview,
+  "coding-test": images.servicesOverviewCoding,
+} as const;
+
 export const metadata: Metadata = {
   title: "Services",
   description:
@@ -44,12 +50,22 @@ export default function ServicesPage() {
       <Section>
         <Container>
           <div className="space-y-6">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <div
                 key={service.slug}
-                className="grid gap-8 rounded-card border border-border bg-background p-7 sm:p-9 lg:grid-cols-[1fr_1.2fr]"
+                className="grid overflow-hidden rounded-2xl border border-border bg-background shadow-lg shadow-primary/5 lg:grid-cols-12"
               >
-                <div>
+                <figure className={`photo-frame relative min-h-72 overflow-hidden bg-surface-2 lg:col-span-5 ${index % 2 === 1 ? "lg:order-3" : ""}`}>
+                  <Image
+                    src={serviceVisuals[service.slug].src}
+                    alt={serviceVisuals[service.slug].alt}
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="photo-media object-cover"
+                  />
+                </figure>
+
+                <div className="p-7 sm:p-9 lg:col-span-3">
                   <IconBadge icon={service.icon} />
                   <h2 className="mt-5 font-display text-2xl font-semibold">
                     {service.name}
@@ -61,7 +77,7 @@ export default function ServicesPage() {
                   </ButtonLink>
                 </div>
 
-                <div className="rounded-2xl bg-surface p-6">
+                <div className="border-t border-border bg-surface p-7 sm:p-9 lg:col-span-4 lg:border-l lg:border-t-0">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
                     You get
                   </p>

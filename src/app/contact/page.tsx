@@ -44,11 +44,11 @@ export default async function ContactPage() {
             <aside className="space-y-5">
               <div className="photo-frame relative aspect-[6/7] overflow-hidden rounded-xl border border-border bg-surface-2 shadow-lg shadow-primary/10">
                 <Image
-                  src={images.hero.src}
-                  alt={images.hero.alt}
+                  src={images.contactCare.src}
+                  alt={images.contactCare.alt}
                   fill
                   sizes="(min-width: 1024px) 24rem, 100vw"
-                  className="photo-media object-cover"
+                  className="photo-media object-cover object-center"
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent" />
               </div>

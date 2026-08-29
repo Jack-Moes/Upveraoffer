@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Eyebrow, Section } from "@/components/ui/Container";
 import { Card, CTABanner, SectionHeading } from "@/components/site/Blocks";
 import { steps, pillars } from "@/content/process";
+import { images } from "@/content/images";
 
 export const metadata: Metadata = {
   title: "How it works",
@@ -55,6 +57,25 @@ export default function ProcessPage() {
 
       <Section>
         <Container>
+          <figure className="mb-16 grid overflow-hidden rounded-2xl border border-border bg-background shadow-xl shadow-primary/10 lg:grid-cols-[1.35fr_.65fr]">
+            <div className="photo-frame relative min-h-80 overflow-hidden bg-surface-2 lg:min-h-[30rem]">
+              <Image
+                src={images.processDiagnostic.src}
+                alt={images.processDiagnostic.alt}
+                fill
+                sizes="(min-width: 1024px) 68vw, 100vw"
+                className="photo-media object-cover"
+              />
+            </div>
+            <figcaption className="flex flex-col justify-between bg-ink p-8 text-ink-foreground sm:p-10">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-primary-soft">Before the plan</span>
+              <div className="mt-20">
+                <h2 className="font-display text-3xl leading-tight">Find the leak before adding more effort.</h2>
+                <p className="mt-5 leading-relaxed text-ink-foreground/65">We map the applications, conversations, and assessments first. The work that follows is built around the evidence—not a template.</p>
+              </div>
+            </figcaption>
+          </figure>
+
           <ol className="space-y-6">
             {steps.map((step) => (
               <li key={step.number}>
@@ -97,6 +118,22 @@ export default function ProcessPage() {
               </li>
             ))}
           </ol>
+
+          <figure className="mt-16">
+            <div className="photo-frame relative aspect-[3/2] overflow-hidden rounded-2xl border border-border bg-surface-2 shadow-xl shadow-primary/10">
+              <Image
+                src={images.processTechnical.src}
+                alt={images.processTechnical.alt}
+                fill
+                sizes="(min-width: 1152px) 72rem, 100vw"
+                className="photo-media object-cover"
+              />
+            </div>
+            <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.14em] text-subtle">
+              <span>Practice under realistic constraints.</span>
+              <span className="font-mono text-primary">Build · Practice · Review</span>
+            </figcaption>
+          </figure>
         </Container>
       </Section>
 

@@ -206,6 +206,26 @@ Dark mode follows the system preference by default and can be overridden with
 the header toggle; the choice persists in `localStorage`. An inline script in
 `layout.tsx` applies it before first paint so there is no flash.
 
+### Adding photography
+
+The deployed Worker serves local image files directly, so photographs are
+managed in the repository rather than uploaded through the admin dashboard.
+
+1. Export the final image as WebP: 1600px wide for landscapes, 900x1200 for
+   portraits, or 512x512 for avatars. Keep most files below 350 KB.
+2. Put it in the matching directory under `public/images/` (`home`, `site`,
+   `people`, `services`, `process`, `about`, `blog`, or `testimonials`).
+3. Register permanent site imagery, alt text, and credit information in
+   `src/content/images.ts`.
+4. Add its production/source record to `public/images/CREDITS.md`.
+5. Blog covers and testimonial portraits may then use the deployed
+   `/images/...` path in Admin. Admin edits paths and metadata; it does not
+   write binary files into an immutable Worker deployment.
+
+Every responsive `Image` using `fill` must include an accurate `sizes` value.
+Use a dedicated asset per placement rather than repeating a photograph across
+unrelated pages.
+
 ---
 
 ## Deployment

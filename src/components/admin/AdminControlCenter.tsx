@@ -65,6 +65,7 @@ export function AdminControlCenter({
             ["pricing-control", "Pricing"],
             ["blog-control", "Blog"],
             ["feedback-control", "Feedback"],
+            ["media-guide", "Media"],
           ].map(([href, text]) => (
             <a key={href} href={`#${href}`} className="rounded-xl px-4 py-2 text-sm font-semibold text-muted transition hover:bg-primary-soft hover:text-primary">
               {text}
@@ -207,6 +208,26 @@ export function AdminControlCenter({
             </details>
           ))}
         </div>
+      </section>
+
+      <section className="space-y-6 pb-10">
+        <SectionTitle id="media-guide" eyebrow="Photography" title="Media workflow" intro="The production Worker serves optimized repository assets. Admin can select deployed image paths for blog covers and feedback portraits, but it cannot write binary files into a deployed Worker." />
+        <div className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-3">
+          {[
+            ["01", "Prepare", "Export WebP files at the final aspect ratio. Keep most photographs below 350 KB."],
+            ["02", "Deploy", "Add the file under public/images, register its alt text and credit, then deploy the site."],
+            ["03", "Select", "Paste the deployed /images/... path into a blog cover or feedback portrait field."],
+          ].map(([number, title, body]) => (
+            <div key={number} className="bg-background p-6 sm:p-7">
+              <span className="font-mono text-xs font-semibold text-primary">/{number}</span>
+              <h3 className="mt-8 font-display text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="rounded-2xl border border-border bg-surface p-5 text-sm leading-relaxed text-muted">
+          Recommended folders: <code className="font-mono text-foreground">/images/blog/</code> for article covers and <code className="font-mono text-foreground">/images/testimonials/</code> for approved client portraits.
+        </p>
       </section>
     </div>
   );

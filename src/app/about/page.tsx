@@ -141,6 +141,18 @@ const gallery = [
     title: "The best conversation started after dinner.",
     note: "No occasion required. Just time together at the end of a long week.",
   },
+  {
+    image: images.aboutConference,
+    kicker: "In the room",
+    title: "The useful part started after the session.",
+    note: "A conference floor, four perspectives, and notes we carried home.",
+  },
+  {
+    image: images.aboutSculpture,
+    kicker: "Open air",
+    title: "A different kind of system to study.",
+    note: "One map, one camera, and an afternoon built around curiosity.",
+  },
 ];
 
 const galleryLayout = [
@@ -174,6 +186,14 @@ const galleryLayout = [
   },
   {
     card: "md:col-span-7 md:-mt-8",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-8 md:mt-3",
+    media: "aspect-[3/2]",
+  },
+  {
+    card: "md:col-span-4 md:mt-16",
     media: "aspect-[3/2]",
   },
 ] as const;
@@ -420,12 +440,12 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-4 lg:pb-1">
               <p className="max-w-md text-base leading-relaxed text-muted sm:text-lg">
-                Eight real days with the people behind Upveraoffer: holiday evenings,
+                Ten real days with the people behind Upveraoffer: holiday evenings,
                 time outdoors, community work, and meals that ran late.
               </p>
               <div className="mt-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
                 <span className="h-px w-10 bg-primary" />
-                Photo notes · 01—08
+                Photo notes · 01—10
               </div>
             </div>
           </div>
