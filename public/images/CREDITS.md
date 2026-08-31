@@ -66,16 +66,16 @@ follow the company's creative direction and were reviewed before publication.
 | `people/chinese-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/us-customer-assistance-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/indian-customer-assistance-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `workplace/team-software-workspace-v6.webp` | About hero | Complete six-person team working across software engineering and customer assistance | AI-assisted company scene | Company creative asset |
-| `workplace/team-holiday-square-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sightseeing-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sailing-offsite-v7.webp` | About gallery | Complete six-person team in distinct summer sailing outfits | AI-assisted edit of company creative asset | Company creative asset |
-| `workplace/team-hike-overlook-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-lounge-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-volunteer-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-golf-day-v5.jpg` | About gallery | Complete six-person team | AI-assisted company-life scene | Company creative asset |
-| `workplace/team-dinner-iced-tea-v8.webp` | About gallery | Complete six-person team sharing a varied American dinner with iced tea | AI-assisted edit of company creative asset | Company creative asset |
-| `home/team-hero-v1.webp` | Home hero | Complete six-person team and canonical identity references | AI-assisted company scene | Company creative asset |
+| `workplace/team-software-workspace-v7.jpg` | About hero | Six canonical employees, exactly once each, working across engineering and customer assistance | Identity-preserving AI-assisted company scene | Company creative asset |
+| `workplace/team-holiday-square-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sightseeing-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sailing-offsite-v8.jpg` | About gallery | Six canonical employees, exactly once each, in distinct summer sailing outfits | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-hike-overlook-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-lounge-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-volunteer-day-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-golf-day-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-dinner-iced-tea-v9.jpg` | About gallery | Six canonical employees, exactly once each, sharing a varied American dinner with iced tea | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `home/team-hero-v2.jpg` | Home hero | Six canonical employees, exactly once each | Identity-preserving AI-assisted company scene | Company creative asset |
 | `home/resume-review-v1.webp` | Home résumé service | Two canonical team identities | AI-assisted company scene | Company creative asset |
 | `home/interview-practice-v1.webp` | Home interview service | Two canonical team identities | AI-assisted company scene | Company creative asset |
 | `home/coding-assessment-v1.webp` | Home coding service | Two canonical developer identities | AI-assisted company scene | Company creative asset |
