@@ -58,35 +58,37 @@ Upveraoffer.
 Where the founder appears, his identity comes from a company-provided reference
 photograph. Five canonical teammate identities and every company-life scene
 follow the company's creative direction and were reviewed before publication.
+The current engineering roster includes one Indian American man, one Black
+American man, and one white American man alongside the founder.
 
 | File | Used on | Identity source | Production | Licence |
 |---|---|---|---|---|
 | `people/indian-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `people/vietnamese-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `people/chinese-developer-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
+| `people/black-american-ai-engineer-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
+| `people/white-american-aiml-engineer-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/us-customer-assistance-v1.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
 | `people/indian-customer-assistance-v2.jpg` | About team profile | Company creative direction | AI-assisted canonical teammate portrait | Company creative asset |
-| `workplace/team-software-workspace-v7.jpg` | About hero | Six canonical employees, exactly once each, working across engineering and customer assistance | Identity-preserving AI-assisted company scene | Company creative asset |
-| `workplace/team-holiday-square-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sightseeing-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-sailing-offsite-v8.jpg` | About gallery | Six canonical employees, exactly once each, in distinct summer sailing outfits | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-hike-overlook-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-lounge-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-volunteer-day-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-golf-day-v6.jpg` | About gallery | Six canonical employees, exactly once each | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `workplace/team-dinner-iced-tea-v9.jpg` | About gallery | Six canonical employees, exactly once each, sharing a varied American dinner with iced tea | Identity-preserving AI-assisted company-life scene | Company creative asset |
-| `home/team-hero-v2.jpg` | Home hero | Six canonical employees, exactly once each | Identity-preserving AI-assisted company scene | Company creative asset |
+| `workplace/team-software-workspace-v8.jpg` | About hero | Revised six-person roster, each identity exactly once, working across engineering and customer assistance | Identity-preserving AI-assisted company scene | Company creative asset |
+| `workplace/team-holiday-square-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sightseeing-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-sailing-offsite-v9.jpg` | About gallery | Revised six-person roster, each identity exactly once, in distinct summer sailing outfits | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-hike-overlook-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-lounge-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-volunteer-day-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-golf-day-v7.jpg` | About gallery | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `workplace/team-dinner-iced-tea-v10.jpg` | About gallery | Revised six-person roster, each identity exactly once, sharing a varied American dinner with iced tea | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `home/team-hero-v3.jpg` | Home hero | Revised six-person roster, each identity exactly once | Identity-preserving AI-assisted company scene | Company creative asset |
 | `home/resume-review-v1.webp` | Home résumé service | Two canonical team identities | AI-assisted company scene | Company creative asset |
-| `home/interview-practice-v1.webp` | Home interview service | Two canonical team identities | AI-assisted company scene | Company creative asset |
-| `home/coding-assessment-v1.webp` | Home coding service | Two canonical developer identities | AI-assisted company scene | Company creative asset |
-| `home/engineers-walking-v1.webp` | Home team section | Three canonical developer identities | AI-assisted company-life scene | Company creative asset |
+| `home/interview-practice-v2.jpg` | Home interview service | Indian customer-assistance specialist and Black AI engineer | Identity-preserving AI-assisted company scene | Company creative asset |
+| `home/coding-assessment-v2.jpg` | Home coding service | White AI/ML engineer and Indian backend engineer | Identity-preserving AI-assisted company scene | Company creative asset |
+| `home/engineers-walking-v2.jpg` | Home team section | Indian, Black, and white canonical engineers | Identity-preserving AI-assisted company-life scene | Company creative asset |
 | `process/diagnostic-review-v1.webp` | Process diagnostic | Two canonical customer-assistance identities | AI-assisted company scene | Company creative asset |
-| `process/technical-practice-v1.webp` | Process technical practice | Three canonical developer identities | AI-assisted company scene | Company creative asset |
+| `process/technical-practice-v2.jpg` | Process technical practice | Indian, Black, and white canonical engineers | Identity-preserving AI-assisted company scene | Company creative asset |
 | `services/overview/resume-editorial-v1.webp` | Services résumé overview | Canonical customer-assistance identity | AI-assisted company scene | Company creative asset |
 | `services/overview/interview-rehearsal-v1.webp` | Services interview overview | Two canonical team identities | AI-assisted company scene | Company creative asset |
-| `services/overview/coding-collaboration-v1.webp` | Services coding overview | Two canonical developer identities | AI-assisted company scene | Company creative asset |
-| `about/team-conference-v1.webp` | About gallery | Four canonical team identities | AI-assisted company-life scene | Company creative asset |
-| `about/sculpture-garden-v1.webp` | About gallery | Three canonical team identities | AI-assisted company-life scene | Company creative asset |
+| `services/overview/coding-collaboration-v2.jpg` | Services coding overview | Black AI engineer and white AI/ML engineer | Identity-preserving AI-assisted company scene | Company creative asset |
+| `about/team-conference-v2.jpg` | About gallery | Four canonical team identities including the Black AI engineer | Identity-preserving AI-assisted company-life scene | Company creative asset |
+| `about/sculpture-garden-v2.jpg` | About gallery | Black and white engineers with Indian customer assistance | Identity-preserving AI-assisted company-life scene | Company creative asset |
 | `site/booking-founder-consult-v1.webp` | Booking sidebar | Company-provided founder reference | AI-assisted company scene | Company creative asset |
 | `site/contact-client-care-v1.webp` | Contact sidebar | Two canonical customer-assistance identities | AI-assisted company scene | Company creative asset |
 

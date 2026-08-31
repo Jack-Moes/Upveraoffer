@@ -67,15 +67,15 @@ const teammateProfiles = [
     detail: "U.S.-based · Core team",
   },
   {
-    image: images.vietnameseDeveloper,
+    image: images.blackAmericanDeveloper,
     label: "Senior AI Engineer",
     objectClass: "object-cover",
     detail: "U.S.-based · Core team",
   },
   {
-    image: images.chineseDeveloper,
+    image: images.whiteAmericanDeveloper,
     label: "Senior AI/ML Engineer",
-    objectClass: "object-contain",
+    objectClass: "object-cover",
     detail: "U.S.-based · Core team",
   },
   {
