@@ -139,7 +139,7 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamHoliday: {
-    src: "/images/workplace/team-holiday-square-v7.jpg",
+    src: "/images/workplace/team-holiday-square-v8.jpg",
     alt: "Upveraoffer's six-person team sharing warm drinks at an outdoor holiday market",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
@@ -152,7 +152,7 @@ export const images = {
       "https://www.pexels.com/photo/businesspeople-attending-a-business-seminar-8761535/",
   },
   teamSightseeing: {
-    src: "/images/workplace/team-sightseeing-v7.jpg",
+    src: "/images/workplace/team-sightseeing-v8.jpg",
     alt: "Upveraoffer's six-person team exploring a contemporary sculpture garden",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
@@ -171,25 +171,25 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamSailing: {
-    src: "/images/workplace/team-sailing-offsite-v9.jpg",
+    src: "/images/workplace/team-sailing-offsite-v10.jpg",
     alt: "Upveraoffer's six-person team sailing together on a hot summer day",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
   teamHike: {
-    src: "/images/workplace/team-hike-overlook-v7.jpg",
+    src: "/images/workplace/team-hike-overlook-v8.jpg",
     alt: "Upveraoffer's six-person team pausing at a mountain trail overlook",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
   teamLounge: {
-    src: "/images/workplace/team-lounge-v7.jpg",
+    src: "/images/workplace/team-lounge-v8.jpg",
     alt: "Upveraoffer's six-person team taking an informal coffee break in the office lounge",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
   },
   teamVolunteer: {
-    src: "/images/workplace/team-volunteer-day-v7.jpg",
+    src: "/images/workplace/team-volunteer-day-v8.jpg",
     alt: "Upveraoffer's six-person team packing food donations at a community volunteer event",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
@@ -201,7 +201,7 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   teamDinner: {
-    src: "/images/workplace/team-dinner-iced-tea-v10.jpg",
+    src: "/images/workplace/team-dinner-iced-tea-v11.jpg",
     alt: "Upveraoffer's complete six-person team sharing an American dinner with iced tea after an event",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",
