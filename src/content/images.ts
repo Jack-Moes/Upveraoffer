@@ -109,7 +109,7 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   servicesOverviewCoding: {
-    src: "/images/services/overview/coding-collaboration-v2.jpg",
+    src: "/images/services/overview/coding-collaboration-v3.jpg",
     alt: "Two Upveraoffer AI engineers working across a glass board and multiple software displays",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",

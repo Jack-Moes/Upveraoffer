@@ -86,7 +86,7 @@ American man, and one white American man alongside the founder.
 | `process/technical-practice-v2.jpg` | Process technical practice | Indian, Black, and white canonical engineers | Identity-preserving AI-assisted company scene | Company creative asset |
 | `services/overview/resume-editorial-v1.webp` | Services résumé overview | Canonical customer-assistance identity | AI-assisted company scene | Company creative asset |
 | `services/overview/interview-rehearsal-v1.webp` | Services interview overview | Two canonical team identities | AI-assisted company scene | Company creative asset |
-| `services/overview/coding-collaboration-v2.jpg` | Services coding overview | Black AI engineer and white AI/ML engineer | Identity-preserving AI-assisted company scene | Company creative asset |
+| `services/overview/coding-collaboration-v3.jpg` | Services coding overview | Black AI engineer and white AI/ML engineer collaborating beside two clearly identified MacBook laptops | Identity-preserving AI-assisted company scene | Company creative asset |
 | `about/team-conference-v2.jpg` | About gallery | Four canonical team identities including the Black AI engineer | Identity-preserving AI-assisted company-life scene | Company creative asset |
 | `about/sculpture-garden-v2.jpg` | About gallery | Black and white engineers with Indian customer assistance | Identity-preserving AI-assisted company-life scene | Company creative asset |
 | `site/booking-founder-consult-v1.webp` | Booking sidebar | Company-provided founder reference | AI-assisted company scene | Company creative asset |
