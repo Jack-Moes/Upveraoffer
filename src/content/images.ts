@@ -91,7 +91,7 @@ export const images = {
     creditUrl: "https://upveraoffer.com",
   },
   processTechnical: {
-    src: "/images/process/technical-practice-v2.jpg",
+    src: "/images/process/technical-practice-v3.jpg",
     alt: "Three Upveraoffer engineers working through system design and AI architecture exercises",
     credit: "Upveraoffer",
     creditUrl: "https://upveraoffer.com",

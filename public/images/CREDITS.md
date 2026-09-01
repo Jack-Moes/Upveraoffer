@@ -83,7 +83,7 @@ American man, and one white American man alongside the founder.
 | `home/coding-assessment-v2.jpg` | Home coding service | White AI/ML engineer and Indian backend engineer | Identity-preserving AI-assisted company scene | Company creative asset |
 | `home/engineers-walking-v2.jpg` | Home team section | Indian, Black, and white canonical engineers | Identity-preserving AI-assisted company-life scene | Company creative asset |
 | `process/diagnostic-review-v1.webp` | Process diagnostic | Two canonical customer-assistance identities | AI-assisted company scene | Company creative asset |
-| `process/technical-practice-v2.jpg` | Process technical practice | Indian, Black, and white canonical engineers | Identity-preserving AI-assisted company scene | Company creative asset |
+| `process/technical-practice-v3.jpg` | Process technical practice | Indian, Black, and white canonical engineers using two MacBooks, one external monitor, and a labeled working architecture diagram | Identity-preserving AI-assisted documentary company scene | Company creative asset |
 | `services/overview/resume-editorial-v1.webp` | Services résumé overview | Canonical customer-assistance identity | AI-assisted company scene | Company creative asset |
 | `services/overview/interview-rehearsal-v1.webp` | Services interview overview | Two canonical team identities | AI-assisted company scene | Company creative asset |
 | `services/overview/coding-collaboration-v3.jpg` | Services coding overview | Black AI engineer and white AI/ML engineer collaborating beside two clearly identified MacBook laptops | Identity-preserving AI-assisted company scene | Company creative asset |
